@@ -1,11 +1,5 @@
 <?php
 
-	// How to connect this PHP file to HTML
-	// in action attribute of form/input, added 'search.php'
-	
-	// How to pass PHP variables to Javascript
-	// https://stackoverflow.com/questions/23740548/how-to-pass-variables-and-data-from-php-to-javascript
-	
 	// Database configurations -- connected to AWS RDS
 	$dbhost = "ihme.c1blkxjim6dl.us-west-2.rds.amazonaws.com";
 	$dbport = 3306;
