@@ -3,7 +3,7 @@
 Within the action attribute of form/input, added 'search.php'
 This might redirect the page to search.php (not sure)!
 
-Ex: <form action='search.php'></form>
+Ex: "< form action='search.php' >< /form >"
 
 # Query
 The query works like
