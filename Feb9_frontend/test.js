@@ -16,7 +16,7 @@ function create() {
 		complete: function(){
 			console.log(data);
 			var width = 420,
-				barHeight = 20;
+				barHeight = 50;
 				
 			var deaths = [data.val]
 			
@@ -27,7 +27,12 @@ function create() {
 			var chart = d3.select(".chart")
 				.attr("width", width)
 				.attr("height", barHeight);
-				
+			
+			chart.selectAll("g").remove();
+			
+			var title = d3.select("#title")
+				.html("2016 deaths from " + cause_name + " in " + data.location_name)
+			
 			var bar = chart.selectAll("g")
 				.data(deaths)
 				.enter().append("g");
@@ -36,7 +41,7 @@ function create() {
 			bar.append("rect")
 				.attr("width", x)
 				.attr("height", barHeight - 1)
-				.style("fill", "blue");
+				.style("fill", "#7fc5be");
 					
 			bar.append("text")
 				.attr("x", function(d) { return x(d) - 3; })
