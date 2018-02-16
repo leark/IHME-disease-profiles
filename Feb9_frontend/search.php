@@ -1,41 +1,36 @@
-<?php
-
-	// Database configurations -- connected to AWS RDS
-	$dbhost = "ihme.c1blkxjim6dl.us-west-2.rds.amazonaws.com";
-	$dbport = 3306;
-	$dbname = "ihmedb";
-	$username = "info490user";
-	$password = "mypassword";
-	
+<?php	
 	try {
 		// If the input isn't empty
-		if (!empty($_GET["causeName"])) {
-			// Change the name attribute to align in both HTML and here
-			// Get the value in the input
+		if (!empty($_GET["causeName"]) && !empty($_GET["locationName"])) { // if input isn't required
+
 			$causeName = $_GET["causeName"];
-			
-			// Database connection
-			$conn = new PDO("mysql:host=$dbhost;port=$dbport; dbname=$dbname", $username, $password) 
-						or die("Could not connect: " . mysql.error());
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
-			
-			// Prints the JSON result of executeQuery
-			print_r(executeQuery($conn, $causeName));
+			$locationName = $_GET["locationName"];
+			$conn = getConnection(); // database connection
+
+			echo json_encode(executeQuery($conn, $causeName, $locationName));
 		}
 	} catch(PDOException $e) {
 		// Either connection failed or there was an error in the query
 		echo "Connection failed: " . $e->getMessage();
 	}
 	
-	// $value is cause_name like Meningitis, $conn is the database connection
+	function getConnection() {
+		include 'dbconfig.php';
+		$connection = new PDO("mysql:host=$dbhost;port=$dbport; dbname=$dbname", $username, $password) 
+						or die("Could not connect: " . mysql.error());
+		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		return $connection;
+	}
+	
+	// $cause like Meningitis, $country like United States, $conn is the database connection
 	// Utilized PDO (prepare()) to prevent SQL Injection
-	// Returns the query as a JSON value
-	function executeQuery($conn, $value) {
-		$cause = $value;
-		$stmt = $conn->prepare("SELECT * FROM DEATHS WHERE cause_name LIKE :cause");
+	// Returns the query as array
+	function executeQuery($conn, $cause, $location) {
+		$stmt = $conn->prepare("SELECT * FROM DEATHS WHERE cause_name LIKE :cause AND location_name LIKE :location");
 		$stmt->bindParam(':cause', $cause);
+		$stmt->bindParam(':location', $location);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
-		return json_encode($result); // returns the row as JSON
+		return $result; // returns the row as array
 	}
 ?>

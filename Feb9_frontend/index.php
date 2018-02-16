@@ -1,6 +1,9 @@
 <html>
 <head>
 	<title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 </head>
 <body>
@@ -9,46 +12,11 @@
 			<h1>IHME Data</h1>
 		</header>
 		<form method="get">
-			<input type="text" name="causeName" required="true">
-			<input type="submit" value="Search">
+			Disease: <input type="text" name="causeName" required="true">
+			Country: <input type="text" name="locationName" required="true">
+			<input type="submit" id="submit" value="Search">
 		</form>
-		<?php
-			// Database configurations
-			$dbhost = "ihme.c1blkxjim6dl.us-west-2.rds.amazonaws.com";
-			$dbport = 3306;
-			$dbname = "ihmedb";
-			$username = "info490user";
-			$password = "mypassword";
-			
-			try {
-				if (!empty($_GET["causeName"])) { // Change the name attribute
-					$causeName = $_GET["causeName"]; // based on their names for input
-					
-					// Database connection
-					$conn = new PDO("mysql:host=$dbhost;port=$dbport; dbname=$dbname", $username, $password) 
-								or die("Could not connect: " . mysql.error());
-					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-					
-					// Connected successfully
-					print_r(executeQuery($conn, $causeName));
-				}
-			} catch(PDOException $e) {
-				echo "Connection failed: " . $e->getMessage();
-			}
-			
-			// $value is cause_name
-			// Utilized PDO to prevent SQL Injection
-			// Returns the query as a JSON value
-			function executeQuery($conn, $value) {
-				$cause = $value;
-				$stmt = $conn->prepare("SELECT * FROM DEATHS WHERE cause_name LIKE :cause");
-				$stmt->bindParam(':cause', $cause);
-				$stmt->execute();
-				$result = $stmt->fetchAll();
-				return json_encode($result);
-				//return $result;
-			}
-		?>
+		<?php include 'search.php' ?>
 	</div>
 </html>
 </body>
