@@ -1,0 +1,37 @@
+body {
+	background-color: white;
+	color: #4d4d4f;
+	font-family: ;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.menu a {
+	color: #4d4d4f;
+	text-decoration: none;
+}
+
+#logo {
+	float: left;
+}
+
+#top {
+	width: 100%;
+	background-color: #cbe2a0;
+	margin: 0px 0px 25px 0px;
+	padding: 0.5px;
+	height: 100%;
+}
+
+li {
+	display: inline;
+}
+
+#jump {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	background-color: #555555;
+}
