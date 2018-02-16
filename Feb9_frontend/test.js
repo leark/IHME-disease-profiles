@@ -15,55 +15,35 @@ function create() {
 		},
 		complete: function(){
 			console.log(data);
-			/*var svg = d3.select("body").append("svg").append("rect")
-				.attr("width", 600)
-				.attr("height", 600)
-				.style("fill", "blue")*/
-			var svg = d3.select("svg");
-			
-			/*
-			var x = d3.scaleOrdinal().range([0, 500])
-				.domain(data.location_name);
-			
-			var y = d3.scaleLinear()
-				.range([500, 0])
-				.domain([0, data.val]);
-				
-			
-			var rects = svg.selectAll('rect')
-				.data(data);
-				
-			var newRects = rects.enter();
-			
-			newRects.append('rect')
-				.attr('y', y(0))
-				.attr('x', x(data.val))
-				.attr('width', 200)
-				.attr('height', data.val);
-			
-			*/
-			
 			var width = 420,
 				barHeight = 20;
 				
+			var deaths = [data.val]
+			
 			var x = d3.scale.linear()
-				.domain([0, data.val])
+				.domain([0, deaths]) 
 				.range([0, width]);
 				
-			//alert(data.val)
-			
 			var chart = d3.select(".chart")
 				.attr("width", width)
-				.attr("height", barHeight * 3 );
+				.attr("height", barHeight);
 				
 			var bar = chart.selectAll("g")
-				.data(data)
-				.enter().append("g")
+				.data(deaths)
+				.enter().append("g");
+				//.attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; }); //positions bars underneath each other 
 			
 			bar.append("rect")
 				.attr("width", x)
 				.attr("height", barHeight - 1)
 				.style("fill", "blue");
+					
+			bar.append("text")
+				.attr("x", function(d) { return x(d) - 3; })
+				.attr("y", barHeight / 2)
+				.attr("dy", ".35em")
+				.text(function(d) { return d; });
+			
 
 		}
 
