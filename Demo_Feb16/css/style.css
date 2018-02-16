@@ -20,9 +20,8 @@ ul {
 #top {
 	width: 100%;
 	background-color: #cbe2a0;
-	margin: 0px 0px 25px 0px;
-	padding: 0.5px;
-	height: 100%;
+	/*margin: 0px 0px 25px 0px;
+	padding: 0.5px;*/
 }
 
 li {
@@ -33,5 +32,7 @@ li {
 	position: fixed;
 	bottom: 5px;
 	right: 5px;
-	background-color: #555555;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #cbe2a0;
 }
