@@ -4,9 +4,9 @@ function create() {
 	
 	$.ajax({
 		url:"search.php", //the page containing php script
-		type: "get", //request type,
+		type: "get", //request type
 		dataType: 'json',
-		data: {request: "success", causeName: cause_name, locationName: location_name},
+		data: {causeName: cause_name, locationName: location_name},
 		success: function(req){
 			console.log(req);
 		}
