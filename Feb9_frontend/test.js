@@ -1,22 +1,12 @@
 function create() {
-	// $.ajax({
-		// url:"test.php", //the page containing php script
-		// type: "post", //request type,
-		// dataType: 'json',
-		// data: {registration: "success", name: "xyz", email: "abc@gmail.com"},
-		// success: function(result){
-			// console.log(result.abc);
-		// }
-	// });
-
-	// var cause_name = $("#causeName").val();
-	// var location_name = $("#locationName").val();
+	var cause_name = $("#causeName").val();
+	var location_name = $("#locationName").val();
 	
 	$.ajax({
-		url:"test.php", //the page containing php script
+		url:"search.php", //the page containing php script
 		type: "get", //request type,
 		dataType: 'json',
-		data: {request: "success", causeName: "HIV/AIDS", locationName: "Russia"},
+		data: {request: "success", causeName: cause_name, locationName: location_name},
 		success: function(req){
 			console.log(req);
 		}
