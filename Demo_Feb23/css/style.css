@@ -1,0 +1,103 @@
+body {
+    background-color: white;
+    color: #4d4d4f;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu a {
+    color: #4d4d4f;
+    text-decoration: none;
+}
+
+#logo {
+    float: left;
+}
+
+#top {
+    width: 100%;
+    background-color: #cbe2a0;
+    padding: 0.1px;
+    
+}
+
+.menu li {
+    display: inline;
+}
+
+#jump {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #cbe2a0;
+}
+
+#topmenu {
+    margin: 1px 5% 20px 5%;
+    display: table;
+    margin: 0% 10%;
+}
+
+#logo {
+    position: relative;
+    display: table-cell;
+}
+
+#buttons {
+    position: relative;
+    display: table-cell;
+    left: 100px;
+}
+
+.button:hover {
+    background-color: lightblue;
+}
+
+.button {
+    height: 20px;
+    width: 75px;
+    border: 0px;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 5px;
+    margin: 0px;
+    font-size: 16px;
+    display: table-cell;
+    text-align: left;
+}
+
+#main {
+    margin: 5% 10%;
+    display: table;
+}
+
+#sidebar {
+    width: 20%;
+    display: table-cell;
+    padding: 5px;
+}
+
+.side li {
+    list-style: none;
+} 
+
+a {
+    text-decoration: none;
+    color: #4d4d4f;
+}
+
+.head {
+    font-variant: small-caps;
+    color: lightslategray;
+}
+
+#info {
+    width: 75%;
+    display: table-cell;
+}
