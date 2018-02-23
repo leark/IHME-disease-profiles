@@ -54,8 +54,13 @@ function create() {
 				//.attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; }); //positions bars underneath each other 
 			chart.append("g")
 			    .attr("class", "x axis")
-			    .attr("transform", "translate(20," + 80 + ")")
+			    .attr("transform", "translate(0," + 80 + ")")
 			    .call(xAxis);
+
+			chart.append("text")
+				.attr("text-anchor", "middle")
+				.attr("transform", "translate(" + (width/2) + "," + (barHeight - 20)+")rotate(0)")
+				.text("Deaths");
 
 			// chart.append("g")
 			//     .attr("class", "y axis")
