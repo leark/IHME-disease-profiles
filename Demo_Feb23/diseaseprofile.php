@@ -81,6 +81,7 @@
                 <ul>
                     <li><a href="http://www.healthdata.org/results/country-profiles/haq">Healthcare Access and Quality</a></li>
                 </ul>
+                <li><a href="http://students.washington.edu/shl7/capstone/diseaseprofiles.html">Disease Profiles</li>
                 <li><a href="http://www.healthdata.org/results/policy-reports">Policy Reports</a></li>
                 <li><a href="http://www.healthdata.org/results/research-articles">Research Articles</a></li>
                 <li><a href="http://www.healthdata.org/results/research-articles">Infographics</a></li>
@@ -91,6 +92,26 @@
         </div>
 
         <div id="info">
+        	<form action="./diseaseprofile.php" method="post">
+                <select name="causeName" id="causeName" required>
+                    <option value="">Choose</option>
+                    <option value="HIV/AIDS">HIV/AIDS</option>
+                    <option value="Upper respiratory infections">Upper respiratory infections</option>
+                    <option value="Lower respiratory infections">Lower respiratory infections</option>
+                    <option value="Thyroid cancer">Thyroid cancer</option>
+                    <option value="Iron-deficiency anemia">Iron-deficiency anemia</option>
+                    <option value="Liver cancer">Liver cancer</option>
+                    <option value="Breast cancer">Breast cancer</option>
+                </select>
+                <select name="locationName" id="locationName" required>
+                    <option value="">Choose</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Russia">Russia</option>
+                    <option value="United States">United States</option>
+                </select>
+                <input type="submit"></button>
+            </form>
+
 			<h1><?=$causeName?> in <?=$locationName?></h1>
 
 			<div id="graphdiv">
