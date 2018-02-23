@@ -1,12 +1,13 @@
 <?php	
 	try {
 		// If the input isn't empty
-		if (!empty($_GET["causeName"])) { // if input isn't required
+		if (!empty($_GET["causeName"]) && !empty($_GET["causeName"])) { // if input isn't required
 
 			$causeName = $_GET["causeName"];
+			$locationName = $_GET["locationName"];
 			$conn = getConnection(); // database connection
 
-			echo json_encode(getAllRows($conn, $causeName));
+			echo json_encode(getAllRows($conn, $causeName, $locationName));
 		}
 	} catch(PDOException $e) {
 		// Either connection failed or there was an error in the query
@@ -21,9 +22,11 @@
 		return $connection;
 	}
 
-	function getAllRows($conn, $cause) {
-		$stmt = $conn->prepare("SELECT * FROM DEATHS WHERE cause LIKE :cause AND year = 2016");
+	function getAllRows($conn, $cause, $location) {
+		$stmt = $conn->prepare("SELECT * FROM DEATHS WHERE cause LIKE :cause AND location LIKE :location 
+										ORDER BY year DESC");
 		$stmt->bindParam(':cause', $cause);
+		$stmt->bindParam(':location', $location);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 		return $result; // returns the row as array	
