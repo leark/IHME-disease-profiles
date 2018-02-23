@@ -26,7 +26,8 @@
 	// Utilized PDO (prepare()) to prevent SQL Injection
 	// Returns the query as array
 	function executeQuery($conn, $cause, $location) {
-		$stmt = $conn->prepare("SELECT * FROM DEATHS WHERE cause_name LIKE :cause AND location_name LIKE :location");
+		$stmt = $conn->prepare("SELECT * FROM DEATHS 
+								WHERE cause LIKE :cause AND location LIKE :location");
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();

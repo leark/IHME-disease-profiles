@@ -54,27 +54,37 @@
         <div id="info">
             <h1>Country Profiles</h1>
 
-<<<<<<< HEAD
-			<select name="disease">
-				<option value="flu">Influenza</option>
-			</select>
-			<br><br>
-			<input type="submit"><button><a href="diseaseprofile.html">Go</a></button>
-		</form>
-=======
-            <form>
+<!--             <form action="./diseaseprofile" method="post">
                 <select name="country">
                     <option value="usa">United States</option>
                 </select>
->>>>>>> ce91fcf46386bef08c4c6d24e7809a064b013c2a
 
                 <select name="disease">
                     <option value="flu">Influenza</option>
                 </select>
                 <br><br>
                 <input type="submit">
-            </form>
+            </form> -->
 
+            <form action="./diseaseprofile" method="post">
+                <select name="causeName" id="causeName" required>
+                    <option value="">Choose</option>
+                    <option value="HIV/AIDS">HIV/AIDS</option>
+                    <option value="Upper respiratory infections">Upper respiratory infections</option>
+                    <option value="Lower respiratory infections">Lower respiratory infections</option>
+                    <option value="Thyroid cancer">Thyroid cancer</option>
+                    <option value="Iron-deficiency anemia">Iron-deficiency anemia</option>
+                    <option value="Liver cancer">Liver cancer</option>
+                    <option value="Breast cancer">Breast cancer</option>
+                </select>
+                <select name="locationName" id="locationName" required>
+                    <option value="">Choose</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Russia">Russia</option>
+                    <option value="United States">United States</option>
+                </select>
+                <input type="submit"></button>
+            </form>
 
             <div id="aboutprofiles">
                 <p>The Country Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>
