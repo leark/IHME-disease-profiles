@@ -22,7 +22,7 @@
 	}
 
 	function getAllRows($conn, $cause) {
-		$stmt = $conn->prepare("SELECT * FROM DEATHS WHERE cause_name LIKE :cause");
+		$stmt = $conn->prepare("SELECT * FROM DEATHS WHERE cause LIKE :cause AND year = 2016");
 		$stmt->bindParam(':cause', $cause);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
