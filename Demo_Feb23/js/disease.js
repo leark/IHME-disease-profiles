@@ -1,16 +1,15 @@
-function create() {
-	var cause_name = $("#causeName").val();
-	var location_name = $("#locationName").val();
-	
+$(function() {
+
 	var data = null;
-	
+
 	$.ajax({
-		url:"search.php", //the page containing php script
+		url:"./stier/search.php", //the page containing php script
 		type: "get", //request type
 		dataType: 'json',
 		data: {causeName: cause_name, locationName: location_name},
 		success: function(req){
-			//console.log(req);
+			// console.log(req);
+			
 			data = req[0];
 		},
 		complete: function(){
@@ -34,7 +33,6 @@ function create() {
 				.scale(x)
 				.orient("bottom");
 				
-
 			// var yAxis = d3.svg.axis()
 			// 	.scale()
 			// 	.orient("left");
@@ -46,7 +44,7 @@ function create() {
 			chart.selectAll("g").remove();
 			
 			var title = d3.select("#title")
-				.html("2016 deaths from " + cause_name + " in " + data.location_name)
+				.html("2016 deaths from " + cause_name + " in " + data.location)
 			
 			var bar = chart.selectAll("g")
 				.data(deaths)
@@ -56,11 +54,6 @@ function create() {
 			    .attr("class", "x axis")
 			    .attr("transform", "translate(0," + 80 + ")")
 			    .call(xAxis);
-
-			chart.append("text")
-				.attr("text-anchor", "middle")
-				.attr("transform", "translate(" + (width/2) + "," + (barHeight - 20)+")rotate(0)")
-				.text("Deaths");
 
 			// chart.append("g")
 			//     .attr("class", "y axis")
@@ -77,13 +70,9 @@ function create() {
 				.attr("y", barHeight / 2)
 				.attr("dy", ".35em")
 				.text(function(d) { return d; });
-			
-
-
 
 		}
 
 	});
+});
 	
-	
-}
