@@ -3,7 +3,7 @@ $(function() {
 	var data = null;
 
 	$.ajax({
-		url:"./stier/search.php", //the page containing php script
+		url:"./php/search.php", //the page containing php script
 		type: "get", //request type
 		dataType: 'json',
 		data: {causeName: cause_name, locationName: location_name},
