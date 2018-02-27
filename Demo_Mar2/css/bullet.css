@@ -13,7 +13,7 @@
 }
 
 .bullet .range.s0 { 
-	fill: #696969; 
+	fill: #dcdcdc; /* dcdcdc */
 }
 
 .bullet .range.s1 { 
@@ -21,7 +21,7 @@
 }
 
 .bullet .range.s2 { 
-	fill: #dcdcdc; 
+	fill: #696969; /* 696969 huhuhuhuhu */ 
 }
 
 .bullet .measure.s0 { 
