@@ -16,10 +16,10 @@ $(function() {
 			
 			var formattedData = [];
 
-			var firstLow = Math.ceil(msg[msg.length - 3].lower),
-				firstHigh = Math.ceil(msg[msg.length - 3].upper);
+			var firstLow = Math.ceil(msg[msg.length - 1].lower),
+				firstHigh = Math.ceil(msg[msg.length - 1].upper);
 
-			for (var i = msg.length - 3; i >= 0; i = i - 3) {
+			for (var i = msg.length - 1; i >= 0; i = i - 3) {
 				var singleYear = msg[i];
 				console.log(singleYear.val);
 				formattedData.push(
