@@ -22,7 +22,7 @@
 	}
 
 	function getCountryFunds($conn, $location) {
-		$stmt = $conn->prepare("SELECT * FROM tbl_FINANCE WHERE recipient_country LIKE :location 
+		$stmt = $conn->prepare("SELECT * FROM tbl_FINANCE WHERE source LIKE :location 
 										ORDER BY year DESC");
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
