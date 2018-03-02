@@ -9,38 +9,40 @@ $(function() {
 		.done(function (msg) {
 			console.log(msg);
 
-			var margins = {top: 30, bottom: 50, left: 60, right: 50};
+			let margins = {top: 30, bottom: 50, left: 60, right: 50};
 
-			var width = 500 - margins.left - margins.right,
+			let width = 500 - margins.left - margins.right,
 				height = 120 - margins.top - margins.bottom;
 			
-			var formattedData = [];
+			let formattedData = [];
 
-			var firstLow = Math.ceil(msg[msg.length - 1].lower),
-				firstHigh = Math.ceil(msg[msg.length - 1].upper);
+			let firstLow = Math.ceil(msg[msg.length - 3].lower),
+				firstHigh = Math.ceil(msg[msg.length - 3].upper),
+				firstVal = msg[msg.length - 3].val;
 
-			for (var i = msg.length - 1; i >= 0; i = i - 3) {
-				var singleYear = msg[i];
+			// formatting table data to 
+			for (let i = msg.length - 3; i >= 0; i = i - 3) {
+				let singleYear = msg[i];
 				console.log(singleYear.val);
 				formattedData.push(
 					{
-						"title":"Deaths",
+						"title": Math.ceil(singleYear.val),
 						"subtitle": singleYear.year,
-						"ranges":[Math.ceil(singleYear.lower), singleYear.val, Math.ceil(singleYear.upper)],
-						// "ranges":[firstLow, singleYear.val, firstHigh],
-						// "measures":[Math.ceil(singleYear.lower), Math.ceil(singleYear.upper)],
-						"measures":[firstLow, firstHigh],
+						// "ranges":[Math.ceil(singleYear.lower), singleYear.val, Math.ceil(singleYear.upper)],
+						"ranges":[Math.ceil(singleYear.lower), Math.ceil(singleYear.val), firstHigh * 1.5],
+						"measures":[Math.ceil(singleYear.lower), Math.ceil(singleYear.upper)],
+						// "measures":[firstLow, firstHigh],
 						"markers":[singleYear.val]
 					});
 			}
 
-			// var modData = [{"title":"Deaths","subtitle":"Numbers","ranges":[3, 7, 14],"measures":[5,10],"markers":[2]}];
+			// let modData = [{"title":"Deaths","subtitle":"Numbers","ranges":[3, 7, 14],"measures":[5,10],"markers":[2]}];
 
-			var bulletChart = d3.bullet()
+			let bulletChart = d3.bullet()
 				.width(width)
 				.height(height);
 
-			var svg = d3.select("#bulletDiv").selectAll("svg")
+			let svg = d3.select("#bulletDiv").selectAll("svg")
 				.data(formattedData)
 			.enter().append("svg")
 				.attr("class", "bullet")
@@ -50,7 +52,7 @@ $(function() {
 				.attr("transform", "translate(" + margins.left + "," + margins.top + ")")
 				.call(bulletChart);
 
-			var title = svg.append("g")
+			let title = svg.append("g")
 			  .style("text-anchor", "end")
 			  .attr("transform", "translate(-6," + height / 2 + ")");
 
@@ -77,15 +79,15 @@ $(function() {
 	// 	.done(function (msg) {
 	// 		console.log(msg);
 
-	// 		var margins = {top: 30, bottom: 50, left: 70, right: 50};
+	// 		let margins = {top: 30, bottom: 50, left: 70, right: 50};
 
-	// 		var width = 510 - margins.left - margins.right,
+	// 		let width = 510 - margins.left - margins.right,
 	// 				height = 120 - margins.top - margins.bottom;
 			
-	// 		var formattedData2 = [];
+	// 		let formattedData2 = [];
 
-	// 		for (var i = 0; i < msg.length; i++) {
-	// 			var singleYear = msg[i];
+	// 		for (let i = 0; i < msg.length; i++) {
+	// 			let singleYear = msg[i];
 	// 			formattedData2.push(
 	// 				{
 	// 					"title":"Deaths",
@@ -96,13 +98,13 @@ $(function() {
 	// 				});
 	// 		}
 
-	// 		// var modData = [{"title":"Deaths","subtitle":"Numbers","ranges":[3, 7, 14],"measures":[5,10],"markers":[2]}];
+	// 		// let modData = [{"title":"Deaths","subtitle":"Numbers","ranges":[3, 7, 14],"measures":[5,10],"markers":[2]}];
 
-	// 		var bulletChart = d3.bullet()
+	// 		let bulletChart = d3.bullet()
 	// 			.width(width)
 	// 			.height(height);
 
-	// 		var svg = d3.select("#bulletDiv2").selectAll("svg")
+	// 		let svg = d3.select("#bulletDiv2").selectAll("svg")
 	// 			.data(formattedData2)
 	// 		.enter().append("svg")
 	// 			.attr("class", "bullet")
@@ -112,7 +114,7 @@ $(function() {
 	// 			.attr("transform", "translate(" + margins.left + "," + margins.top + ")")
 	// 			.call(bulletChart);
 
-	// 		var title = svg.append("g")
+	// 		let title = svg.append("g")
 	// 		  .style("text-anchor", "end")
 	// 		  .attr("transform", "translate(-6," + height / 2 + ")");
 

@@ -14,22 +14,27 @@
 
 .bullet .range.s0 { 
 	fill: #dcdcdc; /* dcdcdc */
+	display: none;
 }
 
 .bullet .range.s1 { 
 	fill: #c0c0c0; 
+	display: none;
 }
 
 .bullet .range.s2 { 
 	fill: #696969; /* 696969 huhuhuhuhu */ 
+	display: none;
 }
 
 .bullet .measure.s0 { 
-	fill: lightsteelblue; 
+	fill: lightsteelblue;
 }
 
 .bullet .measure.s1 { 
-	fill: steelblue; 
+	fill: white;
+	y: 11;
+	height: 30%;
 }
 
 .bullet .title { 
