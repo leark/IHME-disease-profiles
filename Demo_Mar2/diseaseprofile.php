@@ -23,6 +23,7 @@
 	<script type="text/javascript" src="./js/disease.js"></script>
     <script type="text/javascript" src="./js/bullet.js"></script>
     <script type="text/javascript" src="./js/diseaseBullet.js"></script>
+	<script type="text/javascript" src="./js/diseaseLine.js"></script>
 	<style>
 		.chart text {
 			fill: white;
@@ -46,8 +47,10 @@
 		 	display: none;
 		}
 
-		.graphdiv {
-
+		path { 
+			stroke: steelblue;
+			stroke-width: 2;
+			fill: none;
 		}
 	</style>
 </head>
@@ -124,6 +127,8 @@
             <div id="bulletDiv">
             </div>
             <div id="bulletDiv2">
+            </div>
+			<div id="lineDiv">
             </div>
 
 			<div id="aboutprofiles">
