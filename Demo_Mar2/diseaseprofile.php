@@ -20,7 +20,6 @@
 	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	  crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
-	<script type="text/javascript" src="./js/disease.js"></script>
     <script type="text/javascript" src="./js/bullet.js"></script>
     <script type="text/javascript" src="./js/diseaseBullet.js"></script>
 	<script type="text/javascript" src="./js/diseaseLine.js"></script>
@@ -120,10 +119,6 @@
 
 			<h1><?=$causeName?> in <?=$locationName?></h1>
 
-			<div id="graphdiv">
-				<p id="title"></p>
-				<svg class="chart"></svg>
-			</div>
             <div id="bulletDiv">
             </div>
             <div id="bulletDiv2">

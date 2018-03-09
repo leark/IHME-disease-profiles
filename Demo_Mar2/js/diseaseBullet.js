@@ -11,7 +11,7 @@ $(function() {
 
 			let margins = {top: 30, bottom: 50, left: 60, right: 50};
 
-			let width = 500 - margins.left - margins.right,
+			let width = 800 - margins.left - margins.right,
 				height = 120 - margins.top - margins.bottom;
 			
 			let formattedData = [];
@@ -22,7 +22,7 @@ $(function() {
 
 			// formatting table data to 
 			for (let i = msg.length - 3; i >= 0; i = i - 3) {
-				let singleYear = msg[i];
+				var singleYear = msg[i];
 				console.log(singleYear.val);
 				formattedData.push(
 					{
@@ -64,6 +64,13 @@ $(function() {
 			  .attr("class", "subtitle")
 			  .attr("dy", "1em")
 			  .text(function(d) { return d.subtitle; });
+
+			// svg.append("text")
+			//   .attr("x", (width / 2))             
+			//   .attr("y", 0 - (margins.top / 2))
+			//   .attr("text-anchor", "middle")  
+			//   .style("font-size", "16px")  
+			//   .text(`Deaths from ${cause_name}`);
 		
 			})
 		.fail(function (error) {

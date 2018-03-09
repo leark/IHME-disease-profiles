@@ -18,7 +18,6 @@
 	  src="https://code.jquery.com/jquery-3.3.1.min.js"
 	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	  crossorigin="anonymous"></script>
-	<script type="text/javascript" src="./js/disease.js"></script>
 	<script src="https://d3js.org/d3.v3.min.js"></script>
 	<style>
 		.chart text {
@@ -41,10 +40,6 @@
 
 		.x.axis path {
 		 	display: none;
-		}
-
-		.graphdiv {
-
 		}
 	</style>
 </head>
@@ -114,10 +109,6 @@
 
 			<h1><?=$causeName?> in <?=$locationName?></h1>
 
-			<div id="graphdiv">
-				<p id="title"></p>
-				<svg class="chart"></svg>
-			</div>
 
 			<div id="aboutprofiles">
                 <p>The Country Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>
