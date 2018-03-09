@@ -9,9 +9,9 @@ $(function() {
 		.done(function (msg) {
 			console.log(msg);
 
-			var margins = {top: 30, bottom: 50, left: 60, right: 50};
+			var margins = {top: 80, bottom: 50, left: 60, right: 50};
 
-			var width = 500 - margins.left - margins.right,
+			var width = 800 - margins.left - margins.right,
 				height = 360 - margins.top - margins.bottom;
 			
 			var formattedData = [];
@@ -80,14 +80,31 @@ $(function() {
 					.attr("class", "y axis")
 					.call(yAxis);
 		
-		
+			//title
 			svg.append("text")
-				.attr("x", (width / 2))             
-				.attr("y", 0 - (margins.top / 2))
-				.attr("text-anchor", "middle")  
-				.style("font-size", "16px")  
-				.text("Deaths from " + cause_name + " in " + location_name);
-		
+				.attr("x", 0) //(width / 2) for centered             
+				.attr("y", 0 - (margins.top / 3))
+				.attr("text-anchor", "start")  
+				.style("font-size", "20px")  
+				.text("How many people die from " + cause_name.toLowerCase() + "?");
+				
+			  // text label for the x axis
+			  svg.append("text")             
+				  .attr("transform",
+						"translate(" + (width/2) + " ," + 
+									   (height + margins.bottom) + ")")
+				  .style("text-anchor", "middle")
+				  .text("Year");
+			
+			// text label for the y axis	
+			svg.append("text")
+				  .attr("transform", "rotate(-90)")
+				  .attr("y", 0 - margins.left)
+				  .attr("x",0 - (height / 2))
+				  .attr("dy", "1em")
+				  .style("text-anchor", "middle")
+				  .text("Number of deaths");      
+
 			})
 					
 		.fail(function (error) {
