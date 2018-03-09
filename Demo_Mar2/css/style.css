@@ -101,3 +101,16 @@ a {
     width: 75%;
     display: table-cell;
 }
+
+.graph {
+    border-top: 1px solid #d1d3d4;
+    border-bottom: 1px solid #d1d3d4;
+    padding-bottom: 15px;
+}
+
+.graph-header {
+    font-size: 22px;
+    color: #4d4d4f;
+    font-family: Nunito, sans-serif;
+    margin-bottom: 10px;
+}

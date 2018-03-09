@@ -9,7 +9,7 @@ $(function() {
 		.done(function (msg) {
 			console.log(msg);
 
-			var margins = {top: 80, bottom: 50, left: 60, right: 50};
+			var margins = {top: 30, bottom: 50, left: 60, right: 50};
 
 			var width = 800 - margins.left - margins.right,
 				height = 360 - margins.top - margins.bottom;
@@ -81,12 +81,14 @@ $(function() {
 					.call(yAxis);
 		
 			//title
-			svg.append("text")
-				.attr("x", 0) //(width / 2) for centered             
-				.attr("y", 0 - (margins.top / 3))
-				.attr("text-anchor", "start")  
-				.style("font-size", "20px")  
-				.text("How many people die from " + cause_name.toLowerCase() + "?");
+			// svg.append("text")
+			// 	.attr("x", 0) //(width / 2) for centered             
+			// 	.attr("y", 0 - (margins.top / 3))
+			// 	.attr("text-anchor", "start")  
+			// 	.style("font-size", "20px")  
+			// 	.text("How many people die from " + cause_name.toLowerCase() + "?");
+			$('#lineTitle').text(`How many people die from ${cause_name}?`);
+
 				
 			  // text label for the x axis
 			  svg.append("text")             

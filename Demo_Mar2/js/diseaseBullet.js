@@ -16,21 +16,21 @@ $(function() {
 			
 			let formattedData = [];
 
-			let firstLow = Math.ceil(msg[msg.length - 3].lower),
-				firstHigh = Math.ceil(msg[msg.length - 3].upper),
-				firstVal = msg[msg.length - 3].val;
+			let firstLow = msg[msg.length - 1].lower,
+				firstHigh = msg[msg.length - 1].upper,
+				firstVal = msg[msg.length - 1].val;
 
 			// formatting table data to 
-			for (let i = msg.length - 3; i >= 0; i = i - 3) {
+			for (let i = msg.length - 1; i >= 0; i = i - 3) {
 				var singleYear = msg[i];
 				console.log(singleYear.val);
 				formattedData.push(
 					{
-						"title": Math.ceil(singleYear.val),
-						"subtitle": singleYear.year,
+						"title": singleYear.year,
+						"subtitle": singleYear.metric,
 						// "ranges":[Math.ceil(singleYear.lower), singleYear.val, Math.ceil(singleYear.upper)],
-						"ranges":[Math.ceil(singleYear.lower), Math.ceil(singleYear.val), firstHigh * 1.5],
-						"measures":[Math.ceil(singleYear.lower), Math.ceil(singleYear.upper)],
+						"ranges":[singleYear.lower, singleYear.val, firstHigh * 1.5],
+						"measures":[singleYear.lower, singleYear.upper],
 						// "measures":[firstLow, firstHigh],
 						"markers":[singleYear.val]
 					});

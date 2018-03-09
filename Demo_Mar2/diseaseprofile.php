@@ -128,13 +128,14 @@
 
 			<h1><?=$causeName?> in <?=$locationName?></h1>
 
-            <div id="bulletDiv">
+            <div class="graph" id="lineDiv">
+                <h2 class="graph-header" id="lineTitle"></h2>
             </div>
-            <div id="bulletDiv2">
-            </div>	
-			<div id="lineDiv">
+            <div class="graph" id="bulletDiv">
+                <h2 class="graph-header">Mortality rate in years 1996, 2006, 2016</h2>
             </div>
-			<div id="arrowdiagram">
+			<div class="graph" id="arrowdiagram">
+                <h2 class="graph-header" id="arrowTitle"></h2>
             </div>
 
 			<div id="aboutprofiles">

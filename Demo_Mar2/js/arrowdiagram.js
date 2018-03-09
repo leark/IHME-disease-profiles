@@ -65,14 +65,16 @@ d3.custom.slopegraph = function() {
             svg.exit().remove();
 				
 			// Title
-			svg.append("text")
-			.attr("x", (opts.width / 2) + 40)
-			.attr("y", (opts.margin.top / 2))
-			.attr("text-anchor", "middle")  
-			.style("font-size", "16px") 
-			.style("text-decoration", "underline")  
-			.text(cause_name + " 1990 vs 2016");
-			
+			// svg.append("text")
+			// .attr("x", (opts.width / 2) + 40)
+			// .attr("y", (opts.margin.top / 2))
+			// .attr("text-anchor", "middle")  
+			// .style("font-size", "16px") 
+			// .style("text-decoration", "underline")
+			// .text(cause_name + " 1990 vs 2016");
+
+            $('#arrowTitle').text(`${cause_name} Ranking in 1990 vs 2016`);
+
             var chartSvg = svg.select('.chart-group');
             var data = d3.transpose(dataset.data);
             var scale = d3.scale.linear().domain(d3.extent(d3.merge(data))).range([0, chartHeight]);
