@@ -23,6 +23,7 @@
     <script type="text/javascript" src="./js/bullet.js"></script>
     <script type="text/javascript" src="./js/diseaseBullet.js"></script>
 	<script type="text/javascript" src="./js/diseaseLine.js"></script>
+	<script type="text/javascript" src="./js/arrowdiagram.js"></script>
 	<style>
 		.chart text {
 			fill: white;
@@ -51,6 +52,14 @@
 			stroke-width: 2;
 			fill: none;
 		}
+		
+        line.slope-line{
+            stroke:black
+        }
+		
+        text.slope-label{
+            font: 12px Arial;
+        }				
 	</style>
 </head>
 
@@ -122,8 +131,10 @@
             <div id="bulletDiv">
             </div>
             <div id="bulletDiv2">
-            </div>
+            </div>	
 			<div id="lineDiv">
+            </div>
+			<div id="arrowdiagram">
             </div>
 
 			<div id="aboutprofiles">
