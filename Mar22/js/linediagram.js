@@ -5,7 +5,8 @@ $(function() {
 		dataType: 'json',
 		data: {request_type:"line", causeName: cause_name, locationName: location_name}
 	}).done(function (msg) {
-
+		//console.log(msg);
+		
 		var margins = {top: 30, bottom: 50, left: 60, right: 50};
 
 		var width = 800 - margins.left - margins.right,
@@ -16,21 +17,19 @@ $(function() {
 			var singleYear = msg[i];
 			formattedData.push(
 				{
-					"title":"Deaths",
-					"subtitle": singleYear.year,
-					"ranges":[Math.ceil(singleYear.lower), singleYear.val, Math.ceil(singleYear.upper)],
-					// "measures":[Math.ceil(singleYear.lower), Math.ceil(singleYear.upper)],
-					"markers": parseFloat(singleYear.val)
+					"title":singleYear.measure,
+					"year": singleYear.year,
+					"metric": singleYear.metric,
+					"female": parseFloat(msg[i-1].val),
+					"male": parseFloat(msg[i-2].val),
+					"both": parseFloat(singleYear.val)
 				});
 		}
 		console.log(formattedData);
 		
 		// Set the ranges
 		var x = d3.scale.linear().range([0, width]);
-		var y = d3.scale.linear()
-		.range([height, 0]);
-		//.domain(d3.extent(formattedData, function(d) { return d.markers; }));
-		//.domain([2, 100]);
+		var y = d3.scale.linear().range([height, 0]);
 
 		// Define the axes
 		var xAxis = d3.svg.axis().scale(x)
@@ -40,10 +39,20 @@ $(function() {
 		var yAxis = d3.svg.axis().scale(y)
 			.orient("left").ticks(5);
 
-		// Define the line
+		// Define the both line
 		var valueline = d3.svg.line()
-			.x(function(d) { return x(d.subtitle); })
-			.y(function(d) { return y(d.markers); });
+			.x(function(d) { return x(d.year); })
+			.y(function(d) { return y(d.both); });
+			
+		// Define the female line
+		var valuelineF = d3.svg.line()
+			.x(function(d) { return x(d.year); })
+			.y(function(d) { return y(d.female); });
+			
+		// Define the male line
+		var valuelineM = d3.svg.line()
+			.x(function(d) { return x(d.year); })
+			.y(function(d) { return y(d.male); });
 							
 		// Adds the svg canvas					  
 		var svg = d3.select("#lineDiv")
@@ -56,13 +65,26 @@ $(function() {
 			.attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 
 			// Scale the range of the data
-			x.domain(d3.extent(formattedData, function(d) { return d.subtitle; }));
-			y.domain([0, d3.max(formattedData, function(d) { return d.markers; })]);
+			x.domain(d3.extent(formattedData, function(d) { return d.year; }));
+			y.domain([0, d3.max(formattedData, function(d) { return d.both; })]);
 
-			// Add the valueline path.
+			// Add the valueline path for both 
 			svg.append("path")
 				.attr("class", "line")
+				.style("stroke", "black")
 				.attr("d", valueline(formattedData));
+				
+			// Add the valueline path for female 
+			svg.append("path")
+				.attr("class", "line")
+				.style("stroke", "red")
+				.attr("d", valuelineF(formattedData));
+			
+			// Add the valueline path for male 
+			svg.append("path")
+				.attr("class", "line")
+				.style("stroke", "steelblue")
+				.attr("d", valuelineM(formattedData));
 
 			// Add the X Axis
 			svg.append("g")
