@@ -143,10 +143,16 @@ a {
 	display: none;
 }
 
+#lineLegend  svg, 
 path { 
 	fill: none;
 	stroke-width: 5px;
     stroke-linecap: round;
+}
+
+#lineLegend {
+	font-size: 14px;
+	margin-bottom: 10px;
 }
 
 .female { 
