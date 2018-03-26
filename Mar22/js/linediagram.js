@@ -32,13 +32,19 @@ $(function() {
 		var y = d3.scale.linear().range([height, 0]);
 
 		// Define the axes
-		var xAxis = d3.svg.axis().scale(x)
-			.orient("bottom").ticks(5)
-			.tickFormat(d3.format("d"));
+		var xAxis = d3.svg.axis()
+			.scale(x)
+			.orient("bottom")
+			.ticks(12)
+			.tickFormat(d3.format("d"));		
 
-		var yAxis = d3.svg.axis().scale(y)
-			.orient("left").ticks(5);
-
+		function y_axis() {
+			return d3.svg.axis()
+			.scale(y)
+			.orient("left")
+			.ticks(8);
+		}
+			
 		// Define the both line
 		var valueline = d3.svg.line()
 			.x(function(d) { return x(d.year); })
@@ -68,24 +74,6 @@ $(function() {
 			x.domain(d3.extent(formattedData, function(d) { return d.year; }));
 			y.domain([0, d3.max(formattedData, function(d) { return d.both; })]);
 
-			// Add the valueline path for both 
-			svg.append("path")
-				.attr("class", "line")
-				.style("stroke", "black")
-				.attr("d", valueline(formattedData));
-				
-			// Add the valueline path for female 
-			svg.append("path")
-				.attr("class", "line")
-				.style("stroke", "red")
-				.attr("d", valuelineF(formattedData));
-			
-			// Add the valueline path for male 
-			svg.append("path")
-				.attr("class", "line")
-				.style("stroke", "steelblue")
-				.attr("d", valuelineM(formattedData));
-
 			// Add the X Axis
 			svg.append("g")
 				.attr("class", "x axis")
@@ -95,7 +83,24 @@ $(function() {
 			// Add the Y Axis
 			svg.append("g")
 				.attr("class", "y axis")
-				.call(yAxis);
+				.call(y_axis()
+					.tickSize(-width, 0, 0)
+				);
+			
+			// Add the valueline path for both 
+			svg.append("path")
+				.attr("class", "both")
+				.attr("d", valueline(formattedData));
+				
+			// Add the valueline path for female 
+			svg.append("path")
+				.attr("class", "female")
+				.attr("d", valuelineF(formattedData));
+			
+			// Add the valueline path for male 
+			svg.append("path")
+				.attr("class", "male")
+				.attr("d", valuelineM(formattedData));
 
 		$('#lineTitle').text(`How many people died from ${cause_name.toLowerCase()}?`);
 	
