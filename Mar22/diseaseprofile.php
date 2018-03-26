@@ -101,6 +101,14 @@
 
             <div class="graph" id="lineDiv">
                 <h2 class="graph-header" id="lineTitle"></h2>
+				<div id="lineLegend">
+					<span id="fembar"></span>
+					<span id="femtext"></span>
+					<span id="mbar"></span>
+					<span id="mtext"></span>
+					<span id="bothbar"></span>
+					<span id="bothtext"></span>
+				</div>
             </div>
             <div class="graph" id="bulletDiv">
                 <h2 class="graph-header" id="bulletTitle"></h2>

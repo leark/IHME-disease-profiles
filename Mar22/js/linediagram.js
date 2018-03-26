@@ -101,8 +101,49 @@ $(function() {
 			svg.append("path")
 				.attr("class", "male")
 				.attr("d", valuelineM(formattedData));
-
+		
+		//title
 		$('#lineTitle').text(`How many people died from ${cause_name.toLowerCase()}?`);
+		
+		//legend
+		var female = d3.select('#fembar')
+			.append("svg")
+				.attr("class", "female")
+				.attr("width", "24px")
+				.attr("height", "14px")
+			.append("line")
+				.attr("x1", "3px")
+				.attr("x2", "21px")
+				.attr("y1", "9px")
+				.attr("y2", "9px")
+		
+		$("#femtext").text("Females")
+		
+		var male = d3.select('#mbar')
+			.append("svg")
+				.attr("class", "male")
+				.attr("width", "24px")
+				.attr("height", "14px")
+			.append("line")
+				.attr("x1", "3px")
+				.attr("x2", "21px")
+				.attr("y1", "9px")
+				.attr("y2", "9px")
+		
+		$("#mtext").text("Males")
+		
+		var both = d3.select('#bothbar')
+			.append("svg")
+				.attr("class", "both")
+				.attr("width", "24px")
+				.attr("height", "14px")
+			.append("line")
+				.attr("x1", "3px")
+				.attr("x2", "21px")
+				.attr("y1", "9px")
+				.attr("y2", "9px")
+		
+		$("#bothtext").text("All")
 	
 		// text label for the x axis
 		svg.append("text")
