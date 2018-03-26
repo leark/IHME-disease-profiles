@@ -11,10 +11,7 @@
 <head>
 	<title><?=$causeName?> in <?=$locationName?> | Institute for Health Metrics and Evaluation</title>
 
-	<link type="text/css" rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/bullet.css">	
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -25,6 +22,8 @@
 	<script type="text/javascript" src="./js/linediagram.js"></script>
 	<script type="text/javascript" src="./js/arrowdiagram.js"></script>	
 	<script type="text/javascript" src="./js/select2.js"></script>
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/bullet.css"> 
 </head>
 
 <body>
@@ -59,7 +58,7 @@
                 <ul>
                     <li><a href="http://www.healthdata.org/results/country-profiles/haq">Healthcare Access and Quality</a></li>
                 </ul>
-                <li><a href="http://students.washington.edu/shl7/capstone/diseaseprofiles.html">Disease Profiles</li>
+                <li><a href="http://students.washington.edu/shl7/capstone/diseaseprofile.html">Disease Profiles</li>
                 <li><a href="http://www.healthdata.org/results/policy-reports">Policy Reports</a></li>
                 <li><a href="http://www.healthdata.org/results/research-articles">Research Articles</a></li>
                 <li><a href="http://www.healthdata.org/results/research-articles">Infographics</a></li>
