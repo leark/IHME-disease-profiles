@@ -155,6 +155,12 @@ path {
 	margin-bottom: 10px;
 }
 
+#femtext,
+#mtext,
+#bothtext {
+	margin-right: 20px;
+}
+
 .female { 
 	stroke: #C2464F;
 }
