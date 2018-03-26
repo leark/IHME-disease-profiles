@@ -24,6 +24,7 @@
 	<script type="text/javascript" src="./js/select2.js"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/bullet.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/column.css">
 </head>
 
 <body>

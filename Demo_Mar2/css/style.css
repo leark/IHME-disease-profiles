@@ -100,6 +100,7 @@ a {
 #info {
     width: 75%;
     display: table-cell;
+    padding-left: 30px;
 }
 
 .graph {
