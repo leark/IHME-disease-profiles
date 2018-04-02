@@ -27,12 +27,24 @@
 			return GetRateBulletData($conn, $cause, $location);
 		} else if ($type == "line") {
 			return GetDeathLineData($conn, $cause, $location);
+		} else if ($type == "DALYS") {
+			return GetDALYData($conn, $cause, $location);
 		} else if ($type == "ranking") {
 			$first_year = GetDeathRankingData($conn, $cause, $location, 1990);
 		    $second_year = GetDeathRankingData($conn, $cause, $location, 2016);
 			return array_merge($first_year, $second_year);
 		}
 	}
+	
+	function GetDALYData($conn, $cause, $location) {
+		$stmt = $conn->prepare("SELECT * FROM tbl_DALY WHERE cause LIKE :cause AND location LIKE :location 
+										AND metric = 'Rate' ORDER BY year DESC");
+		$stmt->bindParam(':cause', $cause);
+		$stmt->bindParam(':location', $location);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+		return $result; // returns the row as array	
+	}	
 	
 	function GetDeathLineData($conn, $cause, $location) {
 		$stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE cause LIKE :cause AND location LIKE :location 
@@ -42,7 +54,7 @@
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 		return $result; // returns the row as array	
-	}	
+	}
 	
 	function GetRateBulletData($conn, $cause, $location) {
 		$stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE cause LIKE :cause AND location LIKE :location 
