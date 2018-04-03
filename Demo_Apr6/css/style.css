@@ -1,0 +1,190 @@
+body {
+    background-color: white;
+    color: #4d4d4f;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu a {
+    color: #4d4d4f;
+    text-decoration: none;
+}
+
+#logo {
+    float: left;
+}
+
+#top {
+    width: 100%;
+    background-color: #cbe2a0;
+    padding: 0.1px;
+    
+}
+
+.menu li {
+    display: inline;
+}
+
+#jump {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #cbe2a0;
+}
+
+#topmenu {
+    margin: 1px 5% 20px 5%;
+    display: table;
+    margin: 0% 10%;
+}
+
+#logo {
+    position: relative;
+    display: table-cell;
+}
+
+#buttons {
+    position: relative;
+    display: table-cell;
+    left: 100px;
+}
+
+.button:hover {
+    background-color: lightblue;
+}
+
+.button {
+    height: 20px;
+    width: 75px;
+    border: 0px;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 5px;
+    margin: 0px;
+    font-size: 16px;
+    display: table-cell;
+    text-align: left;
+}
+
+#main {
+    margin: 5% 10%;
+    display: table;
+}
+
+#sidebar {
+    width: 20%;
+    display: table-cell;
+    padding: 5px;
+}
+
+.side li {
+    list-style: none;
+} 
+
+a {
+    text-decoration: none;
+    color: #4d4d4f;
+}
+
+.head {
+    font-variant: small-caps;
+    color: lightslategray;
+}
+
+#info {
+    width: 75%;
+    display: table-cell;
+}
+
+.graph {
+    border-top: 1px solid #d1d3d4;
+    border-bottom: 1px solid #d1d3d4;
+    padding-bottom: 15px;
+}
+
+.graph-header {
+    font-size: 22px;
+    color: #4d4d4f;
+    font-family: Nunito, sans-serif;
+    margin-bottom: 10px;
+}
+
+.select2-dropdown_select2-dropdown--below {
+	width: 300px;
+}
+
+/* CHARTS */
+.chart text {
+	fill: white;
+	font: 14px sans-serif;
+	text-anchor: end;
+}
+
+.axis text {
+	font: 10px sans-serif;
+	color: black;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	shape-rendering: crispEdges;
+	stroke: #D1D3D4;
+    stroke-width: 1px;
+}
+
+.x.axis path {
+	display: none;
+}
+
+#lineLegend  svg, 
+path { 
+	fill: none;
+	stroke-width: 5px;
+    stroke-linecap: round;
+}
+
+#lineLegend {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+#femtext,
+#mtext,
+#bothtext {
+	margin-right: 20px;
+}
+
+.female { 
+	stroke: #C2464F;
+}
+
+.male { 
+	stroke: #3B81A0;
+}
+
+.both { 
+	stroke: black;
+}
+
+line.slope-line{
+	stroke:black
+}
+	
+text.slope-label{
+	font: 12px Nunito;
+}
+
+#arrowdiagramDiv > svg {
+	height: 200px;
+	width: 1000px;
+	margin-left: 50px;
+}
+
+
