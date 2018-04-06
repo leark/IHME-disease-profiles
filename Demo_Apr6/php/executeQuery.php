@@ -32,9 +32,19 @@
 		} else if ($type == "yld_line") {
 			return GetYLDLineData($conn, $cause, $location);
 		} else if ($type == "ranking") {
-			$first_year = GetDiseaseRanking($conn, $cause, $location, 1990);
-		    $second_year = GetDiseaseRanking($conn, $cause, $location, 2016);
-			return array_merge($first_year, $second_year);
+			$death_first = GetDiseaseRanking($conn, $cause, $location, 1990, 'GetDeathRanking');
+		    $death_second = GetDiseaseRanking($conn, $cause, $location, 2016, 'GetDeathRanking');
+			
+			$daly_first = GetDiseaseRanking($conn, $cause, $location, 1990, 'GetDalyRanking');
+		    $daly_second = GetDiseaseRanking($conn, $cause, $location, 2016, 'GetDalyRanking');
+
+			$yld_first = GetDiseaseRanking($conn, $cause, $location, 1990, 'GetYldRanking');
+		    $yld_second = GetDiseaseRanking($conn, $cause, $location, 2016, 'GetYldRanking');			
+			
+			
+			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
+			return $total;
+			// return array_merge($first_year, $second_year);
 		} else if ($type == "arrow_ranking") { // delete this one
 			$first_year = GetDeathRankingData($conn, $cause, $location, 1990);
 		    $second_year = GetDeathRankingData($conn, $cause, $location, 2016);
@@ -83,8 +93,8 @@
 		return $result; // returns the row as array	
 	}		
 	
-	function GetDiseaseRanking($conn, $cause, $location, $year) {
-		$stmt = $conn->prepare('CALL GetDiseaseRanking(:location, :cause, :year, "Both", "Number", "All Ages")');
+	function GetDiseaseRanking($conn, $cause, $location, $year, $type) {
+		$stmt = $conn->prepare('CALL ' .  $type . '(:location, :cause, :year, "Both", "Number", "All Ages")');
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':year', $year);
