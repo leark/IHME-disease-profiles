@@ -20,7 +20,10 @@
     <script type="text/javascript" src="./js/bullet.js"></script>
     <script type="text/javascript" src="./js/bulletdiagram.js"></script>
 	<script type="text/javascript" src="./js/linediagram.js"></script>
-	<script type="text/javascript" src="./js/arrowdiagram.js"></script>	
+	<script type="text/javascript" src="./js/line_daly.js"></script>
+	<script type="text/javascript" src="./js/line_yld.js"></script>
+	<script type="text/javascript" src="./js/ranking.js"></script>	
+	<script type="text/javascript" src="./js/arrowdiagram.js"></script>		
 	<script type="text/javascript" src="./js/select2.js"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/bullet.css"> 
@@ -112,6 +115,28 @@
 					<span id="mtext"></span>
 					<span id="bothbar"></span>
 					<span id="bothtext"></span>
+				</div>
+            </div>
+            <div class="graph" id="daly_lineDiv">
+                <h2 class="graph-header" id="daly_lineTitle"></h2>
+				<div id="daly_lineLegend">
+					<span id="daly_fembar"></span>
+					<span id="daly_femtext"></span>
+					<span id="daly_mbar"></span>
+					<span id="daly_mtext"></span>
+					<span id="daly_bothbar"></span>
+					<span id="daly_bothtext"></span>
+				</div>
+            </div>
+			<div class="graph" id="yld_lineDiv">
+                <h2 class="graph-header" id="yld_lineTitle"></h2>
+				<div id="yld_lineLegend">
+					<span id="yld_fembar"></span>
+					<span id="yld_femtext"></span>
+					<span id="yld_mbar"></span>
+					<span id="yld_mtext"></span>
+					<span id="yld_bothbar"></span>
+					<span id="yld_bothtext"></span>
 				</div>
             </div>
             <div class="graph" id="bulletDiv">

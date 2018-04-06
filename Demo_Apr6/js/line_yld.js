@@ -3,7 +3,7 @@ $(function() {
 		url:"./php/executeQuery.php", //the page containing php script
 		type: "get", //request type
 		dataType: 'json',
-		data: {request_type:"death_line", causeName: cause_name, locationName: location_name}
+		data: {request_type:"yld_line", causeName: cause_name, locationName: location_name}
 	}).done(function (msg) {
 		//console.log(msg);
 		
@@ -61,7 +61,7 @@ $(function() {
 			.y(function(d) { return y(d.male); });
 							
 		// Adds the svg canvas					  
-		var svg = d3.select("#lineDiv")
+		var svg = d3.select("#yld_lineDiv")
 			.data(formattedData)
 		.append("svg")
 			.attr("class", "line")
@@ -103,10 +103,10 @@ $(function() {
 				.attr("d", valuelineM(formattedData));
 		
 		//title
-		$('#lineTitle').text(`How many people died from ${cause_name.toLowerCase()}?`);
+		$('#yld_lineTitle').text(`What is the years of life lost (YLL) 	from ${cause_name.toLowerCase()}?`);
 		
 		//legend
-		var female = d3.select('#fembar')
+		var female = d3.select('#yld_fembar')
 			.append("svg")
 				.attr("class", "female")
 				.attr("width", "24px")
@@ -117,9 +117,9 @@ $(function() {
 				.attr("y1", "9px")
 				.attr("y2", "9px")
 		
-		$("#femtext").text("Females")
+		$("#yld_femtext").text("Females")
 		
-		var male = d3.select('#mbar')
+		var male = d3.select('#yld_mbar')
 			.append("svg")
 				.attr("class", "male")
 				.attr("width", "24px")
@@ -130,9 +130,9 @@ $(function() {
 				.attr("y1", "9px")
 				.attr("y2", "9px")
 		
-		$("#mtext").text("Males")
+		$("#yld_mtext").text("Males")
 		
-		var both = d3.select('#bothbar')
+		var both = d3.select('#yld_bothbar')
 			.append("svg")
 				.attr("class", "both")
 				.attr("width", "24px")
@@ -143,7 +143,7 @@ $(function() {
 				.attr("y1", "9px")
 				.attr("y2", "9px")
 		
-		$("#bothtext").text("All")
+		$("#yld_bothtext").text("All")
 	
 		// text label for the x axis
 		svg.append("text")

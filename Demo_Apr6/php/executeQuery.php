@@ -25,30 +25,46 @@
 	function ExecuteQuery($conn, $type, $cause, $location) {
 		if ($type == "bullet") {
 			return GetRateBulletData($conn, $cause, $location);
-		} else if ($type == "line") {
+		} else if ($type == "death_line") {
 			return GetDeathLineData($conn, $cause, $location);
-		} else if ($type == "DALYS") {
-			return GetDALYData($conn, $cause, $location);
+		} else if ($type == "daly_line") {
+			return GetDALYLineData($conn, $cause, $location);
+		} else if ($type == "yld_line") {
+			return GetYLDLineData($conn, $cause, $location);
 		} else if ($type == "ranking") {
+			$first_year = GetDiseaseRanking($conn, $cause, $location, 1990);
+		    $second_year = GetDiseaseRanking($conn, $cause, $location, 2016);
+			return array_merge($first_year, $second_year);
+		} else if ($type == "arrow_ranking") { // delete this one
 			$first_year = GetDeathRankingData($conn, $cause, $location, 1990);
 		    $second_year = GetDeathRankingData($conn, $cause, $location, 2016);
-			return array_merge($first_year, $second_year);
+			return array_merge($first_year, $second_year);			
 		}
 	}
 	
-	function GetDALYData($conn, $cause, $location) {
-		$stmt = $conn->prepare("SELECT * FROM tbl_DALY WHERE cause LIKE :cause AND location LIKE :location 
-										AND metric = 'Rate' ORDER BY year DESC");
+	function GetDeathLineData($conn, $cause, $location) {
+		$stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE cause LIKE :cause AND location LIKE :location 
+										AND metric = 'Number' AND age = 'All Ages' ORDER BY year DESC");
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 		return $result; // returns the row as array	
-	}	
+	}
 	
-	function GetDeathLineData($conn, $cause, $location) {
-		$stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE cause LIKE :cause AND location LIKE :location 
-										AND metric = 'Number' AND age = 'Age-standardized' ORDER BY year DESC");
+	function GetDALYLineData($conn, $cause, $location) {
+		$stmt = $conn->prepare("SELECT * FROM tbl_DALY WHERE cause LIKE :cause AND location LIKE :location 
+										AND metric = 'Rate' AND age = 'Age-standardized' ORDER BY year DESC");
+		$stmt->bindParam(':cause', $cause);
+		$stmt->bindParam(':location', $location);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+		return $result; // returns the row as array	
+	}
+
+	function GetYLDLineData($conn, $cause, $location) {
+		$stmt = $conn->prepare("SELECT * FROM tbl_YLD WHERE cause LIKE :cause AND location LIKE :location 
+										AND metric = 'Rate' AND age = 'All Ages' ORDER BY year DESC");
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
@@ -58,13 +74,27 @@
 	
 	function GetRateBulletData($conn, $cause, $location) {
 		$stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE cause LIKE :cause AND location LIKE :location 
-								AND (year = 1996 or year = 2006 or year = 2016) AND metric = 'Rate' ORDER BY year DESC");
+								AND (year = 1996 or year = 2006 or year = 2016) AND metric = 'Rate' 
+								AND age = 'All Ages' ORDER BY year DESC");
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 		return $result; // returns the row as array	
 	}		
+	
+	function GetDiseaseRanking($conn, $cause, $location, $year) {
+		$stmt = $conn->prepare('CALL GetDiseaseRanking(:location, :cause, :year, "Both", "Number", "All Ages")');
+		$stmt->bindParam(':location', $location);
+		$stmt->bindParam(':cause', $cause);
+		$stmt->bindParam(':year', $year);
+		// $stmt->bindParam(':sex', $sex);
+		// $stmt->bindParam(':metric', $metric);
+		// $stmt->bindParam(':age', $age);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $result; // returns the row as array
+	}
 	
 	function GetDeathRankingData($conn, $cause, $location, $year) {
 		$stmt = $conn->prepare('CALL GetRankingRange(:location, :cause, :year, "Both")');
@@ -74,5 +104,5 @@
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $result; // returns the row as array	
-	}	
+	}
 ?>
