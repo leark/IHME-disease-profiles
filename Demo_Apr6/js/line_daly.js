@@ -42,7 +42,7 @@ $(function() {
 			return d3.svg.axis()
 			.scale(y)
 			.orient("left")
-			.ticks(8);
+			.ticks(10);
 		}
 			
 		// Define the both line
@@ -72,7 +72,25 @@ $(function() {
 
 			// Scale the range of the data
 			x.domain(d3.extent(formattedData, function(d) { return d.year; }));
-			y.domain([0, d3.max(formattedData, function(d) { return d.both; })]);
+			//y.domain([0, d3.max(formattedData, function(d) { return d.both; })]);
+			
+			//need to rewrite this with better style
+			var bdomain = d3.extent(formattedData, function(d) { return d.both; });
+			var fdomain = d3.extent(formattedData, function(d) { return d.female; });
+			var mdomain = d3.extent(formattedData, function(d) { return d.male; });
+			console.log(bdomain);
+			console.log(fdomain);
+			var alldomain = bdomain
+			alldomain.push(fdomain[0])
+			alldomain.push(fdomain[1])
+			alldomain.push(mdomain[0])
+			alldomain.push(mdomain[1])
+			console.log(alldomain);
+			var max = Math.max.apply(Math, alldomain);
+			var min = Math.min.apply(Math, alldomain);
+			console.log(min);
+			console.log(max);
+			y.domain([min - (.05 * min), max]);
 
 			// Add the X Axis
 			svg.append("g")
@@ -103,7 +121,7 @@ $(function() {
 				.attr("d", valuelineM(formattedData));
 		
 		//title
-		$('#daly_lineTitle').text(`What is the disability-adjusted life year (DALY) from ${cause_name.toLowerCase()}?`);
+		$('#daly_lineTitle').text(`How much death and disability is caused by ${cause_name.toLowerCase()}?`);
 		
 		//legend
 		var female = d3.select('#daly_fembar')
@@ -160,7 +178,7 @@ $(function() {
 			  .attr("x",0 - (height / 2))
 			  .attr("dy", "1em")
 			  .style("text-anchor", "middle")
-			  .text("Number of deaths");      
+			  .text("DALYs per 100,000 people");      
 
 	}).fail(function (error) {
 		console.log(error);
