@@ -78,8 +78,8 @@ $(function() {
 			var bdomain = d3.extent(formattedData, function(d) { return d.both; });
 			var fdomain = d3.extent(formattedData, function(d) { return d.female; });
 			var mdomain = d3.extent(formattedData, function(d) { return d.male; });
-			console.log(bdomain);
-			console.log(fdomain);
+			// console.log(bdomain);
+			// console.log(fdomain);
 			var alldomain = bdomain
 			alldomain.push(fdomain[0])
 			alldomain.push(fdomain[1])
@@ -88,8 +88,8 @@ $(function() {
 			console.log(alldomain);
 			var max = Math.max.apply(Math, alldomain);
 			var min = Math.min.apply(Math, alldomain);
-			console.log(min);
-			console.log(max);
+			// console.log(min);
+			// console.log(max);
 			y.domain([min - (.05 * min), max]);
 
 			// Add the X Axis
@@ -180,6 +180,13 @@ $(function() {
 			  .style("text-anchor", "middle")
 			  .text("DALYs per 100,000 people");      
 
+		// Footer
+		var containerDiv = document.getElementById("daly_lineDiv");
+		var footer = document.createElement("p");
+		var footer_text = document.createTextNode("Disability-adjusted life year rate, 1990-2016, age standardized, rate");
+		footer.appendChild(footer_text);
+		containerDiv.appendChild(footer);				  
+			  
 	}).fail(function (error) {
 		console.log(error);
 	});

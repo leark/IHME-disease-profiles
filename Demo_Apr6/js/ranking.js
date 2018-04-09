@@ -9,19 +9,21 @@ $(function() {
 		console.log(rows);
 
 		// Title
-		$('#rankTitle').text(`${cause_name} changes in 1990 vs 2016`);
+		$('#rankTitle').text(`${cause_name} percent change in 1990 vs 2016`);
 
 		var rankData = [];
 		for (let i = 0; i < rows.length; i += 2) {
 			rankData.push({
 				'measure': rows[i].measure,
-				'1990': rows[i].rank,
-				'2016': rows[i + 1].rank,
-				'change': (((rows[i + 1].val - rows[i].val) / rows[i].val ) * 100).toFixed(2) + "%"
+				'1990 ranking': rows[i].rank,
+				'2016 ranking': rows[i + 1].rank,
+				'% change 1990-2016': (((rows[i + 1].val - rows[i].val) / rows[i].val ) * 100).toFixed(2) + "%"
 			});
 		}
 		
-		var rankingsTable = tabulate(rankData, ["measure", "1990", "2016", "change"]);		
+		console.log(rankData);
+		
+		var rankingsTable = tabulate(rankData, ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"]);		
 		rankingsTable.selectAll("thead th")
 			.text(function(column) {
 				return column.charAt(0).toUpperCase() + column.substr(1);
@@ -30,13 +32,18 @@ $(function() {
 			.sort(function(a, b) {
 				return d3.descending(a.age, b.age);
 			});
-			
+
+		// Footer
+		var containerDiv = document.getElementById("rankTableDiv");
+		var footer = document.createElement("p");
+		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, number");
+		footer.appendChild(footer_text);
+		containerDiv.appendChild(footer);
+		
 	}).fail(function (e) { 
 		console.log(e);
 	});
 });
-
-
 
 function tabulate(data, columns) {
     var table = d3.select("#rankTableDiv").append("table"),

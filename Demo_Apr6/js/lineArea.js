@@ -103,7 +103,7 @@ $(function() {
 			.attr("d", valueline(formattedData));
 
 		//title
-		$('#lineAreaTitle').text(`Mortality rate from 1996 to 2016`);
+		$('#lineAreaTitle').text(`Mortality rate from 1990 to 2016`);
 		
 		// text label for the x axis
 		svg.append("text")
@@ -112,6 +112,13 @@ $(function() {
 				(height + margins.bottom) + ")")
 				.style("text-anchor", "middle")
 			.text("Year");
+		
+		// Footer
+		var containerDiv = document.getElementById("lineAreaDiv");
+		var footer = document.createElement("p");
+		var footer_text = document.createTextNode("Morality rate and uncertainty, 1990-2016, all ages, rate");
+		footer.appendChild(footer_text);
+		containerDiv.appendChild(footer);	
 		
 	}).fail(function (error) {
 		console.log(error);

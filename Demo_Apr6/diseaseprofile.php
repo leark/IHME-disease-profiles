@@ -22,10 +22,10 @@
 	<script type="text/javascript" src="./js/linediagram.js"></script>
 	<script type="text/javascript" src="./js/line_daly.js"></script>
 	<script type="text/javascript" src="./js/line_yld.js"></script>
-	<script type="text/javascript" src="./js/arrowdiagram.js"></script>
+	<!-- <script type="text/javascript" src="./js/arrowdiagram.js"></script> -->
 	<script type="text/javascript" src="./js/ranking.js"></script>		
+	<script type="text/javascript" src="./js/lineArea.js"></script>
 	<script type="text/javascript" src="./js/select2.js"></script>
-    <script type="text/javascript" src="./js/lineArea.js"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/bullet.css"> 
     <link rel="stylesheet" type="text/css" href="./css/column.css">
@@ -100,7 +100,7 @@
                     <option value="France">France</option>
 					<option value="New Zealand">New Zealand</option>
                     <option value="Russia">Russia</option>
-                    <option value="United States">United States</option>
+                    <option value="United States">United States</option>					
                 </select>
 				<input type="submit"></button>
             </form>
@@ -149,13 +149,13 @@
             <div class="graph" id="lineAreaDiv">
                 <h2 class="graph-header" id="lineAreaTitle"></h2>
             </div>
-			<div class="graph" id="arrowdiagramDiv">
+<!--			<div class="graph" id="arrowdiagramDiv">
 				<h2 class="graph-header" id="arrowTitle"></h2>
-            </div>
+            </div> -->
 			
 			<div class="graph" id="rankTableDiv">
 				<h2 class="graph-header" id="rankTitle"></h2>
-				<table id="rankTable"></table>
+				<table id="rankTable"></table>				
             </div>	
 			<div id="aboutprofiles">
                 <p>The Country Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>

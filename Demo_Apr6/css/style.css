@@ -143,21 +143,20 @@ a {
 	display: none;
 }
 
-#lineLegend  svg, 
-path { 
+#lineLegend, #daly_lineLegend, #yld_lineLegend svg, path { 
 	fill: none;
 	stroke-width: 5px;
     stroke-linecap: round;
 }
 
-#lineLegend {
+#lineLegend, #daly_lineLegend, #yld_lineLegend {
 	font-size: 14px;
 	margin-bottom: 10px;
 }
 
-#femtext,
-#mtext,
-#bothtext {
+#femtext, #mtext, #bothtext,
+#daly_femtext, #daly_mtext, #daly_bothtext,
+#yld_femtext, #yld_mtext, #yld_bothtext {
 	margin-right: 20px;
 }
 
@@ -193,4 +192,29 @@ text.slope-label{
 
 .area {
     fill: lightsteelblue;
+}
+
+
+/* RANKINGS */
+
+/* h3 { */
+  /* font-size: 16px; */
+/* } */
+
+/* h3 { */
+  /* width: 50%; */
+  /* height: 60px; */
+  /* margin: 0; */
+  /* padding: 0; */
+  /* display: inline; */
+/* }​ */
+
+th, td {
+	border: 1px solid #4d4d4f;
+	text-align: center;
+	padding: 5px 10px;
+}
+
+th {
+	font-size: 18px;
 }
