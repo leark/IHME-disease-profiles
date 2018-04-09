@@ -120,7 +120,7 @@ $(function() {
 				.attr("d", valuelineM(formattedData));
 		
 		//title
-		$('#yld_lineTitle').text(`How much disability is caused by ${cause_name.toLowerCase()}?`);
+		$('#yld_lineTitle').text(`How much disability is caused by ${cause_name}?`);
 		
 		//legend
 		var female = d3.select('#yld_fembar')

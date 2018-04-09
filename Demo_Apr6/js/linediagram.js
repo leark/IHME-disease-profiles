@@ -120,7 +120,7 @@ $(function() {
 				.attr("d", valuelineM(formattedData));
 		
 		//title
-		$('#lineTitle').text(`How many people died from ${cause_name.toLowerCase()}?`);
+		$('#lineTitle').text(`How many people died from ${cause_name}?`);
 		
 		//legend
 		var female = d3.select('#fembar')

@@ -1,10 +1,3 @@
-    // <script type="text/javascript" src="./js/bullet.js"></script>
-    // <script type="text/javascript" src="./js/bulletdiagram.js"></script>
-	// <script type="text/javascript" src="./js/linediagram.js"></script>
-	// <script type="text/javascript" src="./js/line_daly.js"></script>
-	// <script type="text/javascript" src="./js/line_yld.js"></script>
-	// <script type="text/javascript" src="./js/arrowdiagram.js"></script>
-	
 $(function() {
 	$.ajax({
 		url:"./php/executeQuery.php", //the page containing php script
@@ -14,22 +7,66 @@ $(function() {
 	}).done(function (response) {
 		var rows = JSON.parse(response);
 		console.log(rows);
-		// percent change
 
 		// Title
 		$('#rankTitle').text(`${cause_name} changes in 1990 vs 2016`);
 
-		// var container = document.getElementById("rankTableDiv");
+		var rankData = [];
+		for (let i = 0; i < rows.length; i += 2) {
+			rankData.push({
+				'measure': rows[i].measure,
+				'1990': rows[i].rank,
+				'2016': rows[i + 1].rank,
+				'change': (((rows[i + 1].val - rows[i].val) / rows[i].val ) * 100).toFixed(2) + "%"
+			});
+		}
 		
-		// var previous_rank = document.createElement("div");
-		// previous_rank.id = "rank-table";
-		// var prev_title = document.createElement("h3");
-		// var prev_node = document.createTextNode(JSON.stringify(rows));
-		// prev_title.appendChild(prev_node);
-		// previous_rank.appendChild(prev_title);
-		// container.appendChild(previous_rank);
-		
+		var rankingsTable = tabulate(rankData, ["measure", "1990", "2016", "change"]);		
+		rankingsTable.selectAll("thead th")
+			.text(function(column) {
+				return column.charAt(0).toUpperCase() + column.substr(1);
+			});
+		rankingsTable.selectAll("tbody tr")
+			.sort(function(a, b) {
+				return d3.descending(a.age, b.age);
+			});
+			
 	}).fail(function (e) { 
 		console.log(e);
 	});
 });
+
+
+
+function tabulate(data, columns) {
+    var table = d3.select("#rankTableDiv").append("table"),
+        thead = table.append("thead"),
+        tbody = table.append("tbody");
+
+    // append the header row
+    thead.append("tr")
+        .selectAll("th")
+        .data(columns)
+        .enter()
+        .append("th")
+            .text(function(column) { return column; });
+
+    // create a row for each object in the data
+    var rows = tbody.selectAll("tr")
+        .data(data)
+        .enter()
+        .append("tr");
+
+    // create a cell in each row for each column
+    var cells = rows.selectAll("td")
+        .data(function(row) {
+            return columns.map(function(column) {
+                return {column: column, value: row[column]};
+            });
+        })
+        .enter()
+        .append("td")
+            .text(function(d) { return d.value; });
+    
+    return table;
+}
