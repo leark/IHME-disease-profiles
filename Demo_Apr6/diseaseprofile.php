@@ -22,8 +22,8 @@
 	<script type="text/javascript" src="./js/linediagram.js"></script>
 	<script type="text/javascript" src="./js/line_daly.js"></script>
 	<script type="text/javascript" src="./js/line_yld.js"></script>
-	<script type="text/javascript" src="./js/ranking.js"></script>	
-	<script type="text/javascript" src="./js/arrowdiagram.js"></script>		
+	<script type="text/javascript" src="./js/arrowdiagram.js"></script>
+	<script type="text/javascript" src="./js/ranking.js"></script>		
 	<script type="text/javascript" src="./js/select2.js"></script>
     <script type="text/javascript" src="./js/lineArea.js"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
@@ -118,6 +118,7 @@
 					<span id="bothtext"></span>
 				</div>
             </div>
+			
             <div class="graph" id="daly_lineDiv">
                 <h2 class="graph-header" id="daly_lineTitle"></h2>
 				<div id="daly_lineLegend">
@@ -129,6 +130,7 @@
 					<span id="daly_bothtext"></span>
 				</div>
             </div>
+			
 			<div class="graph" id="yld_lineDiv">
                 <h2 class="graph-header" id="yld_lineTitle"></h2>
 				<div id="yld_lineLegend">
@@ -140,16 +142,17 @@
 					<span id="yld_bothtext"></span>
 				</div>
             </div>
-            <div class="graph" id="bulletDiv">
+			
+<!--             <div class="graph" id="bulletDiv">
                 <h2 class="graph-header" id="bulletTitle"></h2>
-            </div>
+            </div> -->
             <div class="graph" id="lineAreaDiv">
                 <h2 class="graph-header" id="lineAreaTitle"></h2>
             </div>
 			<div class="graph" id="arrowdiagramDiv">
 				<h2 class="graph-header" id="arrowTitle"></h2>
             </div>
-
+			
 			<div class="graph" id="rankTableDiv">
 				<h2 class="graph-header" id="rankTitle"></h2>
 				<table id="rankTable"></table>

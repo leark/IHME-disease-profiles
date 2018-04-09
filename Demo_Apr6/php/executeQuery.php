@@ -40,11 +40,9 @@
 
 			$yld_first = GetDiseaseRanking($conn, $cause, $location, 1990, 'GetYldRanking');
 		    $yld_second = GetDiseaseRanking($conn, $cause, $location, 2016, 'GetYldRanking');			
-			
-			
+		
 			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
 			return $total;
-			// return array_merge($first_year, $second_year);
 		} else if ($type == "arrow_ranking") { // delete this one
 			$first_year = GetDeathRankingData($conn, $cause, $location, 1990);
 		    $second_year = GetDeathRankingData($conn, $cause, $location, 2016);
@@ -82,19 +80,31 @@
 		return $result; // returns the row as array	
 	}
 	
+	// new bullet query 
 	function GetRateBulletData($conn, $cause, $location) {
-		$stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE cause LIKE :cause AND location LIKE :location 
-								AND (year = 1996 or year = 2006 or year = 2016) AND metric = 'Rate' 
-								AND age = 'All Ages' ORDER BY year DESC");
+		$stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE location LIKE :location AND cause LIKE :cause AND 
+								metric = 'Rate' AND sex = 'Both' AND age = 'All Ages' ORDER BY year DESC");
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 		return $result; // returns the row as array	
-	}		
+	}	
+	
+	// old bullet query
+	// function GetRateBulletData($conn, $cause, $location) {
+		// $stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE cause LIKE :cause AND location LIKE :location 
+								// AND (year = 1996 or year = 2006 or year = 2016) AND metric = 'Rate' 
+								// AND age = 'All Ages' ORDER BY year DESC");
+		// $stmt->bindParam(':cause', $cause);
+		// $stmt->bindParam(':location', $location);
+		// $stmt->execute();
+		// $result = $stmt->fetchAll();
+		// return $result; // returns the row as array	
+	// }		
 	
 	function GetDiseaseRanking($conn, $cause, $location, $year, $type) {
-		$stmt = $conn->prepare('CALL ' .  $type . '(:location, :cause, :year, "Both", "Number", "All Ages")');
+		$stmt = $conn->prepare('CALL ' .  $type . '(:location, :cause, :year, "Both", "Rate", "All Ages")');
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':year', $year);

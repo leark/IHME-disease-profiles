@@ -121,7 +121,7 @@ $(function() {
 				.attr("d", valuelineM(formattedData));
 		
 		//title
-		$('#daly_lineTitle').text(`How much death and disability is caused by ${cause_name.toLowerCase()}?`);
+		$('#daly_lineTitle').text(`How much death and disability is caused by ${cause_name}?`);
 		
 		//legend
 		var female = d3.select('#daly_fembar')
