@@ -15,7 +15,8 @@ $(function() {
 		let formattedData = [];
 
 		// formatting table data
-		for (let i = msg.length - 1; i >= 0; i = i - 3) {
+		// for (let i = msg.length - 1; i >= 0; i = i - 3) {
+		for (let i = msg.length - 1; i >= 0; i--) {
 			let singleYear = msg[i];
 			{
 				formattedData.push(
@@ -48,11 +49,13 @@ $(function() {
 			.ticks(10);
 		}
 
+		// function for area
 		let area = d3.svg.area()
 			.x(function(d) { return x(d.year); })
 			.y0(function(d) { return y(d.lower); })
 			.y1(function(d) { return y(d.upper); });
 
+		// function for line
 		let valueline = d3.svg.line()
 			.x(function(d) { return x(d.year); })
 			.y(function(d) { return y(d.val); });
@@ -71,11 +74,10 @@ $(function() {
 		x.domain(d3.extent(formattedData, function(d) { return d.year; }));
 		
 		//need to rewrite this with better style
-		let alldomain = d3.extent(formattedData, function(d) { return d.val; });
-		let max = Math.max.apply(Math, alldomain);
-		let min = Math.min.apply(Math, alldomain);
-		console.log(min);
-		console.log(max);
+		let upperDomain = d3.extent(formattedData, function(d) { return d.upper; });
+		let lowerDomain = d3.extent(formattedData, function(d) { return d.lower; });
+		let max = Math.max.apply(Math, upperDomain);
+		let min = Math.min.apply(Math, lowerDomain);
 		y.domain([min - (.05 * min), max]);
 
 		// Add the X Axis
@@ -101,7 +103,15 @@ $(function() {
 			.attr("d", valueline(formattedData));
 
 		//title
-		$('#lineAreaTitle').text(`Mortality rate in years 1996, 2006, 2016`);
+		$('#lineAreaTitle').text(`Mortality rate from 1996 to 2016`);
+		
+		// text label for the x axis
+		svg.append("text")
+			.attr("transform",
+				"translate(" + (width/2) + " ," + 
+				(height + margins.bottom) + ")")
+				.style("text-anchor", "middle")
+			.text("Year");
 		
 	}).fail(function (error) {
 		console.log(error);
