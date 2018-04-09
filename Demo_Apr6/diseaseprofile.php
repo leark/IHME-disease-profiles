@@ -25,6 +25,7 @@
 	<script type="text/javascript" src="./js/ranking.js"></script>	
 	<script type="text/javascript" src="./js/arrowdiagram.js"></script>		
 	<script type="text/javascript" src="./js/select2.js"></script>
+    <script type="text/javascript" src="./js/lineArea.js"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/bullet.css"> 
     <link rel="stylesheet" type="text/css" href="./css/column.css">
@@ -141,6 +142,9 @@
             </div>
             <div class="graph" id="bulletDiv">
                 <h2 class="graph-header" id="bulletTitle"></h2>
+            </div>
+            <div class="graph" id="lineAreaDiv">
+                <h2 class="graph-header" id="lineAreaTitle"></h2>
             </div>
 			<div class="graph" id="arrowdiagramDiv">
 				<h2 class="graph-header" id="arrowTitle"></h2>

@@ -187,4 +187,10 @@ text.slope-label{
 	margin-left: 50px;
 }
 
+.lineValue {
+    stroke: black;
+}
 
+.area {
+    fill: lightsteelblue;
+}
