@@ -16,18 +16,28 @@ $(function() {
 
 		// formatting table data
 		// for (let i = msg.length - 1; i >= 0; i = i - 3) {
+
+		// let max = msg[msg.length - 1].upper;
+		// let min = msg[msg.length - 1].lower;
+
 		for (let i = msg.length - 1; i >= 0; i--) {
 			let singleYear = msg[i];
 			{
 				formattedData.push(
 					{
-						"year": singleYear.year,
+						"year": Number(singleYear.year),
 						"metric": singleYear.metric,
-						"lower": singleYear.lower,
-						"val": singleYear.val,
-						"upper": singleYear.upper
+						"lower": Number(singleYear.lower),
+						"val": Number(singleYear.val),
+						"upper": Number(singleYear.upper)
 					});
 			}
+			// if (max < Number(singleYear.upper)) {
+			// 	max = singleYear.upper;
+			// }
+			// if (min > singleYear.min) {
+			// 	min = singleYear.lower;
+			// }
 		}
 		console.log(formattedData);
 
@@ -74,10 +84,15 @@ $(function() {
 		x.domain(d3.extent(formattedData, function(d) { return d.year; }));
 		
 		//need to rewrite this with better style
-		let upperDomain = d3.extent(formattedData, function(d) { return d.upper; });
-		let lowerDomain = d3.extent(formattedData, function(d) { return d.lower; });
-		let max = Math.max.apply(Math, upperDomain);
-		let min = Math.min.apply(Math, lowerDomain);
+		// let upperDomain = d3.extent(formattedData, function(d) { return d.upper; });
+		// let lowerDomain = d3.extent(formattedData, function(d) { return d.lower; });
+		let max = d3.max(formattedData, function(d) { return d.upper; });
+		let min = d3.min(formattedData, function(d) { return d.lower; });
+		// let max = Math.max.apply(Math, upperDomain);
+		// let min = Math.min.apply(Math, lowerDomain);
+		console.log(max);
+		console.log(min);
+		console.log(`Y domain is calculated with ${min} - (0.05 * ${min} and ${max})`);
 		y.domain([min - (.05 * min), max]);
 
 		// Add the X Axis
