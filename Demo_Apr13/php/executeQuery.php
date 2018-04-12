@@ -32,14 +32,14 @@
 		} else if ($type == "yld_line") {
 			return GetYLDLineData($conn, $cause, $location);
 		} else if ($type == "ranking") {
-			$death_first = GetDiseaseRanking($conn, $cause, $location, 1990, 'GetDeathRanking');
-		    $death_second = GetDiseaseRanking($conn, $cause, $location, 2016, 'GetDeathRanking');
+			$death_first = GetChartRanking($conn, $cause, $location, 1990, 'DEATH');
+		    $death_second = GetChartRanking($conn, $cause, $location, 2016, 'DEATH');
 			
-			$daly_first = GetDiseaseRanking($conn, $cause, $location, 1990, 'GetDalyRanking');
-		    $daly_second = GetDiseaseRanking($conn, $cause, $location, 2016, 'GetDalyRanking');
+			$daly_first = GetChartRanking($conn, $cause, $location, 1990, 'DALY');
+		    $daly_second = GetChartRanking($conn, $cause, $location, 2016, 'DALY');
 
-			$yld_first = GetDiseaseRanking($conn, $cause, $location, 1990, 'GetYldRanking');
-		    $yld_second = GetDiseaseRanking($conn, $cause, $location, 2016, 'GetYldRanking');			
+			$yld_first = GetChartRanking($conn, $cause, $location, 1990, 'YLD');
+		    $yld_second = GetChartRanking($conn, $cause, $location, 2016, 'YLD');			
 		
 			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
 			return $total;
@@ -103,14 +103,12 @@
 		// return $result; // returns the row as array	
 	// }		
 	
-	function GetDiseaseRanking($conn, $cause, $location, $year, $type) {
-		$stmt = $conn->prepare('CALL ' .  $type . '(:location, :cause, :year, "Both", "Rate", "All Ages")');
+	function GetChartRanking($conn, $cause, $location, $year, $type) {
+		$stmt = $conn->prepare('CALL GetChartRanking(:location, :cause, :year, "Both", "Rate", "All Ages", :type)');
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':year', $year);
-		// $stmt->bindParam(':sex', $sex);
-		// $stmt->bindParam(':metric', $metric);
-		// $stmt->bindParam(':age', $age);
+		$stmt->bindParam(':type', $type);
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $result; // returns the row as array
