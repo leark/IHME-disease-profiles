@@ -51,8 +51,7 @@
 	}
 	
 	function GetDeathLineData($conn, $cause, $location) {
-		$stmt = $conn->prepare("SELECT * FROM tbl_DEATH WHERE cause LIKE :cause AND location LIKE :location 
-										AND metric = 'Rate' AND age = 'All Ages' ORDER BY year DESC");
+		$stmt = $conn->prepare('CALL SDICountry_Death(:location, :cause)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
@@ -61,8 +60,7 @@
 	}
 	
 	function GetDALYLineData($conn, $cause, $location) {
-		$stmt = $conn->prepare("SELECT * FROM tbl_DALY WHERE cause LIKE :cause AND location LIKE :location 
-										AND metric = 'Rate' AND age = 'Age-standardized' ORDER BY year DESC");
+		$stmt = $conn->prepare('CALL SDICountry_DALY(:location, :cause)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
@@ -71,8 +69,7 @@
 	}
 
 	function GetYLDLineData($conn, $cause, $location) {
-		$stmt = $conn->prepare("SELECT * FROM tbl_YLD WHERE cause LIKE :cause AND location LIKE :location 
-										AND metric = 'Rate' AND age = 'Age-standardized' ORDER BY year DESC");
+		$stmt = $conn->prepare('CALL SDICountry_YLD(:location, :cause)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();

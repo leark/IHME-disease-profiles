@@ -154,9 +154,9 @@ a {
 	margin-bottom: 10px;
 }
 
-#femtext, #mtext, #bothtext,
-#daly_femtext, #daly_mtext, #daly_bothtext,
-#yld_femtext, #yld_mtext, #yld_bothtext {
+#femtext, #mtext, #bothtext, #sditext,
+#daly_femtext, #daly_mtext, #daly_bothtext, #daly_sditext,
+#yld_femtext, #yld_mtext, #yld_bothtext, #yld_sditext {
 	margin-right: 20px;
 }
 
@@ -170,6 +170,12 @@ a {
 
 .both { 
 	stroke: black;
+}
+
+.sdi { 
+	stroke: gray;
+	stroke-dasharray: 0,8;
+    stroke-linejoin: round;
 }
 
 line.slope-line{

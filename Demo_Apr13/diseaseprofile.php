@@ -117,6 +117,8 @@
 					<span id="mtext"></span>
 					<span id="bothbar"></span>
 					<span id="bothtext"></span>
+					<span id="sdibar"></span>
+					<span id="sditext"></span>
 				</div>
             </div>
 			
@@ -129,6 +131,8 @@
 					<span id="daly_mtext"></span>
 					<span id="daly_bothbar"></span>
 					<span id="daly_bothtext"></span>
+					<span id="daly_sdibar"></span>
+					<span id="daly_sditext"></span>
 				</div>
             </div>
 			
@@ -141,6 +145,8 @@
 					<span id="yld_mtext"></span>
 					<span id="yld_bothbar"></span>
 					<span id="yld_bothtext"></span>
+					<span id="yld_sdibar"></span>
+					<span id="yld_sditext"></span>
 				</div>
             </div>
 			

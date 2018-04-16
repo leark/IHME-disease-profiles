@@ -1,5 +1,7 @@
 $(function() {
-	lineDiagram = function(requestType, lineDiv, titleDiv, titleText, fembar, femtext, mbar, mtext, bothbar, bothtext, yLabel, lineDivID, caption) {
+	lineDiagram = function(requestType, lineDiv, titleDiv, titleText, 
+		fembar, femtext, mbar, mtext, bothbar, bothtext, sdibar, sditext, 
+		yLabel, lineDivID, caption) {
 		$.ajax({
 			url:"./php/executeQuery.php", //the page containing php script
 			type: "get", //request type
@@ -14,7 +16,7 @@ $(function() {
 				height = 360 - margins.top - margins.bottom;
 			var formattedData = [];
 
-			for (var i = msg.length - 1; i >= 0; i = i - 3) {
+			for (var i = msg.length - 1; i >= 0; i = i - 6) {
 				var singleYear = msg[i];
 				formattedData.push(
 					{
@@ -23,7 +25,8 @@ $(function() {
 						"metric": singleYear.metric,
 						"female": parseFloat(msg[i-1].val),
 						"male": parseFloat(msg[i-2].val),
-						"both": parseFloat(singleYear.val)
+						"both": parseFloat(singleYear.val),
+						"sdi": parseFloat(msg[i-3].val)
 					});
 			}
 			console.log(formattedData);
@@ -60,6 +63,11 @@ $(function() {
 			var valuelineM = d3.svg.line()
 				.x(function(d) { return x(d.year); })
 				.y(function(d) { return y(d.male); });
+				
+			// Define the SDI average line
+			var valuelineSDI = d3.svg.line()
+				.x(function(d) { return x(d.year); })
+				.y(function(d) { return y(d.sdi); });
 								
 			// Adds the svg canvas					  
 			var svg = d3.select(lineDiv)
@@ -78,6 +86,7 @@ $(function() {
 				var bdomain = d3.extent(formattedData, function(d) { return d.both; });
 				var fdomain = d3.extent(formattedData, function(d) { return d.female; });
 				var mdomain = d3.extent(formattedData, function(d) { return d.male; });
+				var sdidomain = d3.extent(formattedData, function(d) { return d.sdi; });
 				// console.log(bdomain);
 				// console.log(fdomain);
 				var alldomain = bdomain
@@ -85,6 +94,8 @@ $(function() {
 				alldomain.push(fdomain[1])
 				alldomain.push(mdomain[0])
 				alldomain.push(mdomain[1])
+				alldomain.push(sdidomain[0])
+				alldomain.push(sdidomain[1])
 				console.log(alldomain);
 				var max = Math.max.apply(Math, alldomain);
 				var min = Math.min.apply(Math, alldomain);
@@ -118,7 +129,12 @@ $(function() {
 				// Add the valueline path for male 
 				svg.append("path")
 					.attr("class", "male")
-					.attr("d", valuelineM(formattedData));
+					.attr("d", valuelineM(formattedData));				
+					
+				// Add the valueline path for SDI average
+				svg.append("path")
+					.attr("class", "sdi")
+					.attr("d", valuelineSDI(formattedData));
 			
 			//title
 			$(titleDiv).text(titleText);
@@ -162,6 +178,19 @@ $(function() {
 					.attr("y2", "9px")
 			
 			$(bothtext).text("All")
+			
+			var sdi = d3.select(sdibar)
+				.append("svg")
+					.attr("class", "sdi")
+					.attr("width", "24px")
+					.attr("height", "14px")
+				.append("line")
+					.attr("x1", "3px")
+					.attr("x2", "21px")
+					.attr("y1", "9px")
+					.attr("y2", "9px")
+			
+			$(sditext).text("SDI Average")
 		
 			// text label for the x axis
 			svg.append("text")
