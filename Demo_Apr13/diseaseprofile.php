@@ -26,6 +26,7 @@
 	<!-- <script type="text/javascript" src="./js/arrowdiagram.js"></script> -->
 	<script type="text/javascript" src="./js/ranking.js"></script>		
 	<script type="text/javascript" src="./js/lineArea.js"></script>
+	<!-- <script type="text/javascript" src="./js/heatmap.js"></script>	-->	
 	<script type="text/javascript" src="./js/select2.js"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/bullet.css"> 
@@ -164,6 +165,10 @@
 				<h2 class="graph-header" id="rankTitle"></h2>
 				<table id="rankTable"></table>				
             </div>	
+			<div class="graph" id="heatDiv">
+				<h2 class="graph-header" id="heatTitle"></h2>
+				<div id="heatmap"></div>
+            </div>			
 			<div id="aboutprofiles">
                 <p>The Country Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>
             </div>

@@ -43,6 +43,14 @@
 		
 			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
 			return $total;
+		} else if ($type == "heat_rank") {
+		    $death = GetHeatRanking($conn, $cause, $location, "DEATH");
+		    $daly = GetHeatRanking($conn, $cause, $location, "DALY");
+		    $yld = GetHeatRanking($conn, $cause, $location, "YLD");
+			$yll = GetHeatRanking($conn, $cause, $location, "YLL");
+			
+			$total = array_merge($death,$daly, $yld, $yll);
+			return $total;			
 		} else if ($type == "arrow_ranking") { // delete this one
 			$first_year = GetDeathRankingData($conn, $cause, $location, 1990);
 		    $second_year = GetDeathRankingData($conn, $cause, $location, 2016);
@@ -110,6 +118,16 @@
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $result; // returns the row as array
 	}
+
+	function GetHeatRanking($conn, $cause, $location, $type) {
+		$stmt = $conn->prepare('CALL GetHeatRanking(:location, :cause, 2016, "Both", "Rate", "Age-standardized", :type)');
+		$stmt->bindParam(':cause', $cause);
+		$stmt->bindParam(':location', $location);
+		$stmt->bindParam(':type', $type);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $result; // returns the row as array	
+	}	
 	
 	function GetDeathRankingData($conn, $cause, $location, $year) {
 		$stmt = $conn->prepare('CALL GetRankingRange(:location, :cause, :year, "Both")');
