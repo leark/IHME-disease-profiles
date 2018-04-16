@@ -1,4 +1,13 @@
 $(function() {
+
+	lineDiagram("yld_line", "#yld_lineDiv", '#yld_lineTitle', `How much disability is caused by ${cause_name}?`, 
+		'#yld_fembar', "#yld_femtext", '#yld_mbar', "#yld_mtext", '#yld_bothbar', "#yld_bothtext", 
+		"YLDs per 100,000 people", "yld_lineDiv", "Years lived with disability rate, 1990-2016, all ages, rate");
+
+});
+
+/*
+$(function() {
 	$.ajax({
 		url:"./php/executeQuery.php", //the page containing php script
 		type: "get", //request type
@@ -190,3 +199,4 @@ $(function() {
 		console.log(error);
 	});
 });
+*/

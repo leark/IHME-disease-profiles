@@ -1,4 +1,13 @@
 $(function() {
+
+	lineDiagram("daly_line", "#daly_lineDiv", '#daly_lineTitle', `How much death and disability is caused by ${cause_name}?`, 
+		'#daly_fembar', "#daly_femtext", '#daly_mbar', "#daly_mtext", '#daly_bothbar', "#daly_bothtext", 
+		"DALYs per 100,000 people", "daly_lineDiv", "Disability-adjusted life year rate, 1990-2016, age standardized, rate");
+
+});
+
+/*
+$(function() {
 	$.ajax({
 		url:"./php/executeQuery.php", //the page containing php script
 		type: "get", //request type
@@ -191,3 +200,4 @@ $(function() {
 		console.log(error);
 	});
 });
+*/

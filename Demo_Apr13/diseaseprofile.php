@@ -20,6 +20,7 @@
 <!--     <script type="text/javascript" src="./js/bullet.js"></script>
     <script type="text/javascript" src="./js/bulletdiagram.js"></script> -->
 	<script type="text/javascript" src="./js/linediagram.js"></script>
+	<script type="text/javascript" src="./js/line_deaths.js"></script>
 	<script type="text/javascript" src="./js/line_daly.js"></script>
 	<script type="text/javascript" src="./js/line_yld.js"></script>
 	<!-- <script type="text/javascript" src="./js/arrowdiagram.js"></script> -->
