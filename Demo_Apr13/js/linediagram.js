@@ -15,20 +15,36 @@ $(function() {
 			var width = 800 - margins.left - margins.right,
 				height = 360 - margins.top - margins.bottom;
 			var formattedData = [];
-
-			for (var i = msg.length - 1; i >= 0; i = i - 6) {
-				var singleYear = msg[i];
-				formattedData.push(
-					{
-						"title":singleYear.measure,
-						"year": singleYear.year,
-						"metric": singleYear.metric,
-						"female": parseFloat(msg[i-1].val),
-						"male": parseFloat(msg[i-2].val),
-						"both": parseFloat(singleYear.val),
-						"sdi": parseFloat(msg[i-3].val)
-					});
+			
+			if (msg.length == 81){
+				for (var i = msg.length - 1; i >= 0; i = i - 3) {
+					var singleYear = msg[i];
+					formattedData.push(
+						{
+							"title":singleYear.measure,
+							"year": singleYear.year,
+							"metric": singleYear.metric,
+							"female": parseFloat(msg[i-1].val),
+							"male": parseFloat(msg[i-2].val),
+							"both": parseFloat(singleYear.val)
+						});
+				}
+			} else {
+				for (var i = msg.length - 1; i >= 0; i = i - 6) {
+					var singleYear = msg[i];
+					formattedData.push(
+						{
+							"title":singleYear.measure,
+							"year": singleYear.year,
+							"metric": singleYear.metric,
+							"female": parseFloat(msg[i-1].val),
+							"male": parseFloat(msg[i-2].val),
+							"both": parseFloat(singleYear.val),
+							"sdi": parseFloat(msg[i-3].val)
+						});
+				}
 			}
+			
 			console.log(formattedData);
 			
 			// Set the ranges
@@ -65,10 +81,12 @@ $(function() {
 				.y(function(d) { return y(d.male); });
 				
 			// Define the SDI average line
-			var valuelineSDI = d3.svg.line()
-				.x(function(d) { return x(d.year); })
-				.y(function(d) { return y(d.sdi); });
-								
+			if (typeof formattedData[0].sdi !== 'undefined') {
+				var valuelineSDI = d3.svg.line()
+					.x(function(d) { return x(d.year); })
+					.y(function(d) { return y(d.sdi); });
+			}
+			
 			// Adds the svg canvas					  
 			var svg = d3.select(lineDiv)
 				.data(formattedData)
@@ -86,17 +104,17 @@ $(function() {
 				var bdomain = d3.extent(formattedData, function(d) { return d.both; });
 				var fdomain = d3.extent(formattedData, function(d) { return d.female; });
 				var mdomain = d3.extent(formattedData, function(d) { return d.male; });
-				var sdidomain = d3.extent(formattedData, function(d) { return d.sdi; });
-				// console.log(bdomain);
-				// console.log(fdomain);
 				var alldomain = bdomain
 				alldomain.push(fdomain[0])
 				alldomain.push(fdomain[1])
 				alldomain.push(mdomain[0])
 				alldomain.push(mdomain[1])
-				alldomain.push(sdidomain[0])
-				alldomain.push(sdidomain[1])
-				console.log(alldomain);
+				if (typeof formattedData[0].sdi !== 'undefined') {
+					var sdidomain = d3.extent(formattedData, function(d) { return d.sdi; });
+					alldomain.push(sdidomain[0])
+					alldomain.push(sdidomain[1])
+				}
+				// console.log(alldomain);
 				var max = Math.max.apply(Math, alldomain);
 				var min = Math.min.apply(Math, alldomain);
 				// console.log(min);
@@ -132,10 +150,11 @@ $(function() {
 					.attr("d", valuelineM(formattedData));				
 					
 				// Add the valueline path for SDI average
-				svg.append("path")
-					.attr("class", "sdi")
-					.attr("d", valuelineSDI(formattedData));
-			
+				if (typeof formattedData[0].sdi !== 'undefined') {
+					svg.append("path")
+						.attr("class", "sdi")
+						.attr("d", valuelineSDI(formattedData));
+				}
 			//title
 			$(titleDiv).text(titleText);
 			
@@ -179,18 +198,20 @@ $(function() {
 			
 			$(bothtext).text("All")
 			
-			var sdi = d3.select(sdibar)
-				.append("svg")
-					.attr("class", "sdi")
-					.attr("width", "24px")
-					.attr("height", "14px")
-				.append("line")
-					.attr("x1", "3px")
-					.attr("x2", "21px")
-					.attr("y1", "9px")
-					.attr("y2", "9px")
-			
-			$(sditext).text("SDI Average")
+			if (typeof formattedData[0].sdi !== 'undefined') {
+				var sdi = d3.select(sdibar)
+					.append("svg")
+						.attr("class", "sdi")
+						.attr("width", "24px")
+						.attr("height", "14px")
+					.append("line")
+						.attr("x1", "3px")
+						.attr("x2", "21px")
+						.attr("y1", "9px")
+						.attr("y2", "9px")
+				
+				$(sditext).text("SDI Average")
+			}
 		
 			// text label for the x axis
 			svg.append("text")
