@@ -27,7 +27,7 @@
 	<script type="text/javascript" src="./js/ranking.js"></script>	
 	<script type="text/javascript" src="./js/risks.js"></script>	
 	<script type="text/javascript" src="./js/lineArea.js"></script>
-	<!-- <script type="text/javascript" src="./js/heatmap.js"></script>	-->	
+	<script type="text/javascript" src="./js/heatmap.js"></script>
 	<script type="text/javascript" src="./js/select2.js"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/bullet.css"> 
