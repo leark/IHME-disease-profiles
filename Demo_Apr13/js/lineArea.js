@@ -118,7 +118,7 @@ $(function() {
 			.attr("d", valueline(formattedData));
 
 		//title
-		$('#lineAreaTitle').text(`Mortality rate from 1990 to 2016`);
+		$('#lineAreaTitle').text(`Mortality rate with uncertainty from 1990 to 2016`);
 		
 		// text label for the x axis
 		svg.append("text")
