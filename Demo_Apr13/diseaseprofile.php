@@ -151,6 +151,10 @@
 				</div>
             </div>
 			
+			<div class="graph" id="risksDiv">
+                <h2 class="graph-header" id="risksTitle"></h2>
+            </div>
+			
 <!--             <div class="graph" id="bulletDiv">
                 <h2 class="graph-header" id="bulletTitle"></h2>
             </div> -->

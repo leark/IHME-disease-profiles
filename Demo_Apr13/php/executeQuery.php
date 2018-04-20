@@ -31,6 +31,8 @@
 			return GetDALYLineData($conn, $cause, $location);
 		} else if ($type == "yld_line") {
 			return GetYLDLineData($conn, $cause, $location);
+		} else if ($type == "risks") {
+			return GetRisks($conn, $cause, $location);
 		} else if ($type == "ranking") {
 			$death_first = GetChartRanking($conn, $cause, $location, 1990, 'DEATH');
 		    $death_second = GetChartRanking($conn, $cause, $location, 2016, 'DEATH');
@@ -78,6 +80,15 @@
 
 	function GetYLDLineData($conn, $cause, $location) {
 		$stmt = $conn->prepare('CALL SDICountry_YLD(:location, :cause)');
+		$stmt->bindParam(':cause', $cause);
+		$stmt->bindParam(':location', $location);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+		return $result; // returns the row as array	
+	}
+	
+	function GetRisks($conn, $cause, $location) {
+		$stmt = $conn->prepare('CALL GetRisks(:location, :cause)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
