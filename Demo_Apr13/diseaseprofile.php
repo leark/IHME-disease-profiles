@@ -1,15 +1,15 @@
 <?php
-	$causeName = htmlspecialchars($_POST["causeName"]);
-	$locationName = htmlspecialchars($_POST["locationName"]);
+	$disease = htmlspecialchars($_GET["d"]);
+	$region = htmlspecialchars($_GET["r"]);
 	
 	echo '<script>';
-	echo 'var cause_name = ' . json_encode($causeName) . ';';
-	echo 'var location_name = ' . json_encode($locationName) . ';';
+	echo 'let cause_name = ' . json_encode($disease) . ';';
+	echo 'let location_name = ' . json_encode($region) . ';';
 	echo '</script>';
 ?>
 
 <head>
-	<title><?=$causeName?> in <?=$locationName?> | Institute for Health Metrics and Evaluation</title>
+	<title><?=$disease?> in <?=$region?> | Institute for Health Metrics and Evaluation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	
@@ -48,7 +48,7 @@
         <div id="buttons">
             <div class="button"><a href="http://www.healthdata.org/">Home</a></div>
             <div class="button"><a href="http://www.healthdata.org/results">Results</a></div>
-            <div class="button"><a href="http://www.healthdata.org/news-events">News & Events</a></div>
+            <div class="button"><a href="http://www.healthdata.org/news-events">News &amp; Events</a></div>
             <div class="button"><a href="http://www.healthdata.org/projects">Projects</a></div>
             <div class="button"><a href="http://www.healthdata.org/get-involved">Get Involved</a></div>
             <div class="button"><a href="http://www.healthdata.org/about">About</a></div>
@@ -72,13 +72,13 @@
                 <li><a href="http://www.healthdata.org/results/research-articles">Infographics</a></li>
                 <li><a href="http://www.healthdata.org/us-county-profiles">US County Profiles</a></li>
                 <li><a href="http://www.healthdata.org/results/topics">Topics</a></li>
-                <li><a href="Data & Tools">Data & Tools</a></li>
+                <li><a href="Data &amp; Tools">Data &amp; Tools</a></li>
             </ul>
         </div>
 
         <div id="info">
-        	<form action="./diseaseprofile.php" method="post">
-                <select name="causeName" id="e1" required>					
+        	<form action="./diseaseprofile.php" method="get">
+                <select name="d" id="e1" required>					
                     <option value="">Choose</option>
                     <option value="HIV/AIDS">HIV/AIDS</option>
                     <option value="Upper respiratory infections">Upper respiratory infections</option>
@@ -88,7 +88,7 @@
                     <option value="Liver cancer">Liver cancer</option>
                     <option value="Breast cancer">Breast cancer</option>
                 </select>
-                <select name="locationName" id="e2" required>
+                <select name="r" id="e2" required>
                     <option value="">Choose</option>
 					<option value="Global">Global</option>
                     <optgroup label="Sociodemographic Index">                    
@@ -108,7 +108,7 @@
 				<input type="submit"></button>
             </form>
 
-			<h1><?=$causeName?> in <?=$locationName?></h1>
+			<h1><?=$disease?> in <?=$region?></h1>
 
             <div class="graph" id="lineDiv">
                 <h2 class="graph-header" id="lineTitle"></h2>

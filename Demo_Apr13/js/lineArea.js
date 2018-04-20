@@ -39,7 +39,7 @@ $(function() {
 			// 	min = singleYear.lower;
 			// }
 		}
-		console.log(formattedData);
+		// console.log(formattedData);
 
 		// Set the ranges
 		let x = d3.scale.linear().range([0, width]);
@@ -90,9 +90,9 @@ $(function() {
 		let min = d3.min(formattedData, function(d) { return d.lower; });
 		// let max = Math.max.apply(Math, upperDomain);
 		// let min = Math.min.apply(Math, lowerDomain);
-		console.log(max);
-		console.log(min);
-		console.log(`Y domain is calculated with ${min} - (0.05 * ${min} and ${max})`);
+		// console.log(max);
+		// console.log(min);
+		// console.log(`Y domain is calculated with ${min} - (0.05 * ${min} and ${max})`);
 		y.domain([min - (.05 * min), max]);
 
 		// Add the X Axis

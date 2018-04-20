@@ -45,7 +45,7 @@ $(function() {
 				}
 			}
 			
-			console.log(formattedData);
+			// console.log(formattedData);
 			
 			// Set the ranges
 			var x = d3.scale.linear().range([0, width]);

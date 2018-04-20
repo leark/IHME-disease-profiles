@@ -6,7 +6,6 @@ $(function() {
 		data: {request_type:"ranking", causeName: cause_name, locationName: location_name}
 	}).done(function (response) {
 		var rows = JSON.parse(response);
-		console.log(rows);
 
 		// Title
 		$('#rankTitle').text(`${cause_name} percent change in 1990 vs 2016`);
@@ -21,7 +20,7 @@ $(function() {
 			});
 		}
 		
-		console.log(rankData);
+		// console.log(rankData);
 		
 		var rankingsTable = tabulate(rankData, ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"]);		
 		rankingsTable.selectAll("thead th")
