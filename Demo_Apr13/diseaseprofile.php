@@ -24,7 +24,8 @@
 	<script type="text/javascript" src="./js/line_daly.js"></script>
 	<script type="text/javascript" src="./js/line_yld.js"></script>
 	<!-- <script type="text/javascript" src="./js/arrowdiagram.js"></script> -->
-	<script type="text/javascript" src="./js/ranking.js"></script>		
+	<script type="text/javascript" src="./js/ranking.js"></script>	
+	<script type="text/javascript" src="./js/risks.js"></script>	
 	<script type="text/javascript" src="./js/lineArea.js"></script>
 	<!-- <script type="text/javascript" src="./js/heatmap.js"></script>	-->	
 	<script type="text/javascript" src="./js/select2.js"></script>

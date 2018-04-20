@@ -1,6 +1,4 @@
 $(function() {
-	barChart("risks", "#risksDiv", "#risksTitle", `What are the risk factors for ${cause_name}?`, 
-	"DALYs per 100,000 people");
 	
 	barChart = function(requestType, lineDiv, titleDiv, titleText, 
 		yLabel, lineDivID, caption) {
@@ -12,10 +10,10 @@ $(function() {
 		}).done(function (msg) {
 			//console.log(msg);
 			
-			var margins = {top: 30, bottom: 50, left: 60, right: 50};
+			var margins = {top: 30, bottom: 200, left: 60, right: 50};
 
 			var width = 800 - margins.left - margins.right,
-				height = 360 - margins.top - margins.bottom;
+				height = 460 - margins.top - margins.bottom;
 			var formattedData = [];
 			
 			for (var i = 0; i <= msg.length - 1; i = i + 1) {
@@ -26,22 +24,20 @@ $(function() {
 						"year": singleYear.year,
 						"metric": singleYear.metric,
 						"risk": singleYear.rei,
-						"value": singleYear.val
+						"value": parseFloat(singleYear.val)
 					});
 			}
 			
 			console.log(formattedData);
 			
 			// Set the ranges
-			var x = d3.scale.linear().range([0, width]);
+			var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
 			var y = d3.scale.linear().range([height, 0]);
 
 			// Define the axes
 			var xAxis = d3.svg.axis()
 				.scale(x)
-				.orient("bottom")
-				.ticks(12)
-				.tickFormat(d3.format("d"));		
+				.orient("bottom");		
 
 			function y_axis() {
 				return d3.svg.axis()
@@ -51,66 +47,37 @@ $(function() {
 			}
 				
 			// Define the both line
-			var valueline = d3.svg.line()
-				.x(function(d) { return x(d.year); })
-				.y(function(d) { return y(d.both); });
+			//var valueline = d3.svg.line()
+				//.x(function(d) { return x(d.year); })
+				//.y(function(d) { return y(d.both); });
 				
-			// Define the female line
-			var valuelineF = d3.svg.line()
-				.x(function(d) { return x(d.year); })
-				.y(function(d) { return y(d.female); });
-				
-			// Define the male line
-			var valuelineM = d3.svg.line()
-				.x(function(d) { return x(d.year); })
-				.y(function(d) { return y(d.male); });
-				
-			// Define the SDI average line
-			if (typeof formattedData[0].sdi !== 'undefined') {
-				var valuelineSDI = d3.svg.line()
-					.x(function(d) { return x(d.year); })
-					.y(function(d) { return y(d.sdi); });
-			}
 			
 			// Adds the svg canvas					  
 			var svg = d3.select(lineDiv)
-				.data(formattedData)
+				//.data(formattedData)
 			.append("svg")
-				.attr("class", "line")
+				.attr("class", "risks")
 				.attr("width", width + margins.left + margins.right)
 				.attr("height", height + margins.top + margins.bottom)
 			.append("g")
 				.attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 
 				// Scale the range of the data
-				x.domain(d3.extent(formattedData, function(d) { return d.year; }));
-				
-				//need to rewrite this with better style
-				var bdomain = d3.extent(formattedData, function(d) { return d.both; });
-				var fdomain = d3.extent(formattedData, function(d) { return d.female; });
-				var mdomain = d3.extent(formattedData, function(d) { return d.male; });
-				var alldomain = bdomain
-				alldomain.push(fdomain[0])
-				alldomain.push(fdomain[1])
-				alldomain.push(mdomain[0])
-				alldomain.push(mdomain[1])
-				if (typeof formattedData[0].sdi !== 'undefined') {
-					var sdidomain = d3.extent(formattedData, function(d) { return d.sdi; });
-					alldomain.push(sdidomain[0])
-					alldomain.push(sdidomain[1])
-				}
-				// console.log(alldomain);
-				var max = Math.max.apply(Math, alldomain);
-				var min = Math.min.apply(Math, alldomain);
-				// console.log(min);
-				// console.log(max);
-				y.domain([min - (.05 * min), max]);
+				x.domain(formattedData.map(function(d) { return d.risk; }));
+				y.domain([0, d3.max(formattedData, function(d) { return d.value; })]);
 
 				// Add the X Axis
 				svg.append("g")
 					.attr("class", "x axis")
 					.attr("transform", "translate(0," + height + ")")
-					.call(xAxis);
+					.call(xAxis)
+					.selectAll("text")	
+						.style("text-anchor", "end")
+						.attr("dx", "-.8em")
+						.attr("dy", ".15em")
+						.attr("transform", function(d) {
+							return "rotate(-65)" 
+							});
 
 				// Add the Y Axis
 				svg.append("g")
@@ -120,83 +87,23 @@ $(function() {
 					);
 				
 				// Add the valueline path for both 
-				svg.append("path")
-					.attr("class", "both")
-					.attr("d", valueline(formattedData));
-					
-				// Add the valueline path for female 
-				svg.append("path")
-					.attr("class", "female")
-					.attr("d", valuelineF(formattedData));
+				//svg.append("path")
+					//.attr("class", "both")
+					//.attr("d", valueline(formattedData));
 				
-				// Add the valueline path for male 
-				svg.append("path")
-					.attr("class", "male")
-					.attr("d", valuelineM(formattedData));				
-					
-				// Add the valueline path for SDI average
-				if (typeof formattedData[0].sdi !== 'undefined') {
-					svg.append("path")
-						.attr("class", "sdi")
-						.attr("d", valuelineSDI(formattedData));
-				}
+			svg.selectAll(".bar")
+				.data(formattedData)
+			  .enter().append("rect")
+				  .attr("class", "bar")
+				  .style("fill", "steelblue")
+				  .attr("x", function(d) { return x(d.risk); })
+				  .attr("width", x.rangeBand())
+				  .attr("y", function(d) { return y(d.value); })
+				  .attr("height", function(d) { return height - y(d.value); });
+
+
 			//title
 			$(titleDiv).text(titleText);
-			
-			//legend
-			var female = d3.select(fembar)
-				.append("svg")
-					.attr("class", "female")
-					.attr("width", "24px")
-					.attr("height", "14px")
-				.append("line")
-					.attr("x1", "3px")
-					.attr("x2", "21px")
-					.attr("y1", "9px")
-					.attr("y2", "9px")
-			
-			$(femtext).text("Females")
-			
-			var male = d3.select(mbar)
-				.append("svg")
-					.attr("class", "male")
-					.attr("width", "24px")
-					.attr("height", "14px")
-				.append("line")
-					.attr("x1", "3px")
-					.attr("x2", "21px")
-					.attr("y1", "9px")
-					.attr("y2", "9px")
-			
-			$(mtext).text("Males")
-			
-			var both = d3.select(bothbar)
-				.append("svg")
-					.attr("class", "both")
-					.attr("width", "24px")
-					.attr("height", "14px")
-				.append("line")
-					.attr("x1", "3px")
-					.attr("x2", "21px")
-					.attr("y1", "9px")
-					.attr("y2", "9px")
-			
-			$(bothtext).text("All")
-			
-			if (typeof formattedData[0].sdi !== 'undefined') {
-				var sdi = d3.select(sdibar)
-					.append("svg")
-						.attr("class", "sdi")
-						.attr("width", "24px")
-						.attr("height", "14px")
-					.append("line")
-						.attr("x1", "3px")
-						.attr("x2", "21px")
-						.attr("y1", "9px")
-						.attr("y2", "9px")
-				
-				$(sditext).text("SDI Average")
-			}
 		
 			// text label for the x axis
 			svg.append("text")
@@ -204,7 +111,7 @@ $(function() {
 					"translate(" + (width/2) + " ," + 
 					(height + margins.bottom) + ")")
 					.style("text-anchor", "middle")
-				.text("Year");
+				.text("Risks");
 			
 			// text label for the y axis	
 			svg.append("text")
@@ -226,4 +133,7 @@ $(function() {
 			console.log(error);
 		});
 	}
+	
+	barChart("risks", "#risksDiv", "#risksTitle", `What are the risk factors for ${cause_name}?`, 
+		"DALYs per 100,000 people", "risksDiv", "Disability-adjusted life years, 2016, all ages, rate");
 });
