@@ -19,10 +19,8 @@ $(function() {
 				'% change 1990-2016': (((rows[i + 1].val - rows[i].val) / rows[i].val ) * 100).toFixed(2) + "%"
 			});
 		}
-		
-		// console.log(rankData);
-		
-		var rankingsTable = tabulate(rankData, ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"]);		
+
+		var rankingsTable = tabulate(rankData, ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"]);
 		rankingsTable.selectAll("thead th")
 			.text(function(column) {
 				return column.charAt(0).toUpperCase() + column.substr(1);
@@ -38,8 +36,8 @@ $(function() {
 		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, number");
 		footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);
-		
-	}).fail(function (e) { 
+
+	}).fail(function (e) {
 		console.log(e);
 	});
 });
@@ -73,6 +71,6 @@ function tabulate(data, columns) {
         .enter()
         .append("td")
             .text(function(d) { return d.value; });
-    
+
     return table;
 }
