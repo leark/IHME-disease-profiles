@@ -6,7 +6,6 @@ $(function() {
 		data: {request_type:"heat_rank", causeName: cause_name, locationName: location_name}
 	}).done(function (response) {
 		var rows = JSON.parse(response);
-		// console.log(rows);
 
 		// Title
 		$('#heatTitle').text(`Comparisons of ${cause_name}`);
@@ -29,6 +28,7 @@ $(function() {
 
 		let xAxis = d3.svg.axis()
 			.scale(xScale)
+			.tickSize(0, 0, 0)
 			.orient("top");
 
 		let yScale = d3.scale.ordinal()
@@ -37,6 +37,7 @@ $(function() {
 
 		let yAxis = d3.svg.axis()
 			.scale(yScale)
+			.tickSize(0, 0, 0)
 			.orient("left");
 
 		// var colorScale = d3.scale.threshold()
@@ -50,32 +51,37 @@ $(function() {
 			.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+		// rectangles
 		let cells = svg.selectAll('rect')
 			.data(rows)
 			.enter().append('g').append('rect')
 			.attr('class', 'cell')
-			.attr('width', cellSize)
+			.attr('width', cellSize * 1.5)
 			.attr('height', cellSize)
+			.attr('x', function(d) { return xScale(d.measure) * 1.5; })
 			.attr('y', function(d) { return yScale(d.location); })
-			.attr('x', function(d) { return xScale(d.measure); })
 			// .attr('fill', function(d) { return colorScale(d.val); });
 			.attr('stroke', 'black')
 			.attr('fill', 'white');
 
+		// text
 		let boxes = svg.selectAll('text')
 			.data(rows)
 			.enter().append('g').append('text')
 			.style('text-anchor', 'middle')
 			.text(function(d) { return Math.round( d.val * 10 ) / 10})
-			.attr('x', function(d) { return xScale(d.measure) + 20; })
+			.attr('x', function(d) { return (xScale(d.measure) + (itemSize - 1) / 2) * 1.5; })
 			.attr('y', function(d) { return yScale(d.location) + 30; });
 
+		// y axis
 		svg.append("g")
 			.attr("class", "y axis")
 			.call(yAxis)
 			.selectAll('text')
+			.attr("dx", "-.8em")
 			.attr('font-weight', 'normal');
 
+		// x axis
 		svg.append("g")
 			.attr("class", "x axis")
 			.call(xAxis)
@@ -83,7 +89,7 @@ $(function() {
 			.attr('font-weight', 'normal')
 			.style("text-anchor", "start")
 			.attr("dx", ".8em")
-			.attr("dy", ".5em")
+			.attr("dy", ".8em")
 			.attr("transform", function (d) {
 				return "rotate(-65)";
 			});
