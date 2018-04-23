@@ -7,18 +7,24 @@ $(function() {
 	}).done(function (response) {
 		var rows = JSON.parse(response);
 
+		// remove the long names for DALYs, YLDs, YLLs
+		for (let i = 0; i < rows.length; i++) {
+			let cause = rows[i].measure.split("(");
+			rows[i].measure = cause[0];
+		}
+
 		// Title
 		$('#heatTitle').text(`Comparisons of ${cause_name}`);
 
 		// formatting
 		let itemSize = 51
-			cellSize = itemSize - 1,
-			margin = {top: 120, right: 20, bottom: 20, left: 110};
+			cellSize = itemSize - 1, // size of each rectangle
+			margin = {top: 70, right: 20, bottom: 20, left: 130}; // boundaries of the svg
 
-		let width = 750 - margin.right - margin.left,
-			height = 500 - margin.top - margin.bottom;
+		let width = 500 - margin.right - margin.left,
+			height = 400 - margin.top - margin.bottom;
 
-		// data
+		// structure formatting
 		let x_elements = d3.set(rows.map(function( rows ) { return rows.measure; } )).values(),
 			y_elements = d3.set(rows.map(function( rows ) { return rows.location; } )).values();
 
@@ -27,7 +33,10 @@ $(function() {
 			.rangeBands([0, x_elements.length * itemSize]);
 
 		let xAxis = d3.svg.axis()
-			.scale(xScale)
+			.scale(d3.scale.ordinal()
+				.domain(x_elements)
+				.rangeBands([-10, x_elements.length * (itemSize - 1) * 1.5 - 10])
+			)
 			.tickSize(0, 0, 0)
 			.orient("top");
 
@@ -40,9 +49,10 @@ $(function() {
 			.tickSize(0, 0, 0)
 			.orient("left");
 
+		// color colorScale
 		// var colorScale = d3.scale.threshold()
-		// 	.domain([1, 4])
-		// .range(["#912711", "#002a53", "#27AE60", "#27AE60"]);
+		// 	.domain([1])
+			// .range(["#912711", "#002a53", "#27AE60", "#27AE60"]);
 
 		let svg = d3.select('#heatmap')
 			.append("svg")
@@ -60,9 +70,8 @@ $(function() {
 			.attr('height', cellSize)
 			.attr('x', function(d) { return xScale(d.measure) * 1.5; })
 			.attr('y', function(d) { return yScale(d.location); })
-			// .attr('fill', function(d) { return colorScale(d.val); });
-			.attr('stroke', 'black')
-			.attr('fill', 'white');
+			.attr('fill', function(d) { return "#f2f2f2"; })
+			.attr('stroke', 'black');
 
 		// text
 		let boxes = svg.selectAll('text')
@@ -79,7 +88,9 @@ $(function() {
 			.call(yAxis)
 			.selectAll('text')
 			.attr("dx", "-.8em")
-			.attr('font-weight', 'normal');
+			.attr('font-weight', 'normal')
+			// .style('font-size', '12px')
+			.style('font', '13px Nunito');
 
 		// x axis
 		svg.append("g")
@@ -90,6 +101,8 @@ $(function() {
 			.style("text-anchor", "start")
 			.attr("dx", ".8em")
 			.attr("dy", ".8em")
+			// .style('font-size', '12px')
+			.style('font', '13px Nunito')
 			.attr("transform", function (d) {
 				return "rotate(-65)";
 			});
