@@ -10,13 +10,12 @@ $(function() {
 		}).done(function (msg) {
 			//console.log(msg);
 			
-			var margins = {top: 30, bottom: 160, left: 60, right: 50};
+			var margins = {top: 30, bottom: 50, left: 250, right: 50};
 
-			var width = 800 - margins.left - margins.right,
-				height = 460 - margins.top - margins.bottom;
+			
 			var formattedData = [];
 			
-			for (var i = 0; i <= msg.length - 1; i = i + 1) {
+			for (var i = msg.length - 1; i >=0 ; i = i - 1) {
 				var singleYear = msg[i];
 				formattedData.push(
 					{
@@ -31,22 +30,25 @@ $(function() {
 			console.log(formattedData);
 			
 			if (formattedData.length != 0){
+				
+				var width = 800 - margins.left - margins.right,
+					height = Math.min((100 + (formattedData.length * 100)), 460) - margins.top - margins.bottom;
 			
 				// Set the ranges
-				var x = d3.scale.ordinal().rangeRoundBands([0, width], .1);
-				var y = d3.scale.linear().range([height, 0]);
-
+				var x = d3.scale.linear().range([0, width]);
+				var y = d3.scale.ordinal().rangeRoundBands([height, 0], .1);
+			
 				// Define the axes
 				var xAxis = d3.svg.axis()
 					.scale(x)
-					.orient("bottom");		
+					.orient("bottom")
+					.ticks(8);		
 
-				function y_axis() {
-					return d3.svg.axis()
+				var yAxis = d3.svg.axis()
 					.scale(y)
 					.orient("left")
-					.ticks(10);
-				}
+					.tickSize(0);
+				
 					
 				// Define the both line
 				//var valueline = d3.svg.line()
@@ -65,28 +67,23 @@ $(function() {
 					.attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 
 					// Scale the range of the data
-					x.domain(formattedData.map(function(d) { return d.risk; }));
-					y.domain([0, d3.max(formattedData, function(d) { return d.value; })]);
+					x.domain([0, d3.max(formattedData, function(d) { return d.value; })]);
+					y.domain(formattedData.map(function(d) { return d.risk; }));
 
 					// Add the X Axis
 					svg.append("g")
 						.attr("class", "x axis")
 						.attr("transform", "translate(0," + height + ")")
 						.call(xAxis)
-						.selectAll("text")	
-							.style("text-anchor", "end")
-							.attr("dx", "-.8em")
-							.attr("dy", ".15em")
-							.attr("transform", function(d) {
-								return "rotate(-30)" 
-								});
+						//.selectAll("text")	
+							//.style("text-anchor", "end")
+							//.attr("dx", "-.8em")
+							//.attr("dy", ".15em")
 
 					// Add the Y Axis
 					svg.append("g")
 						.attr("class", "y axis")
-						.call(y_axis()
-							.tickSize(-width, 0, 0)
-						);
+						.call(yAxis);
 					
 					// Add the valueline path for both 
 					//svg.append("path")
@@ -101,10 +98,10 @@ $(function() {
 						  .style("fill", "steelblue")
 						  //.attr("x", function(d) { return x(d.risk); })
 						  //.attr("width", x.rangeBand())
-						  .attr("x", function(d, i) { return x(d.risk) + (x.rangeBand() - 100)/2 ;})
-						  .attr("width", 100)
-						  .attr("y", function(d) { return y(d.value); })
-						  .attr("height", function(d) { return height - y(d.value); });
+						  .attr("y", function(d, i) { return y(d.risk) + (y.rangeBand() - 80)/2 ;})
+						  .attr("height", 80)
+						  .attr("x", 0)
+						  .attr("width", function(d) { return x(d.value); });
 				}
 			
 				else{
@@ -113,12 +110,12 @@ $(function() {
 					  .enter().append("rect")
 						  .attr("class", "bar")
 						  .style("fill", "steelblue")
-						  .attr("x", function(d) { return x(d.risk); })
-						  .attr("width", x.rangeBand())
+						  .attr("y", function(d) { return y(d.risk); })
+						  .attr("height", y.rangeBand())
 						  //.attr("x", function(d, i) { return x(d.risk) + (x.rangeBand() - 100)/2 ;})
 						  //.attr("width", Math.min(x.rangeBand(), 100))
-						  .attr("y", function(d) { return y(d.value); })
-						  .attr("height", function(d) { return height - y(d.value); });
+						  .attr("x", 0)
+						  .attr("width", function(d) { return x(d.value); });
 				}
 
 				//title
@@ -129,17 +126,17 @@ $(function() {
 					.attr("transform",
 						"translate(" + (width/2) + " ," + 
 						(height + margins.bottom) + ")")
-						.style("text-anchor", "middle")
-					.text("Risks");
+					.style("text-anchor", "middle")
+					.text(yLabel);
 				
 				// text label for the y axis	
-				svg.append("text")
+				/*svg.append("text")
 					  .attr("transform", "rotate(-90)")
 					  .attr("y", 0 - margins.left)
 					  .attr("x",0 - (height / 2))
 					  .attr("dy", "1em")
 					  .style("text-anchor", "middle")
-					  .text(yLabel);      
+					  .text("Risks");    */  
 
 				// Footer
 				var containerDiv = document.getElementById(lineDivID);
