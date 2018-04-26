@@ -7,6 +7,12 @@ $(function() {
 	}).done(function (response) {
 		var rows = JSON.parse(response);
 
+		// find the mean data --> determines the color of the fill
+		// make an array with discrete values that determine the value of the domain
+		// domain [1, 2, 3]
+		// color [low, same, high]
+		mean_val_country = [];
+
 		// remove the long names for DALYs, YLDs, YLLs
 		for (let i = 0; i < rows.length; i++) {
 			let cause = rows[i].measure.split("(");
@@ -14,7 +20,7 @@ $(function() {
 		}
 
 		// Title
-		$('#heatTitle').text(`Comparisons of ${cause_name}`);
+		$('#heatTitle').text(`How do causes of death and disability compare with ${cause_name} in other locations`);
 
 		// formatting
 		let itemSize = 51
@@ -51,8 +57,8 @@ $(function() {
 
 		// color colorScale
 		// var colorScale = d3.scale.threshold()
-		// 	.domain([1])
-			// .range(["#912711", "#002a53", "#27AE60", "#27AE60"]);
+		// 	.domain([1, 10])
+		// 	.range(["#3b81a0", "#dc4d28"]);
 
 		let svg = d3.select('#heatmap')
 			.append("svg")
@@ -71,6 +77,7 @@ $(function() {
 			.attr('x', function(d) { return xScale(d.measure) * 1.5; })
 			.attr('y', function(d) { return yScale(d.location); })
 			.attr('fill', function(d) { return "#f2f2f2"; })
+			// .attr('fill', function(d) { return colorScale(d); })
 			.attr('stroke', 'black');
 
 		// text
@@ -89,8 +96,7 @@ $(function() {
 			.selectAll('text')
 			.attr("dx", "-.8em")
 			.attr('font-weight', 'normal')
-			// .style('font-size', '12px')
-			.style('font', '13px Nunito');
+			.style('font', '14px Nunito');
 
 		// x axis
 		svg.append("g")
@@ -101,8 +107,7 @@ $(function() {
 			.style("text-anchor", "start")
 			.attr("dx", ".8em")
 			.attr("dy", ".8em")
-			// .style('font-size', '12px')
-			.style('font', '13px Nunito')
+			.style('font', '14px Nunito')
 			.attr("transform", function (d) {
 				return "rotate(-65)";
 			});
