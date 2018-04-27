@@ -1,4 +1,7 @@
-Satisfy Any
+AuthType UWNetID
+
+require valid-user
+
+#Satisfy Any
 
 Options -Indexes
-
