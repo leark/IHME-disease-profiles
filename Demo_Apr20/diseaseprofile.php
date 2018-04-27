@@ -27,6 +27,10 @@
 	<script type="text/javascript" src="./js/lineArea.js"></script>
 	<script type="text/javascript" src="./js/heat_map.js"></script>
 	<script type="text/javascript" src="./js/select2.js"></script>
+	<script type="text/javascript" src="./js/saveSvgAsPng.js"></script>
+	<script type="text/javascript" src="./js/pngExport.js"></script>
+	<script type="text/javascript" src="./js/dom-to-image.min.js"></script>
+	<script type="text/javascript" src="./js/FileSaver.js"></script>
 	<link type="text/css" rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/bullet.css">
 	<link rel="stylesheet" type="text/css" href="./css/column.css">
@@ -159,6 +163,7 @@
             </div> -->
 			<div class="graph" id="lineAreaDiv">
 				<h2 class="graph-header" id="lineAreaTitle"></h2>
+				<button id='saveButton'>Save as Image</button>
 			</div>
 			<div class="graph" id="rankTableDiv">
 				<h2 class="graph-header" id="rankTitle"></h2>
