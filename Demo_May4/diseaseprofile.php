@@ -113,12 +113,12 @@
 				<div id="lineLegend">
 					<span id="fembar"></span>
 					<span id="femtext"></span>
+					<span id="sdifbar"></span>
+					<span id="sdiftext"></span>
 					<span id="mbar"></span>
 					<span id="mtext"></span>
-					<span id="bothbar"></span>
-					<span id="bothtext"></span>
-					<span id="sdibar"></span>
-					<span id="sditext"></span>
+					<span id="sdimbar"></span>
+					<span id="sdimtext"></span>
 				</div>
 			</div>
 
@@ -127,12 +127,12 @@
 				<div id="daly_lineLegend">
 					<span id="daly_fembar"></span>
 					<span id="daly_femtext"></span>
+					<span id="daly_sdifbar"></span>
+					<span id="daly_sdiftext"></span>
 					<span id="daly_mbar"></span>
 					<span id="daly_mtext"></span>
-					<span id="daly_bothbar"></span>
-					<span id="daly_bothtext"></span>
-					<span id="daly_sdibar"></span>
-					<span id="daly_sditext"></span>
+					<span id="daly_sdimbar"></span>
+					<span id="daly_sdimtext"></span>
 				</div>
 			</div>
 
@@ -141,12 +141,12 @@
 				<div id="yld_lineLegend">
 					<span id="yld_fembar"></span>
 					<span id="yld_femtext"></span>
+					<span id="yld_sdifbar"></span>
+					<span id="yld_sdiftext"></span>
 					<span id="yld_mbar"></span>
 					<span id="yld_mtext"></span>
-					<span id="yld_bothbar"></span>
-					<span id="yld_bothtext"></span>
-					<span id="yld_sdibar"></span>
-					<span id="yld_sditext"></span>
+					<span id="yld_sdimbar"></span>
+					<span id="yld_sdimtext"></span>
 				</div>
 			</div>
 

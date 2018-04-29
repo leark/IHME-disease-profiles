@@ -154,9 +154,9 @@ a {
 	margin-bottom: 10px;
 }
 
-#femtext, #mtext, #bothtext, #sditext,
-#daly_femtext, #daly_mtext, #daly_bothtext, #daly_sditext,
-#yld_femtext, #yld_mtext, #yld_bothtext, #yld_sditext {
+#femtext, #mtext, #sdiftext, #sdimtext,
+#daly_femtext, #daly_mtext, #daly_sdiftext, #daly_sdimtext,
+#yld_femtext, #yld_mtext, #yld_sdiftext, #yld_sdimtext {
 	margin-right: 20px;
 }
 
@@ -164,18 +164,37 @@ a {
 	stroke: #C2464F;
 }
 
+tr.female {
+	background-color: #C2464F;
+	color: #ffffff;
+}
+
 .male { 
 	stroke: #3B81A0;
 }
 
-.both { 
-	stroke: black;
+tr.male {
+	background-color: #3B81A0;
+	color: #ffffff;
 }
 
 .sdi { 
-	stroke: gray;
 	stroke-dasharray: 0,8;
     stroke-linejoin: round;
+}
+
+tr.all {
+	background-color: #9d9fa2;
+	color: #ffffff;
+}
+
+table {
+    border-collapse: collapse;
+	border-color: #454545;
+    border-spacing: 0;
+	color: #454545;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 line.slope-line{
