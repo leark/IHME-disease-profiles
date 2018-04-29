@@ -200,6 +200,18 @@ text.slope-label{
     fill: lightsteelblue;
 }
 
+/* Button styles */
+.saveButtons {
+    float: right;
+    margin-top: 10px;
+}
+
+.graphDiv {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
 
 /* RANKINGS */
 

@@ -25,6 +25,8 @@
 	<script type="text/javascript" src="./js/percent_rank.js"></script>
 	<script type="text/javascript" src="./js/heat_map.js"></script>
 	<script type="text/javascript" src="./js/select2.js"></script>
+	<script type="text/javascript" src="./js/dom-to-image.min.js"></script>
+	<script type="text/javascript" src="./js/FileSaver.js"></script>
 	<link type="text/css" rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/bullet.css">
 	<link rel="stylesheet" type="text/css" href="./css/column.css">
@@ -152,7 +154,10 @@
 				<h2 class="graph-header" id="risksTitle"></h2>
 			</div>
 			<div class="graph" id="lineAreaDiv">
-				<h2 class="graph-header" id="lineAreaTitle"></h2>
+				<button class="saveButtons" id="lineAreaSave">Save as Image</button>
+				<div class="graphDiv" id="lineAreaGraph">
+					<h2 class="graph-header" id="lineAreaTitle"></h2>
+				</div>
 			</div>
 			<div class="graph" id="rankTableDiv">
 				<h2 class="graph-header" id="rankTitle"></h2>

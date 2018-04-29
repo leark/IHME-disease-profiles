@@ -5,12 +5,15 @@ $(function() {
 		dataType: 'json',
 		data: {request_type: "bullet", causeName: cause_name, locationName: location_name}
 	}).done(function (msg) {
+		// console.log(msg);
 
 		let margins = {top: 30, bottom: 50, left: 60, right: 50};
+
 		let width = 800 - margins.left - margins.right,
 			height = 360 - margins.top - margins.bottom;
-
+		
 		let formattedData = [];
+
 		// formatting table data
 		// for (let i = msg.length - 1; i >= 0; i = i - 3) {
 
@@ -47,7 +50,7 @@ $(function() {
 			.scale(x)
 			.orient("bottom")
 			.ticks(12)
-			.tickFormat(d3.format("d"));
+			.tickFormat(d3.format("d"));		
 
 		function y_axis() {
 			return d3.svg.axis()
@@ -67,8 +70,8 @@ $(function() {
 			.x(function(d) { return x(d.year); })
 			.y(function(d) { return y(d.val); });
 
-		// Adds the svg canvas
-		let svg = d3.select("#lineAreaDiv")
+		// Adds the svg canvas					  
+		let svg = d3.select("#lineAreaGraph")
 			.data(formattedData)
 		.append("svg")
 			.attr("class", "lineArea")
@@ -79,7 +82,7 @@ $(function() {
 
 		// Scale the range of the data
 		x.domain(d3.extent(formattedData, function(d) { return d.year; }));
-
+		
 		//need to rewrite this with better style
 		// let upperDomain = d3.extent(formattedData, function(d) { return d.upper; });
 		// let lowerDomain = d3.extent(formattedData, function(d) { return d.lower; });
@@ -109,30 +112,54 @@ $(function() {
 			.attr("class", "area")
 			.attr("d", area(formattedData));
 
-		// Add the valueline path for value
+		// Add the valueline path for value 
 		svg.append("path")
 			.attr("class", "lineValue")
 			.attr("d", valueline(formattedData));
 
 		//title
 		$('#lineAreaTitle').text(`Mortality rate with uncertainty from 1990 to 2016`);
-
+		
 		// text label for the x axis
 		svg.append("text")
 			.attr("transform",
-				"translate(" + (width/2) + " ," +
+				"translate(" + (width/2) + " ," + 
 				(height + margins.bottom) + ")")
 				.style("text-anchor", "middle")
 			.text("Year");
-
+		
 		// Footer
-		var containerDiv = document.getElementById("lineAreaDiv");
+		var containerDiv = document.getElementById("lineAreaGraph");
 		var footer = document.createElement("p");
 		var footer_text = document.createTextNode("Morality rate and uncertainty, 1990-2016, all ages, rate");
 		footer.appendChild(footer_text);
-		containerDiv.appendChild(footer);
+		containerDiv.appendChild(footer);	
+		
+		// Set-up the export button
+		// d3.select('#saveButton').on('click', function(){
+		// 	var svgString = getSVGString(svg.node());
+		// 	svgString2Image( svgString, 2*width, 2*height, 'png', save ); // passes Blob and filesize String to the callback
+
+		// 	function save( dataBlob, filesize ){
+		// 		saveAs( dataBlob, 'D3 vis exported to PNG.png' ); // FileSaver.js function
+		// 	}
+		// });
+
+		$("#lineAreaSave").click(function() {
+			let graph = document.getElementById("lineAreaGraph");
+			domtoimage.toPng(graph, {bgcolor:"#FFFFFF"}).then(function(dataUrl) {
+				let dLink = document.createElement("a");
+				dLink.download = "lineArea.jpeg";
+				dLink.href = dataUrl;
+				dLink.click();
+			})
+			.catch(function(error) {
+				console.error(`Error: `, error);
+			});
+		});
 
 	}).fail(function (error) {
 		console.log(error);
 	});
 });
+	
