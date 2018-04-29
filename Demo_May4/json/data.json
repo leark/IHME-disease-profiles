@@ -1,0 +1,3364 @@
+{
+	"cause": [{
+			"cause_id": 294,
+			"cause_name": "All causes",
+			"parent_id": 294,
+			"level": 0
+		},
+		{
+			"cause_id": 295,
+			"cause_name": "Communicable, maternal, neonatal, and nutritional diseases",
+			"parent_id": 294,
+			"level": 1
+		},
+		{
+			"cause_id": 296,
+			"cause_name": "HIV/AIDS and tuberculosis",
+			"parent_id": 295,
+			"level": 2
+		},
+		{
+			"cause_id": 297,
+			"cause_name": "Tuberculosis",
+			"parent_id": 296,
+			"level": 3
+		},
+		{
+			"cause_id": 298,
+			"cause_name": "HIV/AIDS",
+			"parent_id": 296,
+			"level": 3
+		},
+		{
+			"cause_id": 299,
+			"cause_name": "HIV/AIDS - Tuberculosis",
+			"parent_id": 298,
+			"level": 4
+		},
+		{
+			"cause_id": 300,
+			"cause_name": "HIV/AIDS resulting in other diseases",
+			"parent_id": 298,
+			"level": 4
+		},
+		{
+			"cause_id": 301,
+			"cause_name": "Diarrhea, lower respiratory, and other common infectious diseases",
+			"parent_id": 295,
+			"level": 2
+		},
+		{
+			"cause_id": 302,
+			"cause_name": "Diarrheal diseases",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 318,
+			"cause_name": "Intestinal infectious diseases",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 319,
+			"cause_name": "Typhoid fever",
+			"parent_id": 318,
+			"level": 4
+		},
+		{
+			"cause_id": 320,
+			"cause_name": "Paratyphoid fever",
+			"parent_id": 318,
+			"level": 4
+		},
+		{
+			"cause_id": 321,
+			"cause_name": "Other intestinal infectious diseases",
+			"parent_id": 318,
+			"level": 4
+		},
+		{
+			"cause_id": 322,
+			"cause_name": "Lower respiratory infections",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 328,
+			"cause_name": "Upper respiratory infections",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 329,
+			"cause_name": "Otitis media",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 332,
+			"cause_name": "Meningitis",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 333,
+			"cause_name": "Pneumococcal meningitis",
+			"parent_id": 332,
+			"level": 4
+		},
+		{
+			"cause_id": 334,
+			"cause_name": "H influenzae type B meningitis",
+			"parent_id": 332,
+			"level": 4
+		},
+		{
+			"cause_id": 335,
+			"cause_name": "Meningococcal meningitis",
+			"parent_id": 332,
+			"level": 4
+		},
+		{
+			"cause_id": 336,
+			"cause_name": "Other meningitis",
+			"parent_id": 332,
+			"level": 4
+		},
+		{
+			"cause_id": 337,
+			"cause_name": "Encephalitis",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 338,
+			"cause_name": "Diphtheria",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 339,
+			"cause_name": "Whooping cough",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 340,
+			"cause_name": "Tetanus",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 341,
+			"cause_name": "Measles",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 342,
+			"cause_name": "Varicella and herpes zoster",
+			"parent_id": 301,
+			"level": 3
+		},
+		{
+			"cause_id": 344,
+			"cause_name": "Neglected tropical diseases and malaria",
+			"parent_id": 295,
+			"level": 2
+		},
+		{
+			"cause_id": 345,
+			"cause_name": "Malaria",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 346,
+			"cause_name": "Chagas disease",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 347,
+			"cause_name": "Leishmaniasis",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 348,
+			"cause_name": "Visceral leishmaniasis",
+			"parent_id": 347,
+			"level": 4
+		},
+		{
+			"cause_id": 349,
+			"cause_name": "Cutaneous and mucocutaneous leishmaniasis",
+			"parent_id": 347,
+			"level": 4
+		},
+		{
+			"cause_id": 350,
+			"cause_name": "African trypanosomiasis",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 351,
+			"cause_name": "Schistosomiasis",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 352,
+			"cause_name": "Cysticercosis",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 353,
+			"cause_name": "Cystic echinococcosis",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 354,
+			"cause_name": "Lymphatic filariasis",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 355,
+			"cause_name": "Onchocerciasis",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 356,
+			"cause_name": "Trachoma",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 357,
+			"cause_name": "Dengue",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 358,
+			"cause_name": "Yellow fever",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 359,
+			"cause_name": "Rabies",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 360,
+			"cause_name": "Intestinal nematode infections",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 361,
+			"cause_name": "Ascariasis",
+			"parent_id": 360,
+			"level": 4
+		},
+		{
+			"cause_id": 362,
+			"cause_name": "Trichuriasis",
+			"parent_id": 360,
+			"level": 4
+		},
+		{
+			"cause_id": 363,
+			"cause_name": "Hookworm disease",
+			"parent_id": 360,
+			"level": 4
+		},
+		{
+			"cause_id": 364,
+			"cause_name": "Food-borne trematodiases",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 365,
+			"cause_name": "Other neglected tropical diseases",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 366,
+			"cause_name": "Maternal disorders",
+			"parent_id": 295,
+			"level": 2
+		},
+		{
+			"cause_id": 367,
+			"cause_name": "Maternal hemorrhage",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 368,
+			"cause_name": "Maternal sepsis and other maternal infections",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 369,
+			"cause_name": "Maternal hypertensive disorders",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 370,
+			"cause_name": "Maternal obstructed labor and uterine rupture",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 371,
+			"cause_name": "Maternal abortion, miscarriage, and ectopic pregnancy",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 375,
+			"cause_name": "Indirect maternal deaths",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 376,
+			"cause_name": "Late maternal deaths",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 379,
+			"cause_name": "Other maternal disorders",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 380,
+			"cause_name": "Neonatal disorders",
+			"parent_id": 295,
+			"level": 2
+		},
+		{
+			"cause_id": 381,
+			"cause_name": "Neonatal preterm birth complications",
+			"parent_id": 380,
+			"level": 3
+		},
+		{
+			"cause_id": 382,
+			"cause_name": "Neonatal encephalopathy due to birth asphyxia and trauma",
+			"parent_id": 380,
+			"level": 3
+		},
+		{
+			"cause_id": 383,
+			"cause_name": "Neonatal sepsis and other neonatal infections",
+			"parent_id": 380,
+			"level": 3
+		},
+		{
+			"cause_id": 384,
+			"cause_name": "Hemolytic disease and other neonatal jaundice",
+			"parent_id": 380,
+			"level": 3
+		},
+		{
+			"cause_id": 385,
+			"cause_name": "Other neonatal disorders",
+			"parent_id": 380,
+			"level": 3
+		},
+		{
+			"cause_id": 386,
+			"cause_name": "Nutritional deficiencies",
+			"parent_id": 295,
+			"level": 2
+		},
+		{
+			"cause_id": 387,
+			"cause_name": "Protein-energy malnutrition",
+			"parent_id": 386,
+			"level": 3
+		},
+		{
+			"cause_id": 388,
+			"cause_name": "Iodine deficiency",
+			"parent_id": 386,
+			"level": 3
+		},
+		{
+			"cause_id": 389,
+			"cause_name": "Vitamin A deficiency",
+			"parent_id": 386,
+			"level": 3
+		},
+		{
+			"cause_id": 390,
+			"cause_name": "Iron-deficiency anemia",
+			"parent_id": 386,
+			"level": 3
+		},
+		{
+			"cause_id": 391,
+			"cause_name": "Other nutritional deficiencies",
+			"parent_id": 386,
+			"level": 3
+		},
+		{
+			"cause_id": 392,
+			"cause_name": "Other communicable, maternal, neonatal, and nutritional diseases",
+			"parent_id": 295,
+			"level": 2
+		},
+		{
+			"cause_id": 393,
+			"cause_name": "Sexually transmitted diseases excluding HIV",
+			"parent_id": 392,
+			"level": 3
+		},
+		{
+			"cause_id": 394,
+			"cause_name": "Syphilis",
+			"parent_id": 393,
+			"level": 4
+		},
+		{
+			"cause_id": 395,
+			"cause_name": "Chlamydial infection",
+			"parent_id": 393,
+			"level": 4
+		},
+		{
+			"cause_id": 396,
+			"cause_name": "Gonococcal infection",
+			"parent_id": 393,
+			"level": 4
+		},
+		{
+			"cause_id": 397,
+			"cause_name": "Trichomoniasis",
+			"parent_id": 393,
+			"level": 4
+		},
+		{
+			"cause_id": 398,
+			"cause_name": "Genital herpes",
+			"parent_id": 393,
+			"level": 4
+		},
+		{
+			"cause_id": 399,
+			"cause_name": "Other sexually transmitted diseases",
+			"parent_id": 393,
+			"level": 4
+		},
+		{
+			"cause_id": 400,
+			"cause_name": "Hepatitis",
+			"parent_id": 392,
+			"level": 3
+		},
+		{
+			"cause_id": 401,
+			"cause_name": "Acute hepatitis A",
+			"parent_id": 400,
+			"level": 4
+		},
+		{
+			"cause_id": 402,
+			"cause_name": "Hepatitis B",
+			"parent_id": 400,
+			"level": 4
+		},
+		{
+			"cause_id": 403,
+			"cause_name": "Hepatitis C",
+			"parent_id": 400,
+			"level": 4
+		},
+		{
+			"cause_id": 404,
+			"cause_name": "Acute hepatitis E",
+			"parent_id": 400,
+			"level": 4
+		},
+		{
+			"cause_id": 405,
+			"cause_name": "Leprosy",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 408,
+			"cause_name": "Other infectious diseases",
+			"parent_id": 392,
+			"level": 3
+		},
+		{
+			"cause_id": 409,
+			"cause_name": "Non-communicable diseases",
+			"parent_id": 294,
+			"level": 1
+		},
+		{
+			"cause_id": 410,
+			"cause_name": "Neoplasms",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 411,
+			"cause_name": "Esophageal cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 414,
+			"cause_name": "Stomach cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 417,
+			"cause_name": "Liver cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 418,
+			"cause_name": "Liver cancer due to hepatitis B",
+			"parent_id": 417,
+			"level": 4
+		},
+		{
+			"cause_id": 419,
+			"cause_name": "Liver cancer due to hepatitis C",
+			"parent_id": 417,
+			"level": 4
+		},
+		{
+			"cause_id": 420,
+			"cause_name": "Liver cancer due to alcohol use",
+			"parent_id": 417,
+			"level": 4
+		},
+		{
+			"cause_id": 421,
+			"cause_name": "Liver cancer due to other causes",
+			"parent_id": 417,
+			"level": 4
+		},
+		{
+			"cause_id": 423,
+			"cause_name": "Larynx cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 426,
+			"cause_name": "Tracheal, bronchus, and lung cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 429,
+			"cause_name": "Breast cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 432,
+			"cause_name": "Cervical cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 435,
+			"cause_name": "Uterine cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 438,
+			"cause_name": "Prostate cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 441,
+			"cause_name": "Colon and rectum cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 444,
+			"cause_name": "Lip and oral cavity cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 447,
+			"cause_name": "Nasopharynx cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 450,
+			"cause_name": "Other pharynx cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 453,
+			"cause_name": "Gallbladder and biliary tract cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 456,
+			"cause_name": "Pancreatic cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 459,
+			"cause_name": "Malignant skin melanoma",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 462,
+			"cause_name": "Non-melanoma skin cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 465,
+			"cause_name": "Ovarian cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 468,
+			"cause_name": "Testicular cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 471,
+			"cause_name": "Kidney cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 474,
+			"cause_name": "Bladder cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 477,
+			"cause_name": "Brain and nervous system cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 480,
+			"cause_name": "Thyroid cancer",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 483,
+			"cause_name": "Mesothelioma",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 484,
+			"cause_name": "Hodgkin lymphoma",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 485,
+			"cause_name": "Non-Hodgkin lymphoma",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 486,
+			"cause_name": "Multiple myeloma",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 487,
+			"cause_name": "Leukemia",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 488,
+			"cause_name": "Other neoplasms",
+			"parent_id": 410,
+			"level": 3
+		},
+		{
+			"cause_id": 491,
+			"cause_name": "Cardiovascular diseases",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 492,
+			"cause_name": "Rheumatic heart disease",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 493,
+			"cause_name": "Ischemic heart disease",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 494,
+			"cause_name": "Cerebrovascular disease",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 495,
+			"cause_name": "Ischemic stroke",
+			"parent_id": 494,
+			"level": 4
+		},
+		{
+			"cause_id": 496,
+			"cause_name": "Hemorrhagic stroke",
+			"parent_id": 494,
+			"level": 4
+		},
+		{
+			"cause_id": 498,
+			"cause_name": "Hypertensive heart disease",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 499,
+			"cause_name": "Cardiomyopathy and myocarditis",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 500,
+			"cause_name": "Atrial fibrillation and flutter",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 501,
+			"cause_name": "Aortic aneurysm",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 502,
+			"cause_name": "Peripheral vascular disease",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 503,
+			"cause_name": "Endocarditis",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 507,
+			"cause_name": "Other cardiovascular and circulatory diseases",
+			"parent_id": 491,
+			"level": 3
+		},
+		{
+			"cause_id": 508,
+			"cause_name": "Chronic respiratory diseases",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 509,
+			"cause_name": "Chronic obstructive pulmonary disease",
+			"parent_id": 508,
+			"level": 3
+		},
+		{
+			"cause_id": 510,
+			"cause_name": "Pneumoconiosis",
+			"parent_id": 508,
+			"level": 3
+		},
+		{
+			"cause_id": 511,
+			"cause_name": "Silicosis",
+			"parent_id": 510,
+			"level": 4
+		},
+		{
+			"cause_id": 512,
+			"cause_name": "Asbestosis",
+			"parent_id": 510,
+			"level": 4
+		},
+		{
+			"cause_id": 513,
+			"cause_name": "Coal workers pneumoconiosis",
+			"parent_id": 510,
+			"level": 4
+		},
+		{
+			"cause_id": 514,
+			"cause_name": "Other pneumoconiosis",
+			"parent_id": 510,
+			"level": 4
+		},
+		{
+			"cause_id": 515,
+			"cause_name": "Asthma",
+			"parent_id": 508,
+			"level": 3
+		},
+		{
+			"cause_id": 516,
+			"cause_name": "Interstitial lung disease and pulmonary sarcoidosis",
+			"parent_id": 508,
+			"level": 3
+		},
+		{
+			"cause_id": 520,
+			"cause_name": "Other chronic respiratory diseases",
+			"parent_id": 508,
+			"level": 3
+		},
+		{
+			"cause_id": 521,
+			"cause_name": "Cirrhosis and other chronic liver diseases",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 522,
+			"cause_name": "Cirrhosis and other chronic liver diseases due to hepatitis B",
+			"parent_id": 521,
+			"level": 3
+		},
+		{
+			"cause_id": 523,
+			"cause_name": "Cirrhosis and other chronic liver diseases due to hepatitis C",
+			"parent_id": 521,
+			"level": 3
+		},
+		{
+			"cause_id": 524,
+			"cause_name": "Cirrhosis and other chronic liver diseases due to alcohol use",
+			"parent_id": 521,
+			"level": 3
+		},
+		{
+			"cause_id": 525,
+			"cause_name": "Cirrhosis and other chronic liver diseases due to other causes",
+			"parent_id": 521,
+			"level": 3
+		},
+		{
+			"cause_id": 526,
+			"cause_name": "Digestive diseases",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 527,
+			"cause_name": "Peptic ulcer disease",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 528,
+			"cause_name": "Gastritis and duodenitis",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 529,
+			"cause_name": "Appendicitis",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 530,
+			"cause_name": "Paralytic ileus and intestinal obstruction",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 531,
+			"cause_name": "Inguinal, femoral, and abdominal hernia",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 532,
+			"cause_name": "Inflammatory bowel disease",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 533,
+			"cause_name": "Vascular intestinal disorders",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 534,
+			"cause_name": "Gallbladder and biliary diseases",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 535,
+			"cause_name": "Pancreatitis",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 541,
+			"cause_name": "Other digestive diseases",
+			"parent_id": 526,
+			"level": 3
+		},
+		{
+			"cause_id": 542,
+			"cause_name": "Neurological disorders",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 543,
+			"cause_name": "Alzheimer disease and other dementias",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 544,
+			"cause_name": "Parkinson disease",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 545,
+			"cause_name": "Epilepsy",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 546,
+			"cause_name": "Multiple sclerosis",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 547,
+			"cause_name": "Migraine",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 548,
+			"cause_name": "Tension-type headache",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 549,
+			"cause_name": "Medication overuse headache",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 554,
+			"cause_name": "Motor neuron disease",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 557,
+			"cause_name": "Other neurological disorders",
+			"parent_id": 542,
+			"level": 3
+		},
+		{
+			"cause_id": 558,
+			"cause_name": "Mental and substance use disorders",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 559,
+			"cause_name": "Schizophrenia",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 560,
+			"cause_name": "Alcohol use disorders",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 561,
+			"cause_name": "Drug use disorders",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 562,
+			"cause_name": "Opioid use disorders",
+			"parent_id": 561,
+			"level": 4
+		},
+		{
+			"cause_id": 563,
+			"cause_name": "Cocaine use disorders",
+			"parent_id": 561,
+			"level": 4
+		},
+		{
+			"cause_id": 564,
+			"cause_name": "Amphetamine use disorders",
+			"parent_id": 561,
+			"level": 4
+		},
+		{
+			"cause_id": 565,
+			"cause_name": "Cannabis use disorders",
+			"parent_id": 561,
+			"level": 4
+		},
+		{
+			"cause_id": 566,
+			"cause_name": "Other drug use disorders",
+			"parent_id": 561,
+			"level": 4
+		},
+		{
+			"cause_id": 567,
+			"cause_name": "Depressive disorders",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 568,
+			"cause_name": "Major depressive disorder",
+			"parent_id": 567,
+			"level": 4
+		},
+		{
+			"cause_id": 569,
+			"cause_name": "Dysthymia",
+			"parent_id": 567,
+			"level": 4
+		},
+		{
+			"cause_id": 570,
+			"cause_name": "Bipolar disorder",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 571,
+			"cause_name": "Anxiety disorders",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 572,
+			"cause_name": "Eating disorders",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 573,
+			"cause_name": "Anorexia nervosa",
+			"parent_id": 572,
+			"level": 4
+		},
+		{
+			"cause_id": 574,
+			"cause_name": "Bulimia nervosa",
+			"parent_id": 572,
+			"level": 4
+		},
+		{
+			"cause_id": 575,
+			"cause_name": "Autistic spectrum disorders",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 576,
+			"cause_name": "Autism",
+			"parent_id": 575,
+			"level": 4
+		},
+		{
+			"cause_id": 577,
+			"cause_name": "Asperger syndrome and other autistic spectrum disorders",
+			"parent_id": 575,
+			"level": 4
+		},
+		{
+			"cause_id": 578,
+			"cause_name": "Attention-deficit/hyperactivity disorder",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 579,
+			"cause_name": "Conduct disorder",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 582,
+			"cause_name": "Idiopathic developmental intellectual disability",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 585,
+			"cause_name": "Other mental and substance use disorders",
+			"parent_id": 558,
+			"level": 3
+		},
+		{
+			"cause_id": 586,
+			"cause_name": "Diabetes, urogenital, blood, and endocrine diseases",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 587,
+			"cause_name": "Diabetes mellitus",
+			"parent_id": 586,
+			"level": 3
+		},
+		{
+			"cause_id": 588,
+			"cause_name": "Acute glomerulonephritis",
+			"parent_id": 586,
+			"level": 3
+		},
+		{
+			"cause_id": 589,
+			"cause_name": "Chronic kidney disease",
+			"parent_id": 586,
+			"level": 3
+		},
+		{
+			"cause_id": 590,
+			"cause_name": "Chronic kidney disease due to diabetes mellitus",
+			"parent_id": 589,
+			"level": 4
+		},
+		{
+			"cause_id": 591,
+			"cause_name": "Chronic kidney disease due to hypertension",
+			"parent_id": 589,
+			"level": 4
+		},
+		{
+			"cause_id": 592,
+			"cause_name": "Chronic kidney disease due to glomerulonephritis",
+			"parent_id": 589,
+			"level": 4
+		},
+		{
+			"cause_id": 593,
+			"cause_name": "Chronic kidney disease due to other causes",
+			"parent_id": 589,
+			"level": 4
+		},
+		{
+			"cause_id": 594,
+			"cause_name": "Urinary diseases and male infertility",
+			"parent_id": 586,
+			"level": 3
+		},
+		{
+			"cause_id": 595,
+			"cause_name": "Interstitial nephritis and urinary tract infections",
+			"parent_id": 594,
+			"level": 4
+		},
+		{
+			"cause_id": 596,
+			"cause_name": "Urolithiasis",
+			"parent_id": 594,
+			"level": 4
+		},
+		{
+			"cause_id": 597,
+			"cause_name": "Benign prostatic hyperplasia",
+			"parent_id": 594,
+			"level": 4
+		},
+		{
+			"cause_id": 598,
+			"cause_name": "Male infertility",
+			"parent_id": 594,
+			"level": 4
+		},
+		{
+			"cause_id": 602,
+			"cause_name": "Other urinary diseases",
+			"parent_id": 594,
+			"level": 4
+		},
+		{
+			"cause_id": 603,
+			"cause_name": "Gynecological diseases",
+			"parent_id": 586,
+			"level": 3
+		},
+		{
+			"cause_id": 604,
+			"cause_name": "Uterine fibroids",
+			"parent_id": 603,
+			"level": 4
+		},
+		{
+			"cause_id": 605,
+			"cause_name": "Polycystic ovarian syndrome",
+			"parent_id": 603,
+			"level": 4
+		},
+		{
+			"cause_id": 606,
+			"cause_name": "Female infertility",
+			"parent_id": 603,
+			"level": 4
+		},
+		{
+			"cause_id": 607,
+			"cause_name": "Endometriosis",
+			"parent_id": 603,
+			"level": 4
+		},
+		{
+			"cause_id": 608,
+			"cause_name": "Genital prolapse",
+			"parent_id": 603,
+			"level": 4
+		},
+		{
+			"cause_id": 609,
+			"cause_name": "Premenstrual syndrome",
+			"parent_id": 603,
+			"level": 4
+		},
+		{
+			"cause_id": 612,
+			"cause_name": "Other gynecological diseases",
+			"parent_id": 603,
+			"level": 4
+		},
+		{
+			"cause_id": 613,
+			"cause_name": "Hemoglobinopathies and hemolytic anemias",
+			"parent_id": 586,
+			"level": 3
+		},
+		{
+			"cause_id": 614,
+			"cause_name": "Thalassemias",
+			"parent_id": 613,
+			"level": 4
+		},
+		{
+			"cause_id": 615,
+			"cause_name": "Sickle cell disorders",
+			"parent_id": 613,
+			"level": 4
+		},
+		{
+			"cause_id": 616,
+			"cause_name": "G6PD deficiency",
+			"parent_id": 613,
+			"level": 4
+		},
+		{
+			"cause_id": 618,
+			"cause_name": "Other hemoglobinopathies and hemolytic anemias",
+			"parent_id": 613,
+			"level": 4
+		},
+		{
+			"cause_id": 619,
+			"cause_name": "Endocrine, metabolic, blood, and immune disorders",
+			"parent_id": 586,
+			"level": 3
+		},
+		{
+			"cause_id": 626,
+			"cause_name": "Musculoskeletal disorders",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 627,
+			"cause_name": "Rheumatoid arthritis",
+			"parent_id": 626,
+			"level": 3
+		},
+		{
+			"cause_id": 628,
+			"cause_name": "Osteoarthritis",
+			"parent_id": 626,
+			"level": 3
+		},
+		{
+			"cause_id": 629,
+			"cause_name": "Low back and neck pain",
+			"parent_id": 626,
+			"level": 3
+		},
+		{
+			"cause_id": 630,
+			"cause_name": "Low back pain",
+			"parent_id": 629,
+			"level": 4
+		},
+		{
+			"cause_id": 631,
+			"cause_name": "Neck pain",
+			"parent_id": 629,
+			"level": 4
+		},
+		{
+			"cause_id": 632,
+			"cause_name": "Gout",
+			"parent_id": 626,
+			"level": 3
+		},
+		{
+			"cause_id": 639,
+			"cause_name": "Other musculoskeletal disorders",
+			"parent_id": 626,
+			"level": 3
+		},
+		{
+			"cause_id": 640,
+			"cause_name": "Other non-communicable diseases",
+			"parent_id": 409,
+			"level": 2
+		},
+		{
+			"cause_id": 641,
+			"cause_name": "Congenital anomalies",
+			"parent_id": 640,
+			"level": 3
+		},
+		{
+			"cause_id": 642,
+			"cause_name": "Neural tube defects",
+			"parent_id": 641,
+			"level": 4
+		},
+		{
+			"cause_id": 643,
+			"cause_name": "Congenital heart anomalies",
+			"parent_id": 641,
+			"level": 4
+		},
+		{
+			"cause_id": 644,
+			"cause_name": "Cleft lip and cleft palate",
+			"parent_id": 641,
+			"level": 4
+		},
+		{
+			"cause_id": 645,
+			"cause_name": "Down syndrome",
+			"parent_id": 641,
+			"level": 4
+		},
+		{
+			"cause_id": 646,
+			"cause_name": "Turner syndrome",
+			"parent_id": 641,
+			"level": 4
+		},
+		{
+			"cause_id": 647,
+			"cause_name": "Klinefelter syndrome",
+			"parent_id": 641,
+			"level": 4
+		},
+		{
+			"cause_id": 648,
+			"cause_name": "Other chromosomal abnormalities",
+			"parent_id": 641,
+			"level": 4
+		},
+		{
+			"cause_id": 652,
+			"cause_name": "Other congenital anomalies",
+			"parent_id": 641,
+			"level": 4
+		},
+		{
+			"cause_id": 653,
+			"cause_name": "Skin and subcutaneous diseases",
+			"parent_id": 640,
+			"level": 3
+		},
+		{
+			"cause_id": 654,
+			"cause_name": "Dermatitis",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 655,
+			"cause_name": "Psoriasis",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 656,
+			"cause_name": "Cellulitis",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 657,
+			"cause_name": "Pyoderma",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 658,
+			"cause_name": "Scabies",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 659,
+			"cause_name": "Fungal skin diseases",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 660,
+			"cause_name": "Viral skin diseases",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 661,
+			"cause_name": "Acne vulgaris",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 662,
+			"cause_name": "Alopecia areata",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 663,
+			"cause_name": "Pruritus",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 664,
+			"cause_name": "Urticaria",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 665,
+			"cause_name": "Decubitus ulcer",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 668,
+			"cause_name": "Other skin and subcutaneous diseases",
+			"parent_id": 653,
+			"level": 4
+		},
+		{
+			"cause_id": 669,
+			"cause_name": "Sense organ diseases",
+			"parent_id": 640,
+			"level": 3
+		},
+		{
+			"cause_id": 670,
+			"cause_name": "Glaucoma",
+			"parent_id": 669,
+			"level": 4
+		},
+		{
+			"cause_id": 671,
+			"cause_name": "Cataract",
+			"parent_id": 669,
+			"level": 4
+		},
+		{
+			"cause_id": 672,
+			"cause_name": "Macular degeneration",
+			"parent_id": 669,
+			"level": 4
+		},
+		{
+			"cause_id": 673,
+			"cause_name": "Refraction and accommodation disorders",
+			"parent_id": 669,
+			"level": 4
+		},
+		{
+			"cause_id": 674,
+			"cause_name": "Age-related and other hearing loss",
+			"parent_id": 669,
+			"level": 4
+		},
+		{
+			"cause_id": 675,
+			"cause_name": "Other vision loss",
+			"parent_id": 669,
+			"level": 4
+		},
+		{
+			"cause_id": 679,
+			"cause_name": "Other sense organ diseases",
+			"parent_id": 669,
+			"level": 4
+		},
+		{
+			"cause_id": 680,
+			"cause_name": "Oral disorders",
+			"parent_id": 640,
+			"level": 3
+		},
+		{
+			"cause_id": 681,
+			"cause_name": "Deciduous caries",
+			"parent_id": 680,
+			"level": 4
+		},
+		{
+			"cause_id": 682,
+			"cause_name": "Permanent caries",
+			"parent_id": 680,
+			"level": 4
+		},
+		{
+			"cause_id": 683,
+			"cause_name": "Periodontal diseases",
+			"parent_id": 680,
+			"level": 4
+		},
+		{
+			"cause_id": 684,
+			"cause_name": "Edentulism and severe tooth loss",
+			"parent_id": 680,
+			"level": 4
+		},
+		{
+			"cause_id": 685,
+			"cause_name": "Other oral disorders",
+			"parent_id": 680,
+			"level": 4
+		},
+		{
+			"cause_id": 686,
+			"cause_name": "Sudden infant death syndrome",
+			"parent_id": 640,
+			"level": 3
+		},
+		{
+			"cause_id": 687,
+			"cause_name": "Injuries",
+			"parent_id": 294,
+			"level": 1
+		},
+		{
+			"cause_id": 688,
+			"cause_name": "Transport injuries",
+			"parent_id": 687,
+			"level": 2
+		},
+		{
+			"cause_id": 689,
+			"cause_name": "Road injuries",
+			"parent_id": 688,
+			"level": 3
+		},
+		{
+			"cause_id": 690,
+			"cause_name": "Pedestrian road injuries",
+			"parent_id": 689,
+			"level": 4
+		},
+		{
+			"cause_id": 691,
+			"cause_name": "Cyclist road injuries",
+			"parent_id": 689,
+			"level": 4
+		},
+		{
+			"cause_id": 692,
+			"cause_name": "Motorcyclist road injuries",
+			"parent_id": 689,
+			"level": 4
+		},
+		{
+			"cause_id": 693,
+			"cause_name": "Motor vehicle road injuries",
+			"parent_id": 689,
+			"level": 4
+		},
+		{
+			"cause_id": 694,
+			"cause_name": "Other road injuries",
+			"parent_id": 689,
+			"level": 4
+		},
+		{
+			"cause_id": 695,
+			"cause_name": "Other transport injuries",
+			"parent_id": 688,
+			"level": 3
+		},
+		{
+			"cause_id": 696,
+			"cause_name": "Unintentional injuries",
+			"parent_id": 687,
+			"level": 2
+		},
+		{
+			"cause_id": 697,
+			"cause_name": "Falls",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 698,
+			"cause_name": "Drowning",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 699,
+			"cause_name": "Fire, heat, and hot substances",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 700,
+			"cause_name": "Poisonings",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 704,
+			"cause_name": "Exposure to mechanical forces",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 705,
+			"cause_name": "Unintentional firearm injuries",
+			"parent_id": 704,
+			"level": 4
+		},
+		{
+			"cause_id": 706,
+			"cause_name": "Unintentional suffocation",
+			"parent_id": 704,
+			"level": 4
+		},
+		{
+			"cause_id": 707,
+			"cause_name": "Other exposure to mechanical forces",
+			"parent_id": 704,
+			"level": 4
+		},
+		{
+			"cause_id": 708,
+			"cause_name": "Adverse effects of medical treatment",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 709,
+			"cause_name": "Animal contact",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 710,
+			"cause_name": "Venomous animal contact",
+			"parent_id": 709,
+			"level": 4
+		},
+		{
+			"cause_id": 711,
+			"cause_name": "Non-venomous animal contact",
+			"parent_id": 709,
+			"level": 4
+		},
+		{
+			"cause_id": 712,
+			"cause_name": "Foreign body",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 713,
+			"cause_name": "Pulmonary aspiration and foreign body in airway",
+			"parent_id": 712,
+			"level": 4
+		},
+		{
+			"cause_id": 714,
+			"cause_name": "Foreign body in eyes",
+			"parent_id": 712,
+			"level": 4
+		},
+		{
+			"cause_id": 715,
+			"cause_name": "Foreign body in other body part",
+			"parent_id": 712,
+			"level": 4
+		},
+		{
+			"cause_id": 716,
+			"cause_name": "Other unintentional injuries",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 717,
+			"cause_name": "Self-harm and interpersonal violence",
+			"parent_id": 687,
+			"level": 2
+		},
+		{
+			"cause_id": 718,
+			"cause_name": "Self-harm",
+			"parent_id": 717,
+			"level": 3
+		},
+		{
+			"cause_id": 724,
+			"cause_name": "Interpersonal violence",
+			"parent_id": 717,
+			"level": 3
+		},
+		{
+			"cause_id": 725,
+			"cause_name": "Assault by firearm",
+			"parent_id": 724,
+			"level": 4
+		},
+		{
+			"cause_id": 726,
+			"cause_name": "Assault by sharp object",
+			"parent_id": 724,
+			"level": 4
+		},
+		{
+			"cause_id": 727,
+			"cause_name": "Assault by other means",
+			"parent_id": 724,
+			"level": 4
+		},
+		{
+			"cause_id": 728,
+			"cause_name": "Forces of nature, war, and legal intervention",
+			"parent_id": 687,
+			"level": 2
+		},
+		{
+			"cause_id": 729,
+			"cause_name": "Exposure to forces of nature",
+			"parent_id": 728,
+			"level": 3
+		},
+		{
+			"cause_id": 730,
+			"cause_name": "Collective violence and legal intervention",
+			"parent_id": 728,
+			"level": 3
+		},
+		{
+			"cause_id": 741,
+			"cause_name": "Maternal deaths aggravated by HIV/AIDS",
+			"parent_id": 366,
+			"level": 3
+		},
+		{
+			"cause_id": 837,
+			"cause_name": "Thalassemias trait",
+			"parent_id": 613,
+			"level": 4
+		},
+		{
+			"cause_id": 838,
+			"cause_name": "Sickle cell trait",
+			"parent_id": 613,
+			"level": 4
+		},
+		{
+			"cause_id": 839,
+			"cause_name": "G6PD trait",
+			"parent_id": 613,
+			"level": 4
+		},
+		{
+			"cause_id": 842,
+			"cause_name": "Environmental heat and cold exposure",
+			"parent_id": 696,
+			"level": 3
+		},
+		{
+			"cause_id": 843,
+			"cause_name": "Ebola",
+			"parent_id": 344,
+			"level": 3
+		},
+		{
+			"cause_id": 845,
+			"cause_name": "Acute lymphoid leukemia",
+			"parent_id": 487,
+			"level": 4
+		},
+		{
+			"cause_id": 846,
+			"cause_name": "Chronic lymphoid leukemia",
+			"parent_id": 487,
+			"level": 4
+		},
+		{
+			"cause_id": 847,
+			"cause_name": "Acute myeloid leukemia",
+			"parent_id": 487,
+			"level": 4
+		},
+		{
+			"cause_id": 848,
+			"cause_name": "Chronic myeloid leukemia",
+			"parent_id": 487,
+			"level": 4
+		},
+		{
+			"cause_id": 849,
+			"cause_name": "Non-melanoma skin cancer (squamous-cell carcinoma)",
+			"parent_id": 462,
+			"level": 4
+		},
+		{
+			"cause_id": 850,
+			"cause_name": "Non-melanoma skin cancer (basal-cell carcinoma)",
+			"parent_id": 462,
+			"level": 4
+		}
+	],
+	"location": [{
+			"location_id": 1,
+			"location_name": "Global",
+			"parent_id": 1,
+			"level": 0
+		},
+		{
+			"location_id": 4,
+			"location_name": "Southeast Asia, East Asia, and Oceania",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 5,
+			"location_name": "East Asia",
+			"parent_id": 4,
+			"level": 2
+		},
+		{
+			"location_id": 6,
+			"location_name": "China",
+			"parent_id": 5,
+			"level": 3
+		},
+		{
+			"location_id": 7,
+			"location_name": "North Korea",
+			"parent_id": 5,
+			"level": 3
+		},
+		{
+			"location_id": 8,
+			"location_name": "Taiwan",
+			"parent_id": 5,
+			"level": 3
+		},
+		{
+			"location_id": 9,
+			"location_name": "Southeast Asia",
+			"parent_id": 4,
+			"level": 2
+		},
+		{
+			"location_id": 10,
+			"location_name": "Cambodia",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 11,
+			"location_name": "Indonesia",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 12,
+			"location_name": "Laos",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 13,
+			"location_name": "Malaysia",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 14,
+			"location_name": "Maldives",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 15,
+			"location_name": "Myanmar",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 16,
+			"location_name": "Philippines",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 17,
+			"location_name": "Sri Lanka",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 18,
+			"location_name": "Thailand",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 19,
+			"location_name": "Timor-Leste",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 20,
+			"location_name": "Vietnam",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 21,
+			"location_name": "Oceania",
+			"parent_id": 4,
+			"level": 2
+		},
+		{
+			"location_id": 22,
+			"location_name": "Fiji",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 23,
+			"location_name": "Kiribati",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 24,
+			"location_name": "Marshall Islands",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 25,
+			"location_name": "Federated States of Micronesia",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 26,
+			"location_name": "Papua New Guinea",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 27,
+			"location_name": "Samoa",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 28,
+			"location_name": "Solomon Islands",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 29,
+			"location_name": "Tonga",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 30,
+			"location_name": "Vanuatu",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 31,
+			"location_name": "Central Europe, Eastern Europe, and Central Asia",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 32,
+			"location_name": "Central Asia",
+			"parent_id": 31,
+			"level": 2
+		},
+		{
+			"location_id": 33,
+			"location_name": "Armenia",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 34,
+			"location_name": "Azerbaijan",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 35,
+			"location_name": "Georgia",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 36,
+			"location_name": "Kazakhstan",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 37,
+			"location_name": "Kyrgyzstan",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 38,
+			"location_name": "Mongolia",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 39,
+			"location_name": "Tajikistan",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 40,
+			"location_name": "Turkmenistan",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 41,
+			"location_name": "Uzbekistan",
+			"parent_id": 32,
+			"level": 3
+		},
+		{
+			"location_id": 42,
+			"location_name": "Central Europe",
+			"parent_id": 31,
+			"level": 2
+		},
+		{
+			"location_id": 43,
+			"location_name": "Albania",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 44,
+			"location_name": "Bosnia and Herzegovina",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 45,
+			"location_name": "Bulgaria",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 46,
+			"location_name": "Croatia",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 47,
+			"location_name": "Czech Republic",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 48,
+			"location_name": "Hungary",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 49,
+			"location_name": "Macedonia",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 50,
+			"location_name": "Montenegro",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 51,
+			"location_name": "Poland",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 52,
+			"location_name": "Romania",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 53,
+			"location_name": "Serbia",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 54,
+			"location_name": "Slovakia",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 55,
+			"location_name": "Slovenia",
+			"parent_id": 42,
+			"level": 3
+		},
+		{
+			"location_id": 56,
+			"location_name": "Eastern Europe",
+			"parent_id": 31,
+			"level": 2
+		},
+		{
+			"location_id": 57,
+			"location_name": "Belarus",
+			"parent_id": 56,
+			"level": 3
+		},
+		{
+			"location_id": 58,
+			"location_name": "Estonia",
+			"parent_id": 56,
+			"level": 3
+		},
+		{
+			"location_id": 59,
+			"location_name": "Latvia",
+			"parent_id": 56,
+			"level": 3
+		},
+		{
+			"location_id": 60,
+			"location_name": "Lithuania",
+			"parent_id": 56,
+			"level": 3
+		},
+		{
+			"location_id": 61,
+			"location_name": "Moldova",
+			"parent_id": 56,
+			"level": 3
+		},
+		{
+			"location_id": 62,
+			"location_name": "Russia",
+			"parent_id": 56,
+			"level": 3
+		},
+		{
+			"location_id": 63,
+			"location_name": "Ukraine",
+			"parent_id": 56,
+			"level": 3
+		},
+		{
+			"location_id": 64,
+			"location_name": "High-income",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 65,
+			"location_name": "High-income Asia Pacific",
+			"parent_id": 64,
+			"level": 2
+		},
+		{
+			"location_id": 66,
+			"location_name": "Brunei",
+			"parent_id": 65,
+			"level": 3
+		},
+		{
+			"location_id": 67,
+			"location_name": "Japan",
+			"parent_id": 65,
+			"level": 3
+		},
+		{
+			"location_id": 68,
+			"location_name": "South Korea",
+			"parent_id": 65,
+			"level": 3
+		},
+		{
+			"location_id": 69,
+			"location_name": "Singapore",
+			"parent_id": 65,
+			"level": 3
+		},
+		{
+			"location_id": 70,
+			"location_name": "Australasia",
+			"parent_id": 64,
+			"level": 2
+		},
+		{
+			"location_id": 71,
+			"location_name": "Australia",
+			"parent_id": 70,
+			"level": 3
+		},
+		{
+			"location_id": 72,
+			"location_name": "New Zealand",
+			"parent_id": 70,
+			"level": 3
+		},
+		{
+			"location_id": 73,
+			"location_name": "Western Europe",
+			"parent_id": 64,
+			"level": 2
+		},
+		{
+			"location_id": 74,
+			"location_name": "Andorra",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 75,
+			"location_name": "Austria",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 76,
+			"location_name": "Belgium",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 77,
+			"location_name": "Cyprus",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 78,
+			"location_name": "Denmark",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 79,
+			"location_name": "Finland",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 80,
+			"location_name": "France",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 81,
+			"location_name": "Germany",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 82,
+			"location_name": "Greece",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 83,
+			"location_name": "Iceland",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 84,
+			"location_name": "Ireland",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 85,
+			"location_name": "Israel",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 86,
+			"location_name": "Italy",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 87,
+			"location_name": "Luxembourg",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 88,
+			"location_name": "Malta",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 89,
+			"location_name": "Netherlands",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 90,
+			"location_name": "Norway",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 91,
+			"location_name": "Portugal",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 92,
+			"location_name": "Spain",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 93,
+			"location_name": "Sweden",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 94,
+			"location_name": "Switzerland",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 95,
+			"location_name": "United Kingdom",
+			"parent_id": 73,
+			"level": 3
+		},
+		{
+			"location_id": 96,
+			"location_name": "Southern Latin America",
+			"parent_id": 64,
+			"level": 2
+		},
+		{
+			"location_id": 97,
+			"location_name": "Argentina",
+			"parent_id": 96,
+			"level": 3
+		},
+		{
+			"location_id": 98,
+			"location_name": "Chile",
+			"parent_id": 96,
+			"level": 3
+		},
+		{
+			"location_id": 99,
+			"location_name": "Uruguay",
+			"parent_id": 96,
+			"level": 3
+		},
+		{
+			"location_id": 100,
+			"location_name": "High-income North America",
+			"parent_id": 64,
+			"level": 2
+		},
+		{
+			"location_id": 101,
+			"location_name": "Canada",
+			"parent_id": 100,
+			"level": 3
+		},
+		{
+			"location_id": 102,
+			"location_name": "United States",
+			"parent_id": 100,
+			"level": 3
+		},
+		{
+			"location_id": 103,
+			"location_name": "Latin America and Caribbean",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 104,
+			"location_name": "Caribbean",
+			"parent_id": 103,
+			"level": 2
+		},
+		{
+			"location_id": 105,
+			"location_name": "Antigua and Barbuda",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 106,
+			"location_name": "The Bahamas",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 107,
+			"location_name": "Barbados",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 108,
+			"location_name": "Belize",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 109,
+			"location_name": "Cuba",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 110,
+			"location_name": "Dominica",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 111,
+			"location_name": "Dominican Republic",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 112,
+			"location_name": "Grenada",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 113,
+			"location_name": "Guyana",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 114,
+			"location_name": "Haiti",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 115,
+			"location_name": "Jamaica",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 116,
+			"location_name": "Saint Lucia",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 117,
+			"location_name": "Saint Vincent and the Grenadines",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 118,
+			"location_name": "Suriname",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 119,
+			"location_name": "Trinidad and Tobago",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 120,
+			"location_name": "Andean Latin America",
+			"parent_id": 103,
+			"level": 2
+		},
+		{
+			"location_id": 121,
+			"location_name": "Bolivia",
+			"parent_id": 120,
+			"level": 3
+		},
+		{
+			"location_id": 122,
+			"location_name": "Ecuador",
+			"parent_id": 120,
+			"level": 3
+		},
+		{
+			"location_id": 123,
+			"location_name": "Peru",
+			"parent_id": 120,
+			"level": 3
+		},
+		{
+			"location_id": 124,
+			"location_name": "Central Latin America",
+			"parent_id": 103,
+			"level": 2
+		},
+		{
+			"location_id": 125,
+			"location_name": "Colombia",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 126,
+			"location_name": "Costa Rica",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 127,
+			"location_name": "El Salvador",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 128,
+			"location_name": "Guatemala",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 129,
+			"location_name": "Honduras",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 130,
+			"location_name": "Mexico",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 131,
+			"location_name": "Nicaragua",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 132,
+			"location_name": "Panama",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 133,
+			"location_name": "Venezuela",
+			"parent_id": 124,
+			"level": 3
+		},
+		{
+			"location_id": 134,
+			"location_name": "Tropical Latin America",
+			"parent_id": 103,
+			"level": 2
+		},
+		{
+			"location_id": 135,
+			"location_name": "Brazil",
+			"parent_id": 134,
+			"level": 3
+		},
+		{
+			"location_id": 136,
+			"location_name": "Paraguay",
+			"parent_id": 134,
+			"level": 3
+		},
+		{
+			"location_id": 137,
+			"location_name": "North Africa and Middle East",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 138,
+			"location_name": "North Africa and Middle East",
+			"parent_id": 137,
+			"level": 2
+		},
+		{
+			"location_id": 139,
+			"location_name": "Algeria",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 140,
+			"location_name": "Bahrain",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 141,
+			"location_name": "Egypt",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 142,
+			"location_name": "Iran",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 143,
+			"location_name": "Iraq",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 144,
+			"location_name": "Jordan",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 145,
+			"location_name": "Kuwait",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 146,
+			"location_name": "Lebanon",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 147,
+			"location_name": "Libya",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 148,
+			"location_name": "Morocco",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 149,
+			"location_name": "Palestine",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 150,
+			"location_name": "Oman",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 151,
+			"location_name": "Qatar",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 152,
+			"location_name": "Saudi Arabia",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 153,
+			"location_name": "Syria",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 154,
+			"location_name": "Tunisia",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 155,
+			"location_name": "Turkey",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 156,
+			"location_name": "United Arab Emirates",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 157,
+			"location_name": "Yemen",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 158,
+			"location_name": "South Asia",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 159,
+			"location_name": "South Asia",
+			"parent_id": 158,
+			"level": 2
+		},
+		{
+			"location_id": 160,
+			"location_name": "Afghanistan",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 161,
+			"location_name": "Bangladesh",
+			"parent_id": 159,
+			"level": 3
+		},
+		{
+			"location_id": 162,
+			"location_name": "Bhutan",
+			"parent_id": 159,
+			"level": 3
+		},
+		{
+			"location_id": 163,
+			"location_name": "India",
+			"parent_id": 159,
+			"level": 3
+		},
+		{
+			"location_id": 164,
+			"location_name": "Nepal",
+			"parent_id": 159,
+			"level": 3
+		},
+		{
+			"location_id": 165,
+			"location_name": "Pakistan",
+			"parent_id": 159,
+			"level": 3
+		},
+		{
+			"location_id": 166,
+			"location_name": "Sub-Saharan Africa",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 167,
+			"location_name": "Central Sub-Saharan Africa",
+			"parent_id": 166,
+			"level": 2
+		},
+		{
+			"location_id": 168,
+			"location_name": "Angola",
+			"parent_id": 167,
+			"level": 3
+		},
+		{
+			"location_id": 169,
+			"location_name": "Central African Republic",
+			"parent_id": 167,
+			"level": 3
+		},
+		{
+			"location_id": 170,
+			"location_name": "Congo",
+			"parent_id": 167,
+			"level": 3
+		},
+		{
+			"location_id": 171,
+			"location_name": "Democratic Republic of the Congo",
+			"parent_id": 167,
+			"level": 3
+		},
+		{
+			"location_id": 172,
+			"location_name": "Equatorial Guinea",
+			"parent_id": 167,
+			"level": 3
+		},
+		{
+			"location_id": 173,
+			"location_name": "Gabon",
+			"parent_id": 167,
+			"level": 3
+		},
+		{
+			"location_id": 174,
+			"location_name": "Eastern Sub-Saharan Africa",
+			"parent_id": 166,
+			"level": 2
+		},
+		{
+			"location_id": 175,
+			"location_name": "Burundi",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 176,
+			"location_name": "Comoros",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 177,
+			"location_name": "Djibouti",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 178,
+			"location_name": "Eritrea",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 179,
+			"location_name": "Ethiopia",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 180,
+			"location_name": "Kenya",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 181,
+			"location_name": "Madagascar",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 182,
+			"location_name": "Malawi",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 183,
+			"location_name": "Mauritius",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 184,
+			"location_name": "Mozambique",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 185,
+			"location_name": "Rwanda",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 186,
+			"location_name": "Seychelles",
+			"parent_id": 9,
+			"level": 3
+		},
+		{
+			"location_id": 187,
+			"location_name": "Somalia",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 189,
+			"location_name": "Tanzania",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 190,
+			"location_name": "Uganda",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 191,
+			"location_name": "Zambia",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 192,
+			"location_name": "Southern Sub-Saharan Africa",
+			"parent_id": 166,
+			"level": 2
+		},
+		{
+			"location_id": 193,
+			"location_name": "Botswana",
+			"parent_id": 192,
+			"level": 3
+		},
+		{
+			"location_id": 194,
+			"location_name": "Lesotho",
+			"parent_id": 192,
+			"level": 3
+		},
+		{
+			"location_id": 195,
+			"location_name": "Namibia",
+			"parent_id": 192,
+			"level": 3
+		},
+		{
+			"location_id": 196,
+			"location_name": "South Africa",
+			"parent_id": 192,
+			"level": 3
+		},
+		{
+			"location_id": 197,
+			"location_name": "Swaziland",
+			"parent_id": 192,
+			"level": 3
+		},
+		{
+			"location_id": 198,
+			"location_name": "Zimbabwe",
+			"parent_id": 192,
+			"level": 3
+		},
+		{
+			"location_id": 199,
+			"location_name": "Western Sub-Saharan Africa",
+			"parent_id": 166,
+			"level": 2
+		},
+		{
+			"location_id": 200,
+			"location_name": "Benin",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 201,
+			"location_name": "Burkina Faso",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 202,
+			"location_name": "Cameroon",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 203,
+			"location_name": "Cape Verde",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 204,
+			"location_name": "Chad",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 205,
+			"location_name": "Cote d'Ivoire",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 206,
+			"location_name": "The Gambia",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 207,
+			"location_name": "Ghana",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 208,
+			"location_name": "Guinea",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 209,
+			"location_name": "Guinea-Bissau",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 210,
+			"location_name": "Liberia",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 211,
+			"location_name": "Mali",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 212,
+			"location_name": "Mauritania",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 213,
+			"location_name": "Niger",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 214,
+			"location_name": "Nigeria",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 215,
+			"location_name": "Sao Tome and Principe",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 216,
+			"location_name": "Senegal",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 217,
+			"location_name": "Sierra Leone",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 218,
+			"location_name": "Togo",
+			"parent_id": 199,
+			"level": 3
+		},
+		{
+			"location_id": 298,
+			"location_name": "American Samoa",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 305,
+			"location_name": "Bermuda",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 349,
+			"location_name": "Greenland",
+			"parent_id": 100,
+			"level": 3
+		},
+		{
+			"location_id": 351,
+			"location_name": "Guam",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 376,
+			"location_name": "Northern Mariana Islands",
+			"parent_id": 21,
+			"level": 3
+		},
+		{
+			"location_id": 385,
+			"location_name": "Puerto Rico",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 422,
+			"location_name": "Virgin Islands, U.S.",
+			"parent_id": 104,
+			"level": 3
+		},
+		{
+			"location_id": 433,
+			"location_name": "Northern Ireland",
+			"parent_id": 95,
+			"level": 4
+		},
+		{
+			"location_id": 434,
+			"location_name": "Scotland",
+			"parent_id": 95,
+			"level": 4
+		},
+		{
+			"location_id": 435,
+			"location_name": "South Sudan",
+			"parent_id": 174,
+			"level": 3
+		},
+		{
+			"location_id": 522,
+			"location_name": "Sudan",
+			"parent_id": 138,
+			"level": 3
+		},
+		{
+			"location_id": 4618,
+			"location_name": "North East England",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4619,
+			"location_name": "North West England",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4620,
+			"location_name": "Yorkshire and the Humber",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4621,
+			"location_name": "East Midlands",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4622,
+			"location_name": "West Midlands",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4623,
+			"location_name": "East of England",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4624,
+			"location_name": "Greater London",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4625,
+			"location_name": "South East England",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4626,
+			"location_name": "South West England",
+			"parent_id": 4749,
+			"level": 5
+		},
+		{
+			"location_id": 4636,
+			"location_name": "Wales",
+			"parent_id": 95,
+			"level": 4
+		},
+		{
+			"location_id": 4749,
+			"location_name": "England",
+			"parent_id": 95,
+			"level": 4
+		},
+		{
+			"location_id": 4940,
+			"location_name": "Sweden except Stockholm",
+			"parent_id": 93,
+			"level": 4
+		},
+		{
+			"location_id": 4944,
+			"location_name": "Stockholm",
+			"parent_id": 93,
+			"level": 4
+		},
+		{
+			"location_id": 44634,
+			"location_name": "High-middle SDI",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 44635,
+			"location_name": "High SDI",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 44636,
+			"location_name": "Low-middle SDI",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 44637,
+			"location_name": "Low SDI",
+			"parent_id": 1,
+			"level": 1
+		},
+		{
+			"location_id": 44639,
+			"location_name": "Middle SDI",
+			"parent_id": 1,
+			"level": 1
+		}
+	]
+}
