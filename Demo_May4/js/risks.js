@@ -1,7 +1,7 @@
 $(function() {
 
 	barChart = function(requestType, lineDiv, titleDiv, titleText,
-		yLabel, lineDivID, caption) {
+		xLabel, lineDivID, caption) {
 		$.ajax({
 			url:"./php/executeQuery.php", //the page containing php script
 			type: "get", //request type
@@ -89,7 +89,7 @@ $(function() {
 						.data(formattedData)
 					  .enter().append("rect")
 						  .attr("class", "bar")
-						  .style("fill", "steelblue")
+						  .style("fill", "rgb(149, 198, 132)")
 						  //.attr("x", function(d) { return x(d.risk); })
 						  //.attr("width", x.rangeBand())
 						  .attr("y", function(d, i) { return y(d.risk) + (y.rangeBand() - 80)/2 ;})
@@ -103,7 +103,7 @@ $(function() {
 						.data(formattedData)
 					  .enter().append("rect")
 						  .attr("class", "bar")
-						  .style("fill", "steelblue")
+						  .style("fill", "rgb(149, 198, 132)")
 						  .attr("y", function(d) { return y(d.risk); })
 						  .attr("height", y.rangeBand())
 						  //.attr("x", function(d, i) { return x(d.risk) + (x.rangeBand() - 100)/2 ;})
@@ -119,9 +119,9 @@ $(function() {
 				svg.append("text")
 					.attr("transform",
 						"translate(" + (width/2) + " ," +
-						(height + margins.bottom - 10) + ")")
+						(height + margins.bottom - 6) + ")")
 					.style("text-anchor", "middle")
-					.text(yLabel);
+					.text(xLabel);
 
 				// text label for the y axis
 				/*svg.append("text")

@@ -1,13 +1,14 @@
 $(function() {
 	lineDiagram = function(requestType, lineDiv, titleDiv, titleText,
 		fembar, femtext, mbar, mtext, bothbar, bothtext, sdibar, sditext,
-		yLabel, lineDivID, caption) {
+		yLabel, lineDivID, caption, tableID) {
 		$.ajax({
 			url:"./php/executeQuery.php", //the page containing php script
 			type: "get", //request type
 			dataType: 'json',
 			data: {request_type: requestType, causeName: cause_name, locationName: location_name}
 		}).done(function (msg) {
+			console.log(msg);
 			var margins = {top: 30, bottom: 50, left: 60, right: 50};
 
 			var width = 800 - margins.left - margins.right,
@@ -38,12 +39,14 @@ $(function() {
 							"female": parseFloat(msg[i-1].val),
 							"male": parseFloat(msg[i-2].val),
 							"both": parseFloat(singleYear.val),
-							"sdi": parseFloat(msg[i-3].val)
+							"sdi": parseFloat(msg[i-3].val),
+							"sdiFemale": parseFloat(msg[i-4].val),
+							"sdiMale": parseFloat(msg[i-5].val)
 						});
 				}
 			}
 
-			// console.log(formattedData);
+			console.log(formattedData);
 
 			// Set the ranges
 			var x = d3.scale.linear().range([0, width]);
@@ -215,7 +218,7 @@ $(function() {
 			svg.append("text")
 				.attr("transform",
 					"translate(" + (width/2) + " ," +
-					(height + margins.bottom) + ")")
+					(height + margins.bottom - 6) + ")")
 					.style("text-anchor", "middle")
 				.text("Year");
 
@@ -227,9 +230,58 @@ $(function() {
 				  .attr("dy", "1em")
 				  .style("text-anchor", "middle")
 				  .text(yLabel);
-
-			// Footer
+			
+			// Values table
 			var containerDiv = document.getElementById(lineDivID);
+						
+			var table = document.createElement("table");
+			
+			var tableHeader = table.createTHead();
+			
+			var row = tableHeader.insertRow(0);
+			row.insertCell(0);
+			
+			var countryCell = row.insertCell(1)
+			countryCell.innerHTML = location_name;
+			countryCell.colSpan = "2";
+			
+			var SDICell = row.insertCell(2);
+			SDICell.innerHTML = "SDI Average";
+			SDICell.colSpan = "2";
+			
+			row = tableHeader.insertRow(1);
+			row.insertCell(0);
+			row.insertCell(1).innerHTML = "1990";
+			row.insertCell(2).innerHTML = "2016";
+			row.insertCell(3).innerHTML = "1990";
+			row.insertCell(4).innerHTML = "2016";
+			
+			var tableBody = table.createTBody();
+			
+			row = tableBody.insertRow(0);
+			row.insertCell(0).innerHTML = "Females";
+			row.insertCell(1).innerHTML = formattedData[0].female;
+			row.insertCell(2).innerHTML = formattedData[formattedData.length - 1].female;
+			row.insertCell(3).innerHTML = formattedData[0].sdiFemale;
+			row.insertCell(4).innerHTML = formattedData[formattedData.length - 1].sdiFemale;
+			
+			row = tableBody.insertRow(1);
+			row.insertCell(0).innerHTML = "Males";
+			row.insertCell(1).innerHTML = formattedData[0].male;
+			row.insertCell(2).innerHTML = formattedData[formattedData.length - 1].male;
+			row.insertCell(3).innerHTML = formattedData[0].sdiMale;
+			row.insertCell(4).innerHTML = formattedData[formattedData.length - 1].sdiMale;
+			
+			row = tableBody.insertRow(2);
+			row.insertCell(0).innerHTML = "All";
+			row.insertCell(1).innerHTML = formattedData[0].both;
+			row.insertCell(2).innerHTML = formattedData[formattedData.length - 1].both;
+			row.insertCell(3).innerHTML = formattedData[0].sdi;
+			row.insertCell(4).innerHTML = formattedData[formattedData.length - 1].sdi;
+			
+			containerDiv.appendChild(table);
+			
+			// Footer
 			var footer = document.createElement("p");
 			var footer_text = document.createTextNode(caption);
 			footer.appendChild(footer_text);
