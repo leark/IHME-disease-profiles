@@ -20,7 +20,8 @@ $(function() {
 			});
 		}
 
-		var rankingsTable = tabulate(rankData, ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"]);
+		columns = ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"];
+		var rankingsTable = tabulate(rankData, columns, "#ranktableDiv");
 		rankingsTable.selectAll("thead th")
 			.text(function(column) {
 				return column.charAt(0).toUpperCase() + column.substr(1);
@@ -31,9 +32,9 @@ $(function() {
 			});
 
 		// Footer
-		var containerDiv = document.getElementById("rankTableDiv");
+		var containerDiv = document.getElementById("ranktableDiv");
 		var footer = document.createElement("p");
-		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, number");
+		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, rate");
 		footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);
 
@@ -42,8 +43,8 @@ $(function() {
 	});
 });
 
-function tabulate(data, columns) {
-    var table = d3.select("#rankTableDiv").append("table"),
+function tabulate(data, columns, table) {
+    var table = d3.select(table).append("table"),
         thead = table.append("thead"),
         tbody = table.append("tbody");
 
@@ -53,7 +54,10 @@ function tabulate(data, columns) {
         .data(columns)
         .enter()
         .append("th")
-            .text(function(column) { return column; });
+            .text(function(column) { return column; })
+				.style('font-weight', 'normal')
+				.style('color', '#454545');
+				// .style('background-color', function(d) { return '#3180BB'; })
 
     // create a row for each object in the data
     var rows = tbody.selectAll("tr")
@@ -70,7 +74,11 @@ function tabulate(data, columns) {
         })
         .enter()
         .append("td")
-            .text(function(d) { return d.value; });
+            .text(function(d) { return d.value; })
+				// .style('background-color', function(d) { return '#6BAAD3'; })
+				.style('color', '#454545');
+				// '#6BAAD3', #9BC7DE, 0EC5BE, 7EC5BE
+				// if if the rank rose, make it one color, else if positive, make dark
 
     return table;
 }

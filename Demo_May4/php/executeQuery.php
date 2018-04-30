@@ -62,12 +62,16 @@
 			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
 			return $total;
 		} else if ($type == "heat_rank") {
-			$death = GetHeatRanking($conn, $cause, $location, "DEATH");
-			$daly = GetHeatRanking($conn, $cause, $location, "DALY");
-			$yld = GetHeatRanking($conn, $cause, $location, "YLD");
-			$yll = GetHeatRanking($conn, $cause, $location, "YLL");
+			$death1 = GetHeatRankingMain($conn, $cause, $location, "DEATH");
+			$death2 = GetHeatRankingOthers($conn, $cause, $location, "DEATH");
+			$daly1 = GetHeatRankingMain($conn, $cause, $location, "DALY");
+			$daly2 = GetHeatRankingOthers($conn, $cause, $location, "DALY");
+			$yld1 = GetHeatRankingMain($conn, $cause, $location, "YLD");
+			$yld2 = GetHeatRankingOthers($conn, $cause, $location, "YLD");
+			$yll1 = GetHeatRankingMain($conn, $cause, $location, "YLL");
+			$yll2 = GetHeatRankingOthers($conn, $cause, $location, "YLL");
 
-			$total = array_merge($death, $daly, $yld, $yll);
+			$total = array_merge($death1, $death2, $daly1, $daly2, $yld1, $yld2, $yll1, $yll2);
 			return $total;
 		}
 	}
@@ -112,7 +116,7 @@
 	function GetRateBulletData($conn, $cause, $location) {
 		$stmt = $conn->prepare("CALL GetDeathUncertainty(:location, :cause);");
 		$stmt->bindParam(':location', $location);
-		$stmt->bindParam(':cause', $cause);		
+		$stmt->bindParam(':cause', $cause);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 		return $result; // returns the row as array
@@ -129,8 +133,8 @@
 		return $result; // returns the row as array
 	}
 
-	function GetHeatRanking($conn, $cause, $location, $type) {
-		$stmt = $conn->prepare('CALL GetHeatRanking(:location, :cause, 2016, 3, 3, 22, :type)');
+	function GetHeatRankingMain($conn, $cause, $location, $type) {
+		$stmt = $conn->prepare('CALL GetHeatRankingMain(:location, :cause, 2016, 3, 3, 27, :type)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':type', $type);
@@ -138,4 +142,24 @@
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $result; // returns the row as array
 	}
+
+	function GetHeatRankingOthers($conn, $cause, $location, $type) {
+		$stmt = $conn->prepare('CALL GetHeatRankingOthers(:location, :cause, 2016, 3, 3, 27, :type)');
+		$stmt->bindParam(':cause', $cause);
+		$stmt->bindParam(':location', $location);
+		$stmt->bindParam(':type', $type);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $result; // returns the row as array
+	}
+
+	// function GetHeatRanking($conn, $cause, $location, $type) {
+	// 	$stmt = $conn->prepare('CALL GetHeatRanking(:location, :cause, 2016, 3, 3, 22, :type)');
+	// 	$stmt->bindParam(':cause', $cause);
+	// 	$stmt->bindParam(':location', $location);
+	// 	$stmt->bindParam(':type', $type);
+	// 	$stmt->execute();
+	// 	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	// 	return $result; // returns the row as array
+	// }
 ?>

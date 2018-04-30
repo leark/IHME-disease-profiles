@@ -22,7 +22,7 @@ body {
     width: 100%;
     background-color: #cbe2a0;
     padding: 0.1px;
-    
+
 }
 
 .menu li {
@@ -85,7 +85,7 @@ body {
 
 .side li {
     list-style: none;
-} 
+}
 
 a {
     text-decoration: none;
@@ -143,7 +143,7 @@ a {
 	display: none;
 }
 
-#lineLegend, #daly_lineLegend, #yld_lineLegend svg, path { 
+#lineLegend, #daly_lineLegend, #yld_lineLegend svg, path {
 	fill: none;
 	stroke-width: 5px;
     stroke-linecap: round;
@@ -160,7 +160,7 @@ a {
 	margin-right: 20px;
 }
 
-.female { 
+.female {
 	stroke: #C2464F;
 }
 
@@ -169,7 +169,7 @@ tr.female {
 	color: #ffffff;
 }
 
-.male { 
+.male {
 	stroke: #3B81A0;
 }
 
@@ -178,7 +178,7 @@ tr.male {
 	color: #ffffff;
 }
 
-.sdi { 
+.sdi {
 	stroke-dasharray: 0,8;
     stroke-linejoin: round;
 }
@@ -200,7 +200,7 @@ table {
 line.slope-line{
 	stroke:black
 }
-	
+
 text.slope-label{
 	font: 12px Nunito;
 }
@@ -230,22 +230,6 @@ text.slope-label{
     padding-right: 10px;
 }
 
-
-
-/* RANKINGS */
-
-/* h3 { */
-  /* font-size: 16px; */
-/* } */
-
-/* h3 { */
-  /* width: 50%; */
-  /* height: 60px; */
-  /* margin: 0; */
-  /* padding: 0; */
-  /* display: inline; */
-/* }​ */
-
 th, td {
 	border: 1px solid #4d4d4f;
 	text-align: center;
@@ -254,4 +238,43 @@ th, td {
 
 th {
 	font-size: 18px;
+}
+
+#benchmark_body-cell-neutral {
+  width: 55px;
+  height: 45px;
+  color: #454545;
+  background-color: #DFE0DF;
+}
+
+#benchmark_body-cell-above {
+  width: 55px;
+  height: 45px;
+  color: white;
+  background-color: #F16639;
+}
+
+#benchmark_body-cell-below {
+  width: 55px;
+  height: 45px;
+  color: white;
+  background-color: #5596D0;
+}
+
+#benchmark_header-cell {
+  font-weight: normal;
+  color: #454545;
+  border: none;
+  padding-bottom: 15px;
+  padding-top: 25px;
+}
+
+#benchmark_label-cell {
+  width: auto;
+  border: none;
+}
+
+#benchmark_blank {
+  color: white;
+  border: none;
 }
