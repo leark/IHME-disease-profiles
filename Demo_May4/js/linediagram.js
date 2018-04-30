@@ -244,16 +244,20 @@ $(function() {
 			countryCell.innerHTML = location_name;
 			countryCell.colSpan = "2";
 			
-			var SDICell = row.insertCell(2);
-			SDICell.innerHTML = "SDI Average";
-			SDICell.colSpan = "2";
+			if (typeof formattedData[0].sdi !== 'undefined') {
+				var SDICell = row.insertCell(2);
+				SDICell.innerHTML = "SDI Average";
+				SDICell.colSpan = "2";
+			}
 			
 			row = tableHeader.insertRow(1);
 			row.insertCell(0);
 			row.insertCell(1).innerHTML = "1990";
 			row.insertCell(2).innerHTML = "2016";
-			row.insertCell(3).innerHTML = "1990";
-			row.insertCell(4).innerHTML = "2016";
+			if (typeof formattedData[0].sdi !== 'undefined') {
+				row.insertCell(3).innerHTML = "1990";
+				row.insertCell(4).innerHTML = "2016";
+			}
 			
 			var tableBody = table.createTBody();
 			
@@ -262,24 +266,30 @@ $(function() {
 			row.insertCell(0).innerHTML = "Females";
 			row.insertCell(1).innerHTML = (Math.round(formattedData[0].female * 10) / 10).toFixed(1);
 			row.insertCell(2).innerHTML = (Math.round(formattedData[formattedData.length - 1].female * 10) / 10).toFixed(1);
-			row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdiFemale * 10) / 10).toFixed(1);
-			row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdiFemale * 10) / 10).toFixed(1);
+			if (typeof formattedData[0].sdi !== 'undefined') {
+				row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdiFemale * 10) / 10).toFixed(1);
+				row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdiFemale * 10) / 10).toFixed(1);
+			}
 			
 			row = tableBody.insertRow(1);
 			row.className = "male";
 			row.insertCell(0).innerHTML = "Males";
 			row.insertCell(1).innerHTML = (Math.round(formattedData[0].male * 10) / 10).toFixed(1);
 			row.insertCell(2).innerHTML = (Math.round(formattedData[formattedData.length - 1].male * 10) / 10).toFixed(1);
-			row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdiMale * 10) / 10).toFixed(1);
-			row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdiMale * 10) / 10).toFixed(1);
+			if (typeof formattedData[0].sdi !== 'undefined') {
+				row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdiMale * 10) / 10).toFixed(1);
+				row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdiMale * 10) / 10).toFixed(1);
+			}
 			
 			row = tableBody.insertRow(2);
 			row.className = "all";
 			row.insertCell(0).innerHTML = "All";
 			row.insertCell(1).innerHTML = (Math.round(formattedData[0].both * 10) / 10).toFixed(1);
 			row.insertCell(2).innerHTML = (Math.round(formattedData[formattedData.length - 1].both * 10) / 10).toFixed(1);
-			row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdi * 10) / 10).toFixed(1);
-			row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdi * 10) / 10).toFixed(1);
+			if (typeof formattedData[0].sdi !== 'undefined') {
+				row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdi * 10) / 10).toFixed(1);
+				row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdi * 10) / 10).toFixed(1);
+			}
 			
 			containerDiv.appendChild(table);
 			

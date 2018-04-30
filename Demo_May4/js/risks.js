@@ -61,7 +61,8 @@ $(function() {
 					.attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 
 					// Scale the range of the data
-					x.domain([0, d3.max(formattedData, function(d) { return d.value; })]);
+					xmax = d3.max(formattedData, function(d) { return d.value; });
+					x.domain([0, xmax + (.1 * xmax)]);
 					y.domain(formattedData.map(function(d) { return d.risk; }));
 
 					// Add the X Axis
@@ -83,11 +84,14 @@ $(function() {
 					//svg.append("path")
 						//.attr("class", "both")
 						//.attr("d", valueline(formattedData));
+				
+				var bars = svg.selectAll(".bar")
+					.data(formattedData)
+					.enter()
+					.append("g")
 
 				if (formattedData.length <= 3){
-					svg.selectAll(".bar")
-						.data(formattedData)
-					  .enter().append("rect")
+					bars.append("rect")
 						  .attr("class", "bar")
 						  .style("fill", "rgb(149, 198, 132)")
 						  //.attr("x", function(d) { return x(d.risk); })
@@ -99,9 +103,7 @@ $(function() {
 				}
 
 				else{
-					svg.selectAll(".bar")
-						.data(formattedData)
-					  .enter().append("rect")
+					bars.append("rect")
 						  .attr("class", "bar")
 						  .style("fill", "rgb(149, 198, 132)")
 						  .attr("y", function(d) { return y(d.risk); })
@@ -111,6 +113,20 @@ $(function() {
 						  .attr("x", 0)
 						  .attr("width", function(d) { return x(d.value); });
 				}
+				
+				bars.append("text")
+					.attr("class", "slope-label")
+					//y position of the label is halfway down the bar
+					.attr("y", function (d) {
+						return y(d.risk) + y.rangeBand() / 2 + 4;
+					})
+					//x position is 3 pixels to the right of the bar
+					.attr("x", function (d) {
+						return x(d.value) + 3;
+					})
+					.text(function (d) {
+						return (Math.round(d.value * 10) / 10).toFixed(1);
+					});
 
 				//title
 				$(titleDiv).text(titleText);
