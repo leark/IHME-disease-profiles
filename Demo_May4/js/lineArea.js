@@ -7,6 +7,9 @@ $(function() {
 	}).done(function (msg) {
 		// console.log(msg);
 
+		let loading = document.getElementById("lineAreaLoading");
+		loading.parentNode.removeChild(loading);
+
 		let margins = {top: 30, bottom: 50, left: 60, right: 50};
 
 		let width = 800 - margins.left - margins.right,
