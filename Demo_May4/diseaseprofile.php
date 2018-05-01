@@ -27,6 +27,7 @@
 	<script type="text/javascript" src="./js/select2.js"></script>
 	<script type="text/javascript" src="./js/dom-to-image.min.js"></script>
 	<script type="text/javascript" src="./js/FileSaver.js"></script>
+	<script type="text/javascript" src="./js/iniSaveButton.js"></script>
 	<link type="text/css" rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/bullet.css">
 	<link rel="stylesheet" type="text/css" href="./css/column.css">
@@ -91,9 +92,9 @@
 					<option value="Global">Global</option>
 					<optgroup label="Sociodemographic Index">
 					<option value="High SDI">High SDI</option>
-					<option value="High-Middle SDI">High Middle SDI</option>
+					<option value="High-middle SDI">High Middle SDI</option>
 					<option value="Middle SDI">Middle SDI</option>
-					<option value="Low-Middle SDI">Low Middle SDI</option>
+					<option value="Low-middle SDI">Low Middle SDI</option>
 					<option value="Low SDI">Low SDI</option>
 					<optgroup label="Countries">
 					<option value="Cuba">Cuba</option>
@@ -157,6 +158,7 @@
 				<button class="saveButtons" id="lineAreaSave">Save as Image</button>
 				<div class="graphDiv" id="lineAreaGraph">
 					<h2 class="graph-header" id="lineAreaTitle"></h2>
+					<img class="loading" id="lineAreaLoading" src="./img/loading.gif">
 				</div>
 			</div>
 			<div class="graph" id="ranktableDiv">
