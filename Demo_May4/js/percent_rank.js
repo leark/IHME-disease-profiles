@@ -7,6 +7,8 @@ $(function() {
 	}).done(function (response) {
 		var rows = JSON.parse(response);
 
+		iniSaveButton(`ranktableSave`, `ranktableGraph`);
+
 		// Title
 		$('#rankTitle').text(`${cause_name} percent change in 1990 vs 2016`);
 
@@ -21,7 +23,7 @@ $(function() {
 		}
 
 		columns = ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"];
-		var rankingsTable = tabulate(rankData, columns, "#ranktableDiv");
+		var rankingsTable = tabulate(rankData, columns, "#ranktableGraph");
 		rankingsTable.selectAll("thead th")
 			.text(function(column) {
 				return column.charAt(0).toUpperCase() + column.substr(1);
@@ -32,7 +34,7 @@ $(function() {
 			});
 
 		// Footer
-		var containerDiv = document.getElementById("ranktableDiv");
+		var containerDiv = document.getElementById("ranktableGraph");
 		var footer = document.createElement("p");
 		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, rate");
 		footer.appendChild(footer_text);

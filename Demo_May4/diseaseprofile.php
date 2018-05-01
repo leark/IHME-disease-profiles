@@ -162,10 +162,16 @@
 				</div>
 			</div>
 			<div class="graph" id="ranktableDiv">
-				<h2 class="graph-header" id="rankTitle"></h2>
+				<button class="saveButtons" id="ranktableSave">Save as Image</button>
+				<div class="graphDiv" id="ranktableGraph">
+					<h2 class="graph-header" id="rankTitle"></h2>
+				</div>
 			</div>
 			<div class="graph" id="heatmapDiv">
-				<h2 class="graph-header" id="heatTitle"></h2>
+				<button class="saveButtons" id="heatmapSave">Save as Image</button>
+				<div class="graphDiv" id="heatmapGraph">
+					<h2 class="graph-header" id="heatTitle"></h2>
+				</div>
 			</div>
 			<div id="aboutprofiles">
 				<p>The Disease Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>

@@ -5,6 +5,8 @@ $(function() {
 		datatype: 'json',
 		data: {request_type:"heat_rank", causeName: cause_name, locationName: location_name}
 	}).done(function (response) {
+		iniSaveButton(`heatmapSave`,`heatmapGraph`);
+
 		if (!location_name.includes("SDI") && location_name != "Global") {
 			var rows = JSON.parse(response);
 			heatData = [];
@@ -22,7 +24,7 @@ $(function() {
 			$('#heatTitle').text(`How do causes of death and disability compare with ${cause_name}`);
 
 			column = ["location", "Deaths", "DALYs", "YLDs", "YLLs"];
-			var heatmapTable = tabulateMap(heatData, column, "#heatmapDiv");
+			var heatmapTable = tabulateMap(heatData, column, "#heatmapGraph");
 			heatmapTable.selectAll("thead th")
 			.text(function(column) {
 				return column;
@@ -33,7 +35,7 @@ $(function() {
 			});
 
 			// Footer
-			let containerDiv = document.getElementById("heatmapDiv");
+			let containerDiv = document.getElementById("heatmapGraph");
 			let footer = document.createElement("p");
 			let footer_text = document.createTextNode("2016, age-standardized, rate");
 				footer.appendChild(footer_text);

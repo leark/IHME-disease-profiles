@@ -10,7 +10,7 @@ Here's an example div that you want to save (you should also format it your grap
 
 To attach the save function to the button in this div, you would write
 
-linkSaveButton(`lineAreaSave`, `lineAreaGraph`, `${cause_name}MortalityAt${location_name}`);
+iniSaveButton(`lineAreaSave`, `lineAreaGraph`, `${cause_name}MortalityAt${location_name}`);
 
 	fileName is an optional parameter that will default the saved file's name to graphID.
 
