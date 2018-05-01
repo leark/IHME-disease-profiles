@@ -29,7 +29,7 @@ function iniSaveButton(buttonID, graphID, fileName = graphID, backgroundColor = 
 			dLink.click();
 		})
 		.catch(function(error) {
-			console.error(`Error from ${graphID}: `, error);
+			console.error(`Error from saving ${graphID}: `, error);
 		});
 	});
 }
