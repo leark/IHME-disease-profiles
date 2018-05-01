@@ -92,9 +92,9 @@
 					<option value="Global">Global</option>
 					<optgroup label="Sociodemographic Index">
 					<option value="High SDI">High SDI</option>
-					<!-- <option value="High-Middle SDI">High Middle SDI</option> -->
+					<option value="High-middle SDI">High Middle SDI</option>
 					<option value="Middle SDI">Middle SDI</option>
-					<!-- <option value="Low-Middle SDI">Low Middle SDI</option> -->
+					<option value="Low-middle SDI">Low Middle SDI</option>
 					<option value="Low SDI">Low SDI</option>
 					<optgroup label="Countries">
 					<option value="Cuba">Cuba</option>

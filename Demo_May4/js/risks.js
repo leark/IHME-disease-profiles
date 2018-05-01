@@ -23,7 +23,7 @@ $(function() {
 					});
 			}
 
-			console.log(formattedData);
+			// console.log(formattedData);
 
 			if (formattedData.length != 0){
 
@@ -84,7 +84,7 @@ $(function() {
 					//svg.append("path")
 						//.attr("class", "both")
 						//.attr("d", valueline(formattedData));
-				
+
 				var bars = svg.selectAll(".bar")
 					.data(formattedData)
 					.enter()
@@ -113,7 +113,7 @@ $(function() {
 						  .attr("x", 0)
 						  .attr("width", function(d) { return x(d.value); });
 				}
-				
+
 				bars.append("text")
 					.attr("class", "slope-label")
 					//y position of the label is halfway down the bar

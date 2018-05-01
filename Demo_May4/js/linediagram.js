@@ -8,13 +8,13 @@ $(function() {
 			dataType: 'json',
 			data: {request_type: requestType, causeName: cause_name, locationName: location_name}
 		}).done(function (msg) {
-			//console.log(msg);
+			console.log(msg);
 			var margins = {top: 30, bottom: 50, left: 60, right: 50};
 
 			var width = 800 - margins.left - margins.right,
 				height = 360 - margins.top - margins.bottom;
 			var formattedData = [];
-			
+			console.log(msg.length);
 			// input location is an SDI or global
 			if (msg.length == 81){
 				for (var i = msg.length - 1; i >= 0; i = i - 3) {
@@ -29,7 +29,7 @@ $(function() {
 							"both": parseFloat(singleYear.val)
 						});
 				}
-			// input location is a country 
+			// input location is a country
 			} else {
 				for (var i = msg.length - 1; i >= 0; i = i - 6) {
 					var singleYear = msg[i];
@@ -47,7 +47,6 @@ $(function() {
 						});
 				}
 			}
-
 			console.log(formattedData);
 
 			// Set the ranges
@@ -83,10 +82,10 @@ $(function() {
 				var sdifline = d3.svg.line()
 					.x(function(d) { return x(d.year); })
 					.y(function(d) { return y(d.sdiFemale); });
-					
+
 				var sdimline = d3.svg.line()
 					.x(function(d) { return x(d.year); })
-					.y(function(d) { return y(d.sdiMale); });	
+					.y(function(d) { return y(d.sdiMale); });
 			}
 
 			// Adds the svg canvas
@@ -118,7 +117,7 @@ $(function() {
 				// console.log(domain);
 				var max = Math.max.apply(Math, domain);
 				var min = Math.min.apply(Math, domain);
-				
+
 				y.domain([min - (.05 * min), max]);
 
 				// Add the X Axis
@@ -149,12 +148,12 @@ $(function() {
 					svg.append("path")
 						.attr("class", "sdi female")
 						.attr("d", sdifline(formattedData));
-					
+
 					svg.append("path")
 						.attr("class", "sdi male")
 						.attr("d", sdimline(formattedData));
 				}
-				
+
 			//title
 			$(titleDiv).text(titleText);
 
@@ -198,7 +197,7 @@ $(function() {
 						.attr("y2", "9px")
 
 				$(sdiftext).text("SDI average, females")
-				
+
 				var sdim = d3.select(sdimbar)
 					.append("svg")
 						.attr("class", "sdi male")
@@ -229,27 +228,27 @@ $(function() {
 				  .attr("dy", "1em")
 				  .style("text-anchor", "middle")
 				  .text(yLabel);
-			
+
 			// Values table
 			var containerDiv = document.getElementById(lineDivID);
-						
+
 			var table = document.createElement("table");
-			
+
 			var tableHeader = table.createTHead();
-			
+
 			var row = tableHeader.insertRow(0);
 			row.insertCell(0);
-			
+
 			var countryCell = row.insertCell(1)
 			countryCell.innerHTML = location_name;
 			countryCell.colSpan = "2";
-			
+
 			if (typeof formattedData[0].sdi !== 'undefined') {
 				var SDICell = row.insertCell(2);
 				SDICell.innerHTML = "SDI Average";
 				SDICell.colSpan = "2";
 			}
-			
+
 			row = tableHeader.insertRow(1);
 			row.insertCell(0);
 			row.insertCell(1).innerHTML = "1990";
@@ -258,9 +257,9 @@ $(function() {
 				row.insertCell(3).innerHTML = "1990";
 				row.insertCell(4).innerHTML = "2016";
 			}
-			
+
 			var tableBody = table.createTBody();
-			
+
 			row = tableBody.insertRow(0);
 			row.className = "female";
 			row.insertCell(0).innerHTML = "Females";
@@ -270,7 +269,7 @@ $(function() {
 				row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdiFemale * 10) / 10).toFixed(1);
 				row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdiFemale * 10) / 10).toFixed(1);
 			}
-			
+
 			row = tableBody.insertRow(1);
 			row.className = "male";
 			row.insertCell(0).innerHTML = "Males";
@@ -280,7 +279,7 @@ $(function() {
 				row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdiMale * 10) / 10).toFixed(1);
 				row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdiMale * 10) / 10).toFixed(1);
 			}
-			
+
 			row = tableBody.insertRow(2);
 			row.className = "all";
 			row.insertCell(0).innerHTML = "All";
@@ -290,9 +289,9 @@ $(function() {
 				row.insertCell(3).innerHTML = (Math.round(formattedData[0].sdi * 10) / 10).toFixed(1);
 				row.insertCell(4).innerHTML = (Math.round(formattedData[formattedData.length - 1].sdi * 10) / 10).toFixed(1);
 			}
-			
+
 			containerDiv.appendChild(table);
-			
+
 			// Footer
 			var footer = document.createElement("p");
 			var footer_text = document.createTextNode(caption);
