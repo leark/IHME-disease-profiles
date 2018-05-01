@@ -27,6 +27,7 @@
 	<script type="text/javascript" src="./js/select2.js"></script>
 	<script type="text/javascript" src="./js/dom-to-image.min.js"></script>
 	<script type="text/javascript" src="./js/FileSaver.js"></script>
+	<script type="text/javascript" src="./js/iniSaveButton.js"></script>
 	<link type="text/css" rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/bullet.css">
 	<link rel="stylesheet" type="text/css" href="./css/column.css">
@@ -166,7 +167,7 @@
 				<h2 class="graph-header" id="heatTitle"></h2>
 			</div>
 			<div id="aboutprofiles">
-				<p>The Country Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>
+				<p>The Disease Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>
 			</div>
 
 		</div>

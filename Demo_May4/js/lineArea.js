@@ -135,31 +135,11 @@ $(function() {
 		footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);	
 		
-		// Set-up the export button
-		// d3.select('#saveButton').on('click', function(){
-		// 	var svgString = getSVGString(svg.node());
-		// 	svgString2Image( svgString, 2*width, 2*height, 'png', save ); // passes Blob and filesize String to the callback
-
-		// 	function save( dataBlob, filesize ){
-		// 		saveAs( dataBlob, 'D3 vis exported to PNG.png' ); // FileSaver.js function
-		// 	}
-		// });
-
-		$("#lineAreaSave").click(function() {
-			let graph = document.getElementById("lineAreaGraph");
-			domtoimage.toPng(graph, {bgcolor:"#FFFFFF"}).then(function(dataUrl) {
-				let dLink = document.createElement("a");
-				dLink.download = "lineArea.jpeg";
-				dLink.href = dataUrl;
-				dLink.click();
-			})
-			.catch(function(error) {
-				console.error(`Error: `, error);
-			});
-		});
+		// initialize the export to image button
+		iniSaveButton(`lineAreaSave`, `lineAreaGraph`, `${cause_name}MortalityAt${location_name}`);
 
 	}).fail(function (error) {
-		console.log(error);
+		console.log(`Error from lineArea: ${error}`);
 	});
 });
 	
