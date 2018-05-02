@@ -39,7 +39,7 @@ $(function() {
 		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, rate");
 		footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);
-
+		
 	}).fail(function (e) {
 		console.log(e);
 	});

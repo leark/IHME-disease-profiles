@@ -25,7 +25,7 @@
 	<script type="text/javascript" src="./js/percent_rank.js"></script>
 	<script type="text/javascript" src="./js/heat_map.js"></script>
 	<script type="text/javascript" src="./js/select2.js"></script>
-	<script type="text/javascript" src="./js/dom-to-image.min.js"></script>
+	<script type="text/javascript" src="./js/dom-to-image.js"></script>
 	<script type="text/javascript" src="./js/FileSaver.js"></script>
 	<script type="text/javascript" src="./js/iniSaveButton.js"></script>
 	<link type="text/css" rel="stylesheet" href="./css/style.css">
@@ -167,7 +167,7 @@
 				</div>
 			</div>
 			<div class="graph" id="heatmapDiv">
-				<button class="saveButtons" id="heatmapSave">Save as Image</button>
+				<button class="saveButtons" id="heatmapSave" style="display: none">Save as Image</button>
 				<div class="graphDiv" id="heatmapGraph">
 					<h2 class="graph-header" id="heatTitle"></h2>
 				</div>

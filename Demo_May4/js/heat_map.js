@@ -40,7 +40,9 @@ $(function() {
 			let footer_text = document.createTextNode("2016, age-standardized, rate");
 				footer.appendChild(footer_text);
 				containerDiv.appendChild(footer);
-			}
+
+			document.getElementById(`heatmapSave`).style.display = "inherit";
+		}
 	}).fail(function (e) {
 		console.log(e);
 	});
