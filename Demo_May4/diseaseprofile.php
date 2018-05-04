@@ -112,73 +112,74 @@
 			</form>
 
 			<h1><?=$disease?> in <?=$region?></h1>
+			<img id="loading" src="./img/loading.gif">
+			<div id="everything" style="visibility: hidden;">
+				<div class="graph" id="lineDiv">
+					<h2 class="graph-header" id="lineTitle"></h2>
+					<div id="lineLegend">
+						<span id="fembar"></span>
+						<span id="femtext"></span>
+						<span id="sdifbar"></span>
+						<span id="sdiftext"></span>
+						<span id="mbar"></span>
+						<span id="mtext"></span>
+						<span id="sdimbar"></span>
+						<span id="sdimtext"></span>
+					</div>
+				</div>
 
-			<div class="graph" id="lineDiv">
-				<h2 class="graph-header" id="lineTitle"></h2>
-				<div id="lineLegend">
-					<span id="fembar"></span>
-					<span id="femtext"></span>
-					<span id="sdifbar"></span>
-					<span id="sdiftext"></span>
-					<span id="mbar"></span>
-					<span id="mtext"></span>
-					<span id="sdimbar"></span>
-					<span id="sdimtext"></span>
+				<div class="graph" id="daly_lineDiv">
+					<h2 class="graph-header" id="daly_lineTitle"></h2>
+					<div id="daly_lineLegend">
+						<span id="daly_fembar"></span>
+						<span id="daly_femtext"></span>
+						<span id="daly_sdifbar"></span>
+						<span id="daly_sdiftext"></span>
+						<span id="daly_mbar"></span>
+						<span id="daly_mtext"></span>
+						<span id="daly_sdimbar"></span>
+						<span id="daly_sdimtext"></span>
+					</div>
 				</div>
-			</div>
 
-			<div class="graph" id="daly_lineDiv">
-				<h2 class="graph-header" id="daly_lineTitle"></h2>
-				<div id="daly_lineLegend">
-					<span id="daly_fembar"></span>
-					<span id="daly_femtext"></span>
-					<span id="daly_sdifbar"></span>
-					<span id="daly_sdiftext"></span>
-					<span id="daly_mbar"></span>
-					<span id="daly_mtext"></span>
-					<span id="daly_sdimbar"></span>
-					<span id="daly_sdimtext"></span>
+				<div class="graph" id="yld_lineDiv">
+					<h2 class="graph-header" id="yld_lineTitle"></h2>
+					<div id="yld_lineLegend">
+						<span id="yld_fembar"></span>
+						<span id="yld_femtext"></span>
+						<span id="yld_sdifbar"></span>
+						<span id="yld_sdiftext"></span>
+						<span id="yld_mbar"></span>
+						<span id="yld_mtext"></span>
+						<span id="yld_sdimbar"></span>
+						<span id="yld_sdimtext"></span>
+					</div>
 				</div>
-			</div>
 
-			<div class="graph" id="yld_lineDiv">
-				<h2 class="graph-header" id="yld_lineTitle"></h2>
-				<div id="yld_lineLegend">
-					<span id="yld_fembar"></span>
-					<span id="yld_femtext"></span>
-					<span id="yld_sdifbar"></span>
-					<span id="yld_sdiftext"></span>
-					<span id="yld_mbar"></span>
-					<span id="yld_mtext"></span>
-					<span id="yld_sdimbar"></span>
-					<span id="yld_sdimtext"></span>
+				<div class="graph" id="risksDiv">
+					<h2 class="graph-header" id="risksTitle"></h2>
 				</div>
-			</div>
-
-			<div class="graph" id="risksDiv">
-				<h2 class="graph-header" id="risksTitle"></h2>
-			</div>
-			<div class="graph" id="lineAreaDiv">
-				<button class="saveButtons" id="lineAreaSave">Save as Image</button>
-				<div class="graphDiv" id="lineAreaGraph">
-					<h2 class="graph-header" id="lineAreaTitle"></h2>
-					<img class="loading" id="lineAreaLoading" src="./img/loading.gif">
+				<div class="graph" id="lineAreaDiv">
+					<button class="saveButtons" id="lineAreaSave">Save as Image</button>
+					<div class="graphDiv" id="lineAreaGraph">
+						<h2 class="graph-header" id="lineAreaTitle"></h2>
+					</div>
 				</div>
-			</div>
-			<div class="graph" id="ranktableDiv">
-				<button class="saveButtons" id="ranktableSave">Save as Image</button>
-				<div class="graphDiv" id="ranktableGraph">
-					<h2 class="graph-header" id="rankTitle"></h2>
+				<div class="graph" id="ranktableDiv">
+					<button class="saveButtons" id="ranktableSave">Save as Image</button>
+					<div class="graphDiv" id="ranktableGraph">
+						<h2 class="graph-header" id="rankTitle"></h2>
+					</div>
 				</div>
-			</div>
-			<div class="graph" id="heatmapDiv">
-				<button class="saveButtons" id="heatmapSave" style="display: none">Save as Image</button>
-				<div class="graphDiv" id="heatmapGraph">
-					<h2 class="graph-header" id="heatTitle"></h2>
+				<div class="graph" id="heatmapDiv">
+					<button class="saveButtons" id="heatmapSave" style="display: none">Save as Image</button>
+					<div class="graphDiv" id="heatmapGraph">
+						<h2 class="graph-header" id="heatTitle"></h2>
+					</div>
 				</div>
-			</div>
-			<div id="aboutprofiles">
-				<p>The Disease Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>
+				<div id="aboutprofiles">
+					<p>The Disease Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>
+				</div>
 			</div>
 
 		</div>
