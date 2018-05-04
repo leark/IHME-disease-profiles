@@ -2,6 +2,11 @@
 	$disease = htmlspecialchars($_GET["d"]);
 	$region = htmlspecialchars($_GET["r"]);
 
+	if ($disease == '' || $region == '') {
+		header('Location: ./diseaseprofile.html', true, 301);
+		exit();
+	}
+
 	echo '<script>';
 	echo 'let cause_name = ' . json_encode($disease) . ';';
 	echo 'let location_name = ' . json_encode($region) . ';';
