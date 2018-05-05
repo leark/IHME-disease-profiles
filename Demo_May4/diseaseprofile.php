@@ -11,6 +11,7 @@
 	echo 'let cause_name = ' . json_encode($disease) . ';';
 	echo 'let location_name = ' . json_encode($region) . ';';
 	echo '</script>';
+	exit();
 ?>
 
 <head>
