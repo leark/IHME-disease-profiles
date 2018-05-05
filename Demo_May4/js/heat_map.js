@@ -5,7 +5,10 @@ $(function() {
 		datatype: 'json',
 		data: {request_type:"heat_rank", causeName: cause_name, locationName: location_name}
 	}).done(function (response) {
+		let loading = document.getElementById("loading");
+		loading.style.display = 'none';
 		iniSaveButton(`heatmapSave`,`heatmapGraph`);
+		document.getElementById("everything").style.visibility = "visible";
 
 		if (!location_name.includes("SDI") && location_name != "Global") {
 			var rows = JSON.parse(response);
@@ -46,6 +49,7 @@ $(function() {
 	}).fail(function (e) {
 		console.log(e);
 	});
+
 });
 
 function tabulateMap(data, columns, table) {
