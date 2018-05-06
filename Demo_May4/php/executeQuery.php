@@ -20,9 +20,7 @@
 					if ($value['location_name'] == $location)
 							$l_id = $value['location_id'];
 			}
-			// echo $c_id . " " . $l_id;
 			echo json_encode(ExecuteQuery($conn, $req_type, $c_id, $l_id));
-			// echo json_encode(ExecuteQuery($conn, $req_type, $cause, $location));
 			$conn = null;
 		}
 	} catch(PDOException $e) {
@@ -58,7 +56,6 @@
 
 			$yld_first = GetChartRanking($conn, $cause, $location, 1990, 'YLD');
 			$yld_second = GetChartRanking($conn, $cause, $location, 2016, 'YLD');
-
 			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
 			return $total;
 		} else if ($type == "heat_rank") {
@@ -153,13 +150,4 @@
 		return $result; // returns the row as array
 	}
 
-	// function GetHeatRanking($conn, $cause, $location, $type) {
-	// 	$stmt = $conn->prepare('CALL GetHeatRanking(:location, :cause, 2016, 3, 3, 22, :type)');
-	// 	$stmt->bindParam(':cause', $cause);
-	// 	$stmt->bindParam(':location', $location);
-	// 	$stmt->bindParam(':type', $type);
-	// 	$stmt->execute();
-	// 	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	// 	return $result; // returns the row as array
-	// }
 ?>
