@@ -33,6 +33,7 @@
 	<script type="text/javascript" src="./js/dom-to-image.js"></script>
 	<script type="text/javascript" src="./js/FileSaver.js"></script>
 	<script type="text/javascript" src="./js/iniSaveButton.js"></script>
+	<script type="text/javascript" src="./js/createGraphTable.js"></script>
 	<link type="text/css" rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/column.css">
 </head>
@@ -114,8 +115,10 @@
 			<h1><?=$disease?> in <?=$region?></h1>
 			<img id="loading" src="./img/loading.gif">
 			<div id="everything" style="visibility: hidden;">
+				<div id="media">
+					<div class="profile-print-button"><a class="button-style-1" onclick="window.print();">Print</a></div>
+				</div>
 				<div id="SDI"></div>
-				<div class="profile-print-button" style="float:right;"><a class="button-style-1" style="cursor:pointer;" onclick="window.print();">Print</a></div>
 				<div class="graph" id="lineDiv">
 					<h2 class="graph-header" id="lineTitle"></h2>
 					<div id="lineLegend">

@@ -6,5 +6,70 @@
 
 #info {
     width: 77%;
-    float: right;
+    float: left;
 }
+
+.button-style-1 {
+  background: rgba(87,175,85,.8);
+  padding: 8px 9px;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.profile-print-button {
+	top: 50%;
+	float: right;
+	transform: translateY(-50%);
+}
+
+@media print {
+	body * {
+		visibility: hidden;
+	}
+
+	#info, #info * {
+		visibility: visible;
+	}
+
+	#info {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.graph {
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
+
+	.graph-header {
+		page-break-after: avoid;
+	}
+}
+
+.Females {
+	stroke: #C2464F;
+}
+
+tr.Females {
+	background-color: #C2464F;
+	color: #ffffff;
+}
+
+.Males {
+	stroke: #3B81A0;
+}
+
+tr.Males {
+	background-color: #3B81A0;
+	color: #ffffff;
+}
+
+tr.All {
+	background-color: #9d9fa2;
+	color: #ffffff;
+}
+
+
+/*below 1060px width, make sidebar into something else*/

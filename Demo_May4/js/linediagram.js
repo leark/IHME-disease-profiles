@@ -28,7 +28,13 @@ $(function() {
 							"metric": singleYear.metric,
 							"female": parseFloat(msg[i-1].val),
 							"male": parseFloat(msg[i-2].val),
-							"both": parseFloat(singleYear.val)
+							"both": parseFloat(singleYear.val),
+							// "0": parseFloat(msg[i-1].val),
+							// "1": parseFloat(msg[i-2].val),
+							// "2": parseFloat(singleYear.val),
+							// "6": 'Females',
+							// "7": 'Males',
+							// "8": 'All'
 						});
 				}
 			// input location is a country
@@ -47,6 +53,15 @@ $(function() {
 							"sdiFemale": parseFloat(msg[i-4].val),
 							"sdiMale": parseFloat(msg[i-5].val),
 							"sdiGroup": msg[i-5].location_name
+							// "0": parseFloat(msg[i-1].val),
+							// "1": parseFloat(msg[i-2].val),
+							// "2": parseFloat(singleYear.val),
+							// "3": parseFloat(msg[i-3].val),
+							// "4": parseFloat(msg[i-4].val),
+							// "5": parseFloat(msg[i-5].val),
+							// "6": 'Females',
+							// "7": 'Males',
+							// "8": 'All'
 						});
 				}
 				//SDI Info
