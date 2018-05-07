@@ -25,6 +25,8 @@
 			if ($l_id != 0 && $c_id != 0) {
 				echo json_encode(ExecuteQuery($conn, $req_type, $c_id, $l_id));
 				// echo json_encode(ExecuteQuery($conn, $req_type, $cause, $location));
+			} else {
+				header('Location: ./diseaseprofile.html', true, 301);
 			}
 			$conn = null;
 			exit();

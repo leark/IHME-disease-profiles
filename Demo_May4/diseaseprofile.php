@@ -115,6 +115,7 @@
 			<img id="loading" src="./img/loading.gif">
 			<div id="everything" style="visibility: hidden;">
 				<div id="SDI"></div>
+				<div class="profile-print-button" style="float:right;"><a class="button-style-1" style="cursor:pointer;" onclick="window.print();">Print</a></div>
 				<div class="graph" id="lineDiv">
 					<h2 class="graph-header" id="lineTitle"></h2>
 					<div id="lineLegend">
