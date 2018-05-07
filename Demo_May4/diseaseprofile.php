@@ -114,6 +114,7 @@
 			<h1><?=$disease?> in <?=$region?></h1>
 			<img id="loading" src="./img/loading.gif">
 			<div id="everything" style="visibility: hidden;">
+				<div id="SDI"></div>
 				<div class="graph" id="lineDiv">
 					<h2 class="graph-header" id="lineTitle"></h2>
 					<div id="lineLegend">
@@ -175,6 +176,11 @@
 					<button class="saveButtons" id="heatmapSave" style="display: none">Save as Image</button>
 					<div class="graphDiv" id="heatmapGraph">
 						<h2 class="graph-header" id="heatTitle"></h2>
+					</div>
+					<div id="benchmark-legend">
+						<div class="disease-profile legend" id="legend-item-lower-text">Significantly lower than mean</div>
+						<div class="disease-profile legend" id="legend-item-same-text">Statistically indistinguishable from mean</div>
+						<div class="disease-profile legend" id="legend-item-upper-text">Significantly higher than mean</div>
 					</div>
 				</div>
 				<div id="aboutprofiles">

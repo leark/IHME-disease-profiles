@@ -8,13 +8,15 @@ $(function() {
 			dataType: 'json',
 			data: {request_type: requestType, causeName: cause_name, locationName: location_name}
 		}).done(function (msg) {
-			console.log(msg);
+			//console.log(msg);
+			
 			var margins = {top: 30, bottom: 50, left: 60, right: 50};
 
 			var width = 800 - margins.left - margins.right,
 				height = 360 - margins.top - margins.bottom;
+				
 			var formattedData = [];
-			console.log(msg.length);
+			
 			// input location is an SDI or global
 			if (msg.length == 81){
 				for (var i = msg.length - 1; i >= 0; i = i - 3) {
@@ -43,8 +45,13 @@ $(function() {
 							"both": parseFloat(singleYear.val),
 							"sdi": parseFloat(msg[i-3].val),
 							"sdiFemale": parseFloat(msg[i-4].val),
-							"sdiMale": parseFloat(msg[i-5].val)
+							"sdiMale": parseFloat(msg[i-5].val),
+							"sdiGroup": msg[i-5].location_name
 						});
+				}
+				//SDI Info
+				if (requestType == "death_line"){
+					document.getElementById('SDI').innerHTML = formattedData[0].sdiGroup;
 				}
 			}
 			console.log(formattedData);
