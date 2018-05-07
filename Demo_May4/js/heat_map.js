@@ -40,6 +40,27 @@ $(function() {
 				return d3.descending(a.age, b.age);
 			});
 
+			// Legend
+			let benchmarkDiv = document.getElementById("benchmark-legend");
+
+			let lower = document.createElement("div");
+			lower.innerHTML = "Significantly lower than mean";
+			lower.className = "disease-profile legend";
+			lower.setAttribute("id", "legend-item-lower-text");
+			benchmarkDiv.appendChild(lower);
+
+			let same = document.createElement("div");
+			same.innerHTML = "Statistically indistinguishable from mean";
+			same.className = "disease-profile legend";
+			same.setAttribute("id", "legend-item-same-text");
+			benchmarkDiv.appendChild(same);
+
+			let upper = document.createElement("div");
+			upper.innerHTML = "Significantly higher than mean";
+			upper.className = "disease-profile legend";
+			upper.setAttribute("id", "legend-item-upper-text");
+			benchmarkDiv.appendChild(upper);
+
 			// Footer
 			let containerDiv = document.getElementById("heatmapDiv");
 			let footer = document.createElement("p");

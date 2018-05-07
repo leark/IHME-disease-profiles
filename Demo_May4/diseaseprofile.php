@@ -177,11 +177,7 @@
 					<div class="graphDiv" id="heatmapGraph">
 						<h2 class="graph-header" id="heatTitle"></h2>
 					</div>
-					<div id="benchmark-legend">
-						<div class="disease-profile legend" id="legend-item-lower-text">Significantly lower than mean</div>
-						<div class="disease-profile legend" id="legend-item-same-text">Statistically indistinguishable from mean</div>
-						<div class="disease-profile legend" id="legend-item-upper-text">Significantly higher than mean</div>
-					</div>
+					<div id="benchmark-legend"></div>
 				</div>
 				<div id="aboutprofiles">
 					<p>The Disease Profiles provide an overview of findings from the Global Burden of Disease (GBD). They are based on over 115,000 different data sources used by researchers to produce the most scientifically rigorous estimates possible. Estimates from the GBD study may differ from national statistics due to differences in data sources and methodology. These profiles are meant to be freely downloaded and distributed. Please send feedback and questions to <a href="mailto:engage@healthdata.org">engage@healthdata.org</a>.</p>

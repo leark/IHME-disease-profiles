@@ -66,7 +66,8 @@
 			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
 			return $total;
 		} else if ($type == "heat_rank") {
-			return GetHeatRanking($conn, $cause, $location, 2016);
+			if ($location < 40000)
+				return GetHeatRanking($conn, $cause, $location, 2016);
 		}
 	}
 
