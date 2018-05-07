@@ -10,17 +10,20 @@ $(function() {
 		iniSaveButton(`heatmapSave`,`heatmapGraph`);
 		document.getElementById("everything").style.visibility = "visible";
 
+		let column_num = 4;
 		if (!location_name.includes("SDI") && location_name != "Global") {
 			var rows = JSON.parse(response);
 			heatData = [];
-			for (let i = 0; i < 6; i++) {
+			rows[column_num].location = "Comparison group mean (" + rows[column_num].location + ")";
+			// normalize value to be greater than 0
+			for (let i = 0; i < rows.length; i+= column_num) {
 				heatData.push({
 					'location': rows[i].location,
-					'Deaths': Math.round(rows[i].val * 10000 ) / 100,
-					'DALYs': Math.round(rows[i + 7].val * 100 ) / 100,
-					'YLDs': Math.round(rows[i + 2 * 7].val * 100 ) / 100,
-					'YLLs': Math.round(rows[i + 3 * 7].val * 100 ) / 100
-				})
+					'Deaths': Math.round(rows[i].val * 100) / 10,
+					'DALYs': Math.round(rows[i + 1].val * 10 ) / 10,
+					'YLDs': Math.round(rows[i + 2].val * 10 ) / 10,
+					'YLLs': Math.round(rows[i + 3].val * 10 ) / 10
+				});
 			};
 
 			// Title
@@ -38,14 +41,16 @@ $(function() {
 			});
 
 			// Footer
-			let containerDiv = document.getElementById("heatmapGraph");
+			let containerDiv = document.getElementById("heatmapDiv");
 			let footer = document.createElement("p");
+			footer.className = "footer";
 			let footer_text = document.createTextNode("2016, age-standardized, rate");
 				footer.appendChild(footer_text);
 				containerDiv.appendChild(footer);
 
 			document.getElementById(`heatmapSave`).style.display = "inherit";
-		}
+		};
+
 	}).fail(function (e) {
 		console.log(e);
 	});
@@ -92,7 +97,6 @@ function tabulateMap(data, columns, table) {
 								return "benchmark_label-cell";
 						} else {
 								var sum = (d.mean - d.value) / Math.abs(d.mean + d.value);
-								// console.log(sum);
 								if (Math.abs(sum) < 0.10) {
 										return "benchmark_body-cell-neutral";
 								} else if (sum < 0) {
