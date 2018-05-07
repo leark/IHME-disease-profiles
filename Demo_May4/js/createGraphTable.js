@@ -40,6 +40,18 @@ function createGraphTable(location_name, data, gender = false) {
 	if (!gender) {
 		rowNumber = 2;
 	}
+
+	// This table assumes certain things from data
+	// "0": female value,
+	// "1": male value,
+	// "2": both value,
+	// "3": sdi female,
+	// "4": sdi male,
+	// "5": sdi both,
+	// "6": 'Females',
+	// "7": 'Males',
+	// "8": 'All'
+
 	for (; rowNumber <= 2; rowNumber++) {
 		tableBody.deleteRow(rowNumber);
 		row = tableBody.insertRow(rowNumber);
