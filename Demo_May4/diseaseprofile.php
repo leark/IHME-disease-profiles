@@ -160,7 +160,12 @@
 						<span id="yld_sdimtext"></span>
 					</div>
 				</div>
-
+				<div class="graph" id="ranktableDiv">
+					<button class="saveButtons" id="ranktableSave">Save as Image</button>
+					<div class="graphDiv" id="ranktableGraph">
+						<h2 class="graph-header" id="rankTitle"></h2>
+					</div>
+				</div>
 				<div class="graph" id="risksDiv">
 					<h2 class="graph-header" id="risksTitle"></h2>
 				</div>
@@ -168,12 +173,6 @@
 					<button class="saveButtons" id="lineAreaSave">Save as Image</button>
 					<div class="graphDiv" id="lineAreaGraph">
 						<h2 class="graph-header" id="lineAreaTitle"></h2>
-					</div>
-				</div>
-				<div class="graph" id="ranktableDiv">
-					<button class="saveButtons" id="ranktableSave">Save as Image</button>
-					<div class="graphDiv" id="ranktableGraph">
-						<h2 class="graph-header" id="rankTitle"></h2>
 					</div>
 				</div>
 				<div class="graph" id="heatmapDiv">
