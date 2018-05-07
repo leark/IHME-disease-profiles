@@ -21,13 +21,17 @@
 							$l_id = $value['location_id'];
 			}
 			// echo $c_id . " " . $l_id;
-			echo json_encode(ExecuteQuery($conn, $req_type, $c_id, $l_id));
-			// echo json_encode(ExecuteQuery($conn, $req_type, $cause, $location));
+			if ($l_id != 0 && $c_id != 0) {
+				echo json_encode(ExecuteQuery($conn, $req_type, $c_id, $l_id));
+				// echo json_encode(ExecuteQuery($conn, $req_type, $cause, $location));
+			}
 			$conn = null;
+			exit();
 		}
 	} catch(PDOException $e) {
 		// Either connection failed or there was an error in the query
 		echo "Connection failed: " . $e->getMessage();
+		exit();
 	}
 
 	function GetConnection() {
