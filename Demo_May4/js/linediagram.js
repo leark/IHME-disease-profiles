@@ -177,7 +177,7 @@ $(function() {
 				}
 
 			//title
-			$(titleDiv).text(titleText);
+			$(titleDiv).text(titleText + causeToLowerCase(cause_name) + "?");
 
 			//legend
 			var female = d3.select(fembar)
