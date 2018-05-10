@@ -1,7 +1,7 @@
 $(function() {
 	lineDiagram = function(requestType, lineDiv, titleDiv, titleText,
 		fembar, femtext, mbar, mtext, sdifbar, sdiftext, sdimbar, sdimtext,
-		yLabel, lineDivID, caption) {
+		yLabel, lineDivID, caption, buttonID, graphID) {
 		$.ajax({
 			url:"./php/executeQuery.php", //the page containing php script
 			type: "get", //request type
@@ -319,6 +319,9 @@ $(function() {
 			var footer_text = document.createTextNode(caption);
 			footer.appendChild(footer_text);
 			containerDiv.appendChild(footer);
+			
+			//save as image 
+			iniSaveButton(buttonID, graphID, `${cause_name}_${location_name}`);
 
 		}).fail(function (error) {
 			console.log(error);

@@ -280,44 +280,53 @@
 				</div>
 				<div id="SDI"></div>
 				<div class="graph" id="lineDiv">
-					<h2 class="graph-header" id="lineTitle"></h2>
-					<div id="lineLegend">
-						<span id="fembar"></span>
-						<span id="femtext"></span>
-						<span id="sdifbar"></span>
-						<span id="sdiftext"></span>
-						<span id="mbar"></span>
-						<span id="mtext"></span>
-						<span id="sdimbar"></span>
-						<span id="sdimtext"></span>
+					<button class="saveButtons" id="lineSave">Save as Image</button>
+					<div class="graphDiv" id="lineGraph">
+						<h2 class="graph-header" id="lineTitle"></h2>
+						<div id="lineLegend">
+							<span id="fembar"></span>
+							<span id="femtext"></span>
+							<span id="sdifbar"></span>
+							<span id="sdiftext"></span>
+							<span id="mbar"></span>
+							<span id="mtext"></span>
+							<span id="sdimbar"></span>
+							<span id="sdimtext"></span>
+						</div>
 					</div>
 				</div>
 
 				<div class="graph" id="daly_lineDiv">
-					<h2 class="graph-header" id="daly_lineTitle"></h2>
-					<div id="daly_lineLegend">
-						<span id="daly_fembar"></span>
-						<span id="daly_femtext"></span>
-						<span id="daly_sdifbar"></span>
-						<span id="daly_sdiftext"></span>
-						<span id="daly_mbar"></span>
-						<span id="daly_mtext"></span>
-						<span id="daly_sdimbar"></span>
-						<span id="daly_sdimtext"></span>
+					<button class="saveButtons" id="dalyLineSave">Save as Image</button>
+					<div class="graphDiv" id="dalyLineGraph">
+						<h2 class="graph-header" id="daly_lineTitle"></h2>
+						<div id="daly_lineLegend">
+							<span id="daly_fembar"></span>
+							<span id="daly_femtext"></span>
+							<span id="daly_sdifbar"></span>
+							<span id="daly_sdiftext"></span>
+							<span id="daly_mbar"></span>
+							<span id="daly_mtext"></span>
+							<span id="daly_sdimbar"></span>
+							<span id="daly_sdimtext"></span>
+						</div>
 					</div>
 				</div>
 
 				<div class="graph" id="yld_lineDiv">
-					<h2 class="graph-header" id="yld_lineTitle"></h2>
-					<div id="yld_lineLegend">
-						<span id="yld_fembar"></span>
-						<span id="yld_femtext"></span>
-						<span id="yld_sdifbar"></span>
-						<span id="yld_sdiftext"></span>
-						<span id="yld_mbar"></span>
-						<span id="yld_mtext"></span>
-						<span id="yld_sdimbar"></span>
-						<span id="yld_sdimtext"></span>
+					<button class="saveButtons" id="yldLineSave">Save as Image</button>
+					<div class="graphDiv" id="yldLineGraph">
+						<h2 class="graph-header" id="yld_lineTitle"></h2>
+						<div id="yld_lineLegend">
+							<span id="yld_fembar"></span>
+							<span id="yld_femtext"></span>
+							<span id="yld_sdifbar"></span>
+							<span id="yld_sdiftext"></span>
+							<span id="yld_mbar"></span>
+							<span id="yld_mtext"></span>
+							<span id="yld_sdimbar"></span>
+							<span id="yld_sdimtext"></span>
+						</div>
 					</div>
 				</div>
 				<div class="graph" id="ranktableDiv">
