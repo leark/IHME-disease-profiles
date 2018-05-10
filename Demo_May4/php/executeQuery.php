@@ -57,14 +57,14 @@
 		} else if ($type == "risks") {
 			return GetRisks($conn, $cause, $location);
 		} else if ($type == "percent_rank") {
-			$death_first = GetChartRanking($conn, $cause, $location, 1990, 'DEATH');
-			$death_second = GetChartRanking($conn, $cause, $location, 2016, 'DEATH');
+			$death_first = GetChartRanking($conn, $cause, $location, 1990, 1);
+			$death_second = GetChartRanking($conn, $cause, $location, 2016, 1);
 
-			$daly_first = GetChartRanking($conn, $cause, $location, 1990, 'DALY');
-			$daly_second = GetChartRanking($conn, $cause, $location, 2016, 'DALY');
+			$daly_first = GetChartRanking($conn, $cause, $location, 1990, 2);
+			$daly_second = GetChartRanking($conn, $cause, $location, 2016, 2);
 
-			$yld_first = GetChartRanking($conn, $cause, $location, 1990, 'YLD');
-			$yld_second = GetChartRanking($conn, $cause, $location, 2016, 'YLD');
+			$yld_first = GetChartRanking($conn, $cause, $location, 1990, 3);
+			$yld_second = GetChartRanking($conn, $cause, $location, 2016, 3);
 			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
 			return $total;
 		} else if ($type == "heat_rank") {
@@ -120,7 +120,7 @@
 	}
 
 	function GetChartRanking($conn, $cause, $location, $year, $type) {
-		$stmt = $conn->prepare('CALL GetChartRankingAll(:location, :cause, :year, 3, 3, 22, :type)');
+		$stmt = $conn->prepare('CALL GetChartRanking(:location, :cause, :year, 3, 3, 22, :type)');
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':year', $year);
