@@ -20,12 +20,21 @@
 					if ($value['location_name'] == $location)
 							$l_id = $value['location_id'];
 			}
-			echo json_encode(ExecuteQuery($conn, $req_type, $c_id, $l_id));
+
+			// echo $c_id . " " . $l_id;
+			if ($l_id != 0 && $c_id != 0) {
+				echo json_encode(ExecuteQuery($conn, $req_type, $c_id, $l_id));
+				// echo json_encode(ExecuteQuery($conn, $req_type, $cause, $location));
+			} else {
+				header('Location: ./diseaseprofile.html', true, 301);
+			}
 			$conn = null;
+			exit();
 		}
 	} catch(PDOException $e) {
 		// Either connection failed or there was an error in the query
 		echo "Connection failed: " . $e->getMessage();
+		exit();
 	}
 
 	function GetConnection() {
@@ -38,7 +47,7 @@
 
 	function ExecuteQuery($conn, $type, $cause, $location) {
 		if ($type == "bullet") {
-			return GetRateBulletData($conn, $cause, $location);
+			return GetMortalityUncertainty($conn, $cause, $location);
 		} else if ($type == "death_line") {
 			return GetDeathLineData($conn, $cause, $location);
 		} else if ($type == "daly_line") {
@@ -59,17 +68,8 @@
 			$total = array_merge($death_first, $death_second, $daly_first, $daly_second, $yld_first, $yld_second);
 			return $total;
 		} else if ($type == "heat_rank") {
-			$death1 = GetHeatRankingMain($conn, $cause, $location, "DEATH");
-			$death2 = GetHeatRankingOthers($conn, $cause, $location, "DEATH");
-			$daly1 = GetHeatRankingMain($conn, $cause, $location, "DALY");
-			$daly2 = GetHeatRankingOthers($conn, $cause, $location, "DALY");
-			$yld1 = GetHeatRankingMain($conn, $cause, $location, "YLD");
-			$yld2 = GetHeatRankingOthers($conn, $cause, $location, "YLD");
-			$yll1 = GetHeatRankingMain($conn, $cause, $location, "YLL");
-			$yll2 = GetHeatRankingOthers($conn, $cause, $location, "YLL");
-
-			$total = array_merge($death1, $death2, $daly1, $daly2, $yld1, $yld2, $yll1, $yll2);
-			return $total;
+			if ($location < 40000)
+				return GetHeatRanking($conn, $cause, $location, 2016);
 		}
 	}
 
@@ -110,7 +110,7 @@
 	}
 
 	// new bullet query
-	function GetRateBulletData($conn, $cause, $location) {
+	function GetMortalityUncertainty($conn, $cause, $location) {
 		$stmt = $conn->prepare("CALL GetDeathUncertainty(:location, :cause);");
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
@@ -120,7 +120,7 @@
 	}
 
 	function GetChartRanking($conn, $cause, $location, $year, $type) {
-		$stmt = $conn->prepare('CALL GetChartRanking(:location, :cause, :year, 3, 3, 22, :type)');
+		$stmt = $conn->prepare('CALL GetChartRankingAll(:location, :cause, :year, 3, 3, 22, :type)');
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':year', $year);
@@ -130,21 +130,10 @@
 		return $result; // returns the row as array
 	}
 
-	function GetHeatRankingMain($conn, $cause, $location, $type) {
-		$stmt = $conn->prepare('CALL GetHeatRankingMain(:location, :cause, 2016, 3, 3, 27, :type)');
+	function GetHeatRanking($conn, $cause, $location, $type) {
+		$stmt = $conn->prepare('CALL GetHeatRanking(:location, :cause, 2016, 3, 3, 27)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
-		$stmt->bindParam(':type', $type);
-		$stmt->execute();
-		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		return $result; // returns the row as array
-	}
-
-	function GetHeatRankingOthers($conn, $cause, $location, $type) {
-		$stmt = $conn->prepare('CALL GetHeatRankingOthers(:location, :cause, 2016, 3, 3, 27, :type)');
-		$stmt->bindParam(':cause', $cause);
-		$stmt->bindParam(':location', $location);
-		$stmt->bindParam(':type', $type);
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $result; // returns the row as array

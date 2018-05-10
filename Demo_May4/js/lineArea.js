@@ -13,12 +13,6 @@ $(function() {
 		
 		let formattedData = [];
 
-		// formatting table data
-		// for (let i = msg.length - 1; i >= 0; i = i - 3) {
-
-		// let max = msg[msg.length - 1].upper;
-		// let min = msg[msg.length - 1].lower;
-
 		for (let i = msg.length - 1; i >= 0; i--) {
 			let singleYear = msg[i];
 			{
@@ -28,15 +22,11 @@ $(function() {
 						"metric": singleYear.metric,
 						"lower": Number(singleYear.lower),
 						"val": Number(singleYear.val),
-						"upper": Number(singleYear.upper)
+						"upper": Number(singleYear.upper),
+						"2": Number(singleYear.val),
+						"8": `All`
 					});
 			}
-			// if (max < Number(singleYear.upper)) {
-			// 	max = singleYear.upper;
-			// }
-			// if (min > singleYear.min) {
-			// 	min = singleYear.lower;
-			// }
 		}
 		// console.log(formattedData);
 
@@ -129,6 +119,7 @@ $(function() {
 		
 		// Footer
 		var containerDiv = document.getElementById("lineAreaGraph");
+		containerDiv.appendChild(createGraphTable(location_name, formattedData));
 		var footer = document.createElement("p");
 		var footer_text = document.createTextNode("Morality rate and uncertainty, 1990-2016, all ages, rate");
 		footer.appendChild(footer_text);

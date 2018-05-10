@@ -243,6 +243,13 @@ th {
 	font-size: 18px;
 }
 
+#loading {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 #benchmark_body-cell-neutral {
   width: 55px;
   height: 45px;
@@ -273,7 +280,7 @@ th {
 }
 
 #benchmark_label-cell {
-  width: auto;
+  width: 200px;
   border: none;
 }
 
@@ -282,10 +289,56 @@ th {
   border: none;
 }
 
+#legend-item-lower-text::before,
+#legend-item-same-text::before,
+#legend-item-upper-text::before {
+  border-left-width: 8px;
+  border-left-style: solid;
+  border-color: inherit;
+  border-radius: 16px;
+  content: "";
+  width: 100%;
+  height: 18px;
+  padding: 1px 0;
+  margin-right: 2px;
+}
 
-#loading {
+#legend-item-lower-text {
+  font-size: 11px;
+  border-left-color: rgb(85, 150, 208);
+  float: left;
+  margin-right: 15px;
+}
+
+#legend-item-same-text {
+  font-size: 11px;
+  border-left-color: rgb(224, 224, 224);
+  float: left;
+  margin-right: 15px;
+}
+
+#legend-item-upper-text {
+  font-size: 11px;
+  border-left-color: rgb(255, 102, 51);
+  float: left;
+}
+
+.legend {
+  border: 0;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  width: auto;
+  margin: 1px 0;
+  padding: 2px 0;
+  padding-left: 18px;
+  text-indent: -18px;
+  background: 0 0;
+}
+
+#benchmark-legend {
+  margin-left: 10px;
+  overflow:hidden;
+}
+
+.footer {
+  width: 100%;
 }
