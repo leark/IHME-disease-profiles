@@ -111,7 +111,7 @@
 
 	// new bullet query
 	function GetMortalityUncertainty($conn, $cause, $location) {
-		$stmt = $conn->prepare("CALL GetDeathUncertaintySmall(:location, :cause);");
+		$stmt = $conn->prepare("CALL GetDeathUncertainty(:location, :cause);");
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
 		$stmt->execute();
@@ -131,7 +131,7 @@
 	}
 
 	function GetHeatRanking($conn, $cause, $location, $type) {
-		$stmt = $conn->prepare('CALL GetHeatRankingSmall(:location, :cause, 2016)');
+		$stmt = $conn->prepare('CALL GetHeatRanking(:location, :cause, 2016)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
