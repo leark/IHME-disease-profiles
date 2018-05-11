@@ -112,7 +112,7 @@ function tabulateMap(data, columns, table) {
         })
         .enter()
         .append("td")
-            .text(function(d) { return d.value; })
+        .text(function(d) { return d.value; })
 				.attr('id', function(d) {
 						if (isNaN(d.value)) {
 								return "benchmark_label-cell";
