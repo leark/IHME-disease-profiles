@@ -64,11 +64,19 @@ $(function() {
 							// "8": 'All'
 						});
 				}
-				//SDI Info
-				if (requestType == "death_line"){
+			}
+
+			let sdiPresent = typeof formattedData[0].sdi !== `undefined`;
+
+			//SDI Info
+			if (requestType == "death_line"){
+				if (sdiPresent) {
 					document.getElementById('SDI').innerHTML = formattedData[0].sdiGroup;
+				} else {
+					document.getElementById(`media`).style.height = `20px`;
 				}
 			}
+
 			console.log(formattedData);
 
 			// Set the ranges

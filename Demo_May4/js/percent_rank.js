@@ -7,7 +7,7 @@ $(function() {
 	}).done(function (response) {
 		var rows = JSON.parse(response);
 
-		iniSaveButton(`ranktableSave`, `ranktableGraph`);
+		iniSaveButton(`ranktableSave`, `ranktableDiv`);
 
 		// Title
 		$('#rankTitle').text(`${cause_name} percent change in 1990 vs 2016`);
@@ -39,6 +39,8 @@ $(function() {
 		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, rate");
 		footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);
+
+		document.getElementById(`ranktableSave`).style.display = "inherit";
 		
 	}).fail(function (e) {
 		console.log(e);

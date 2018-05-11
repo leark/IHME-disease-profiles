@@ -20,16 +20,22 @@ do not add file extension (e.g. .jpge, .png, etc) TO fileName if you're changing
 */
 
 function iniSaveButton(buttonID, graphID, fileName = graphID, backgroundColor = `#FFFFFF`) {
+	let button = document.getElementById(buttonID);
 	$(`#${buttonID}`).click(function() {
 		let graph = document.getElementById(graphID);
-		domtoimage.toPng(graph, {bgcolor:backgroundColor}).then(function(dataUrl) {
+		domtoimage.toPng(graph, {filter: filter, bgcolor:backgroundColor}).then(function(dataUrl) {
 			let dLink = document.createElement("a");
 			dLink.download = `${fileName}.png`;
 			dLink.href = dataUrl;
 			dLink.click();
-		})
+		}
+		)
 		.catch(function(error) {
 			console.error(`Error from saving ${graphID}: `, error);
 		});
 	});
+}
+
+function filter (node) {
+	return (node.tagName !== `BUTTON`);
 }

@@ -37,6 +37,11 @@
 	<script type="text/javascript" src="./js/causeToLower.js"></script>
 	<link type="text/css" rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/column.css">
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+	</script>
 </head>
 
 <body>
@@ -61,9 +66,11 @@
     </div>
 
 	<div id="main">
-
 		<div id="sidebar">
-			<p class="head">RESULTS</p>
+			<div onclick="goBack()" style="cursor: pointer; color: #57b055;">
+				<p>< Back</p>
+			</div>
+<!-- 			<p class="head">RESULTS</p>
 			<ul class="side">
 				<li><a href="http://ghdx.healthdata.org/gbd-results-tool">GBD Results Tool</a></li>
 				<li><a href="http://www.healthdata.org/results/data-visualizations">Data Visualizations</a></li>
@@ -78,7 +85,7 @@
 				<li><a href="http://www.healthdata.org/us-county-profiles">US County Profiles</a></li>
 				<li><a href="http://www.healthdata.org/results/topics">Topics</a></li>
 				<li><a href="Data &amp; Tools">Data &amp; Tools</a></li>
-			</ul>
+			</ul> -->
 		</div>
 
 		<div id="info">
@@ -330,7 +337,7 @@
 					</div>
 				</div>
 				<div class="graph" id="ranktableDiv">
-					<button class="saveButtons" id="ranktableSave">Save as Image</button>
+					<button class="saveButtons" id="ranktableSave" style="display: none">Save as Image</button>
 					<div class="graphDiv" id="ranktableGraph">
 						<h2 class="graph-header" id="rankTitle"></h2>
 					</div>

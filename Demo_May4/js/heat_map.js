@@ -7,7 +7,7 @@ $(function() {
 	}).done(function (response) {
 		let loading = document.getElementById("loading");
 		loading.style.display = 'none';
-		iniSaveButton(`heatmapSave`,`heatmapGraph`);
+		iniSaveButton(`heatmapSave`,`heatmapDiv`);
 		document.getElementById("everything").style.visibility = "visible";
 
 		let column_num = 4;

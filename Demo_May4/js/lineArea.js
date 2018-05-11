@@ -6,6 +6,8 @@ $(function() {
 		data: {request_type: "bullet", causeName: cause_name, locationName: location_name}
 	}).done(function (msg) {
 		// console.log(msg);
+		cause_name = causeToLowerCase(cause_name);
+
 		let margins = {top: 30, bottom: 50, left: 60, right: 50};
 
 		let width = 800 - margins.left - margins.right,
@@ -73,15 +75,8 @@ $(function() {
 		x.domain(d3.extent(formattedData, function(d) { return d.year; }));
 		
 		//need to rewrite this with better style
-		// let upperDomain = d3.extent(formattedData, function(d) { return d.upper; });
-		// let lowerDomain = d3.extent(formattedData, function(d) { return d.lower; });
 		let max = d3.max(formattedData, function(d) { return d.upper; });
 		let min = d3.min(formattedData, function(d) { return d.lower; });
-		// let max = Math.max.apply(Math, upperDomain);
-		// let min = Math.min.apply(Math, lowerDomain);
-		// console.log(max);
-		// console.log(min);
-		// console.log(`Y domain is calculated with ${min} - (0.05 * ${min} and ${max})`);
 		y.domain([min - (.05 * min), max]);
 
 		// Add the X Axis
@@ -107,7 +102,7 @@ $(function() {
 			.attr("d", valueline(formattedData));
 
 		//title
-		$('#lineAreaTitle').text(`Mortality rate with uncertainty from 1990 to 2016`);
+		$('#lineAreaTitle').text(`What is the death rate for ${cause_name}?`);
 		
 		// text label for the x axis
 		svg.append("text")
@@ -117,16 +112,25 @@ $(function() {
 				.style("text-anchor", "middle")
 			.text("Year");
 		
+		svg.append("text")
+			  .attr("transform", "rotate(-90)")
+			  .attr("y", 0 - margins.left)
+			  .attr("x",0 - (height / 2))
+			  .attr("dy", "1em")
+			  .style("text-anchor", "middle")
+			  .text(`Deaths per 100,000 people`);
+
 		// Footer
 		var containerDiv = document.getElementById("lineAreaGraph");
 		containerDiv.appendChild(createGraphTable(location_name, formattedData));
-		var footer = document.createElement("p");
-		var footer_text = document.createTextNode("Morality rate and uncertainty, 1990-2016, all ages, rate");
-		footer.appendChild(footer_text);
+		var footer = document.createElement(`div`);
+		footer.innerHTML = `<p>All-ages mortality rate per 100,000 with 95% uncertainty interval, 1990–2016</p>`;
+		// var footer_text = document.createTextNode("Morality rate and uncertainty, 1990-2016, all ages, rate");
+		// footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);	
 		
 		// initialize the export to image button
-		iniSaveButton(`lineAreaSave`, `lineAreaGraph`, `${cause_name}MortalityAt${location_name}`);
+		iniSaveButton(`lineAreaSave`, `lineAreaDiv`, `${cause_name}MortalityAt${location_name}`);
 
 	}).fail(function (error) {
 		console.log(`Error from lineArea: ${error}`);

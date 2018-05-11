@@ -1,5 +1,4 @@
 $(function() {
-
 	barChart = function(requestType, lineDiv, titleDiv, titleText,
 		xLabel, lineDivID, caption) {
 		$.ajax({
@@ -8,6 +7,8 @@ $(function() {
 			dataType: 'json',
 			data: {request_type: requestType, causeName: cause_name, locationName: location_name}
 		}).done(function (msg) {
+			cause_name = causeToLowerCase(cause_name);
+
 			var margins = {top: 30, bottom: 50, left: 250, right: 50};
 			var formattedData = [];
 
@@ -129,7 +130,7 @@ $(function() {
 					});
 
 				//title
-				$(titleDiv).text(titleText);
+				$(titleDiv).text(`${titleText} ${cause_name}?`);
 
 				// text label for the x axis
 				svg.append("text")
@@ -160,6 +161,6 @@ $(function() {
 		});
 	}
 
-	barChart("risks", "#risksDiv", "#risksTitle", `What are the risk factors for ${cause_name}?`,
+	barChart("risks", "#risksDiv", "#risksTitle", `What are the risk factors for`,
 		"DALYs per 100,000 people", "risksDiv", "Disability-adjusted life years, 2016, all ages, rate");
 });
