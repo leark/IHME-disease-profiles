@@ -131,7 +131,7 @@
 	}
 
 	function GetHeatRanking($conn, $cause, $location, $type) {
-		$stmt = $conn->prepare('CALL GetHeatRanking(:location, :cause, 2016, 3, 3, 27)');
+		$stmt = $conn->prepare('CALL GetHeatRankingSmall(:location, :cause, 2016, 3, 3, 27)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();

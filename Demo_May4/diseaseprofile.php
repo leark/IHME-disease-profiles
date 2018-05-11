@@ -275,6 +275,20 @@
 					<option value="New Zealand">New Zealand</option>
 					<option value="Russia">Russia</option>
 					<option value="United States">United States</option>
+					<!-- <option value="Chad">Chad</option>
+					<option value="Colombia">Colombia</option>
+					<option value="Cuba">Cuba</option>
+					<option value="France">France</option>
+					<option value="Japan">Japan</option>
+					<option value="Mexico">Mexico</option>
+					<option value="New Zealand">New Zealand</option>
+					<option value="Nigeria">Nigeria</option>
+					<option value="Palestine">Palestine</option>
+					<option value="Russia">Russia</option>
+					<option value="Spain">Spain</option>
+					<option value="Syria">Syria</option>
+					<option value="Thailand">Thailand</option>
+					<option value="United States">United States</option>					 -->
 				</select>
 				<input type="submit"></button>
 			</form>
