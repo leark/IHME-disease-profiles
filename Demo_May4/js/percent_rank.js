@@ -29,7 +29,7 @@ $(function() {
 			});
 
 		}
-		console.log(rankData);
+		// console.log(rankData);
 		columns = ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"];
 		var rankingsTable = tabulate(rankData, columns, "#ranktableGraph");
 		rankingsTable.selectAll("thead th")
