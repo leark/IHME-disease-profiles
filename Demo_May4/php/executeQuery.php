@@ -74,7 +74,7 @@
 	}
 
 	function GetDeathLineData($conn, $cause, $location) {
-		$stmt = $conn->prepare('CALL SDICountry_Death(:location, :cause)');
+		$stmt = $conn->prepare('CALL SDILine(:location, :cause, 1)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
@@ -131,7 +131,7 @@
 	}
 
 	function GetHeatRanking($conn, $cause, $location, $type) {
-		$stmt = $conn->prepare('CALL GetHeatRankingSmall(:location, :cause, 2016, 3, 3, 27)');
+		$stmt = $conn->prepare('CALL GetHeatRankingSmall(:location, :cause, 2016)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
