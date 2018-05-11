@@ -156,6 +156,10 @@ $(function() {
 				footer.appendChild(footer_text);
 				containerDiv.appendChild(footer);
 			}
+			// else {
+			// 	//title - margin needs fixing if we employ this
+			// 	$(titleDiv).text(`No risks found for ${cause_name}`);
+			// }
 		}).fail(function (error) {
 			console.log(error);
 		});

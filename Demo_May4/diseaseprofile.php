@@ -269,13 +269,7 @@
 					<option value="Low-middle SDI">Low Middle SDI</option>
 					<option value="Low SDI">Low SDI</option>
 					<optgroup label="Countries">
-					<option value="Cuba">Cuba</option>
-					<option value="Colombia">Colombia</option>
-					<option value="France">France</option>
-					<option value="New Zealand">New Zealand</option>
-					<option value="Russia">Russia</option>
-					<option value="United States">United States</option>
-					<!-- <option value="Chad">Chad</option>
+					<option value="Chad">Chad</option>
 					<option value="Colombia">Colombia</option>
 					<option value="Cuba">Cuba</option>
 					<option value="France">France</option>
@@ -288,7 +282,7 @@
 					<option value="Spain">Spain</option>
 					<option value="Syria">Syria</option>
 					<option value="Thailand">Thailand</option>
-					<option value="United States">United States</option>					 -->
+					<option value="United States">United States</option>
 				</select>
 				<input type="submit"></button>
 			</form>

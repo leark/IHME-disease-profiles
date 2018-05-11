@@ -9,14 +9,14 @@ $(function() {
 			data: {request_type: requestType, causeName: cause_name, locationName: location_name}
 		}).done(function (msg) {
 			//console.log(msg);
-			
+
 			var margins = {top: 30, bottom: 50, left: 60, right: 50};
 
 			var width = 800 - margins.left - margins.right,
 				height = 360 - margins.top - margins.bottom;
-				
+
 			var formattedData = [];
-			
+
 			// input location is an SDI or global
 			if (msg.length == 81){
 				for (var i = msg.length - 1; i >= 0; i = i - 3) {
@@ -77,7 +77,7 @@ $(function() {
 				}
 			}
 
-			console.log(formattedData);
+			// console.log(formattedData);
 
 			// Set the ranges
 			var x = d3.scale.linear().range([0, width]);
@@ -327,8 +327,8 @@ $(function() {
 			var footer_text = document.createTextNode(caption);
 			footer.appendChild(footer_text);
 			containerDiv.appendChild(footer);
-			
-			//save as image 
+
+			//save as image
 			iniSaveButton(buttonID, graphID, `${cause_name}_${location_name}`);
 
 		}).fail(function (error) {

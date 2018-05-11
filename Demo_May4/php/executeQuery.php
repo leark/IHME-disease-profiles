@@ -74,7 +74,7 @@
 	}
 
 	function GetDeathLineData($conn, $cause, $location) {
-		$stmt = $conn->prepare('CALL SDILine(:location, :cause, 1)');
+		$stmt = $conn->prepare('CALL SDICountry_DEATH(:location, :cause)');
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':location', $location);
 		$stmt->execute();
@@ -111,7 +111,7 @@
 
 	// new bullet query
 	function GetMortalityUncertainty($conn, $cause, $location) {
-		$stmt = $conn->prepare("CALL GetDeathUncertainty(:location, :cause);");
+		$stmt = $conn->prepare("CALL GetDeathUncertaintySmall(:location, :cause);");
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
 		$stmt->execute();
