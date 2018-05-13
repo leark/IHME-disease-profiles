@@ -47,7 +47,7 @@ $(function() {
 		// Footer
 		var containerDiv = document.getElementById("ranktableGraph");
 		var footer = document.createElement("p");
-		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, rate");
+		var footer_text = document.createTextNode(`Percent change, 1990-2016, all ages, rate, ${location_name}`);
 		footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);
 

@@ -166,5 +166,5 @@ $(function() {
 	}
 
 	barChart("risks", "#risksDiv", "#risksTitle", `What risk factors drive death and disability combined for`,
-		"DALYs per 100,000 people", "risksDiv", `Disability-adjusted life years, 2016, all ages, rate, ${location_name}`);
+		"DALYs per 100,000 people", "risksDiv", `All ages disability-adjusted life years rate per 100,000, 2016, ${location_name}`);
 });

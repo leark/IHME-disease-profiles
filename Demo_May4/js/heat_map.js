@@ -27,7 +27,7 @@ $(function() {
 			};
 
 			// Title
-			$('#heatTitle').text(`How do causes of death and disability compare with ${cause_name}`);
+			$('#heatTitle').text(`How do death and disability from ${cause_name} compare across similar SDI locations?`);
 
 			column = ["location", "Deaths", "DALYs", "YLDs", "YLLs"];
 			var heatmapTable = tabulateMap(heatData, column, "#heatmapGraph");
@@ -65,7 +65,7 @@ $(function() {
 			let containerDiv = document.getElementById("heatmapDiv");
 			let footer = document.createElement("p");
 			footer.className = "footer";
-			let footer_text = document.createTextNode("2016, age-standardized, rate");
+			let footer_text = document.createTextNode(`Age-standardized rate per 100,000, 2016, ${location_name}`);
 				footer.appendChild(footer_text);
 				containerDiv.appendChild(footer);
 
