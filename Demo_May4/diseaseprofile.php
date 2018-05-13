@@ -39,7 +39,8 @@
 	<link rel="stylesheet" type="text/css" href="./css/column.css">
 	<script>
 		function goBack() {
-			window.history.back();
+			//window.history.back();
+			location.href = "http://students.washington.edu/shl7/capstone/diseaseprofile.html";
 		}
 	</script>
 </head>
