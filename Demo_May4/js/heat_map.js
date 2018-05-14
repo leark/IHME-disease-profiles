@@ -5,10 +5,7 @@ $(function() {
 		datatype: 'json',
 		data: {request_type:"heat_rank", causeName: cause_name, locationName: location_name}
 	}).done(function (response) {
-		let loading = document.getElementById("loading");
-		loading.style.display = 'none';
 		iniSaveButton(`heatmapSave`,`heatmapDiv`);
-		document.getElementById("everything").style.visibility = "visible";
 
 		let column_num = 4;
 		if (!location_name.includes("SDI") && location_name != "Global") {
