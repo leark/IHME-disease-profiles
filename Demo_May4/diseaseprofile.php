@@ -352,7 +352,10 @@
 					</div>
 				</div>
 				<div class="graph" id="risksDiv">
-					<h2 class="graph-header" id="risksTitle"></h2>
+					<button class="saveButtons" id="risksSave">Save as Image</button>
+					<div class="graphDiv" id="risksGraph">
+						<h2 class="graph-header" id="risksTitle"></h2>
+					</div>
 				</div>
 				<div class="graph" id="lineAreaDiv">
 					<button class="saveButtons" id="lineAreaSave">Save as Image</button>
