@@ -1,13 +1,14 @@
 $(function() {
-
 	barChart = function(requestType, lineDiv, titleDiv, titleText,
-		xLabel, lineDivID, caption) {
+		xLabel, lineDivID, buttonID, caption) {
 		$.ajax({
 			url:"./php/executeQuery.php", //the page containing php script
 			type: "get", //request type
 			dataType: 'json',
 			data: {request_type: requestType, causeName: cause_name, locationName: location_name}
 		}).done(function (msg) {
+			cause_name = causeToLowerCase(cause_name);
+
 			var margins = {top: 30, bottom: 50, left: 250, right: 50};
 			var formattedData = [];
 
@@ -129,7 +130,7 @@ $(function() {
 					});
 
 				//title
-				$(titleDiv).text(titleText);
+				$(titleDiv).text(`${titleText} ${cause_name}?`);
 
 				// text label for the x axis
 				svg.append("text")
@@ -154,12 +155,19 @@ $(function() {
 				var footer_text = document.createTextNode(caption);
 				footer.appendChild(footer_text);
 				containerDiv.appendChild(footer);
+				
+				//save as image
+				iniSaveButton(buttonID, lineDivID, `${cause_name}_${location_name}_risks`);
+			}
+			//no data
+			else {
+				document.getElementById(lineDivID).style.display = "none";
 			}
 		}).fail(function (error) {
 			console.log(error);
 		});
 	}
 
-	barChart("risks", "#risksDiv", "#risksTitle", `What are the risk factors for ${cause_name}?`,
-		"DALYs per 100,000 people", "risksDiv", "Disability-adjusted life years, 2016, all ages, rate");
+	barChart("risks", "#risksDiv", "#risksTitle", `What risk factors drive death and disability combined for`,
+		"DALYs per 100,000 people", "risksDiv", "risksSave", `All ages disability-adjusted life years (DALYs) rate per 100,000, 2016, ${location_name}`);
 });

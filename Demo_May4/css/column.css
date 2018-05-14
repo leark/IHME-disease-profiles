@@ -7,6 +7,11 @@
 #info {
     width: 77%;
     float: left;
+    /*margin: 0 auto;*/
+}
+
+#media {
+	/*height: 20px;*/
 }
 
 .button-style-1 {

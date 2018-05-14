@@ -7,7 +7,7 @@ $(function() {
 	}).done(function (response) {
 		let loading = document.getElementById("loading");
 		loading.style.display = 'none';
-		iniSaveButton(`heatmapSave`,`heatmapGraph`);
+		iniSaveButton(`heatmapSave`,`heatmapDiv`);
 		document.getElementById("everything").style.visibility = "visible";
 
 		let column_num = 4;
@@ -27,7 +27,7 @@ $(function() {
 			};
 
 			// Title
-			$('#heatTitle').text(`How do causes of death and disability compare with ${cause_name}`);
+			$('#heatTitle').text(`How do death and disability from ${cause_name} compare across similar SDI locations?`);
 
 			column = ["location", "Deaths", "DALYs", "YLDs", "YLLs"];
 			var heatmapTable = tabulateMap(heatData, column, "#heatmapGraph");
@@ -44,19 +44,19 @@ $(function() {
 			let benchmarkDiv = document.getElementById("benchmark-legend");
 
 			let lower = document.createElement("div");
-			lower.innerHTML = "Significantly lower than mean";
+			lower.innerHTML = "Lower than mean";
 			lower.className = "disease-profile legend";
 			lower.setAttribute("id", "legend-item-lower-text");
 			benchmarkDiv.appendChild(lower);
 
 			let same = document.createElement("div");
-			same.innerHTML = "Statistically indistinguishable from mean";
+			same.innerHTML = "Equal to mean";
 			same.className = "disease-profile legend";
 			same.setAttribute("id", "legend-item-same-text");
 			benchmarkDiv.appendChild(same);
 
 			let upper = document.createElement("div");
-			upper.innerHTML = "Significantly higher than mean";
+			upper.innerHTML = "Higher than mean";
 			upper.className = "disease-profile legend";
 			upper.setAttribute("id", "legend-item-upper-text");
 			benchmarkDiv.appendChild(upper);
@@ -65,7 +65,7 @@ $(function() {
 			let containerDiv = document.getElementById("heatmapDiv");
 			let footer = document.createElement("p");
 			footer.className = "footer";
-			let footer_text = document.createTextNode("2016, age-standardized, rate");
+			let footer_text = document.createTextNode(`Age-standardized rate per 100,000, 2016, ${location_name}`);
 				footer.appendChild(footer_text);
 				containerDiv.appendChild(footer);
 
@@ -112,7 +112,7 @@ function tabulateMap(data, columns, table) {
         })
         .enter()
         .append("td")
-            .text(function(d) { return d.value; })
+        .text(function(d) { return d.value; })
 				.attr('id', function(d) {
 						if (isNaN(d.value)) {
 								return "benchmark_label-cell";

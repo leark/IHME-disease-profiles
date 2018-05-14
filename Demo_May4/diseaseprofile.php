@@ -35,8 +35,15 @@
 	<script type="text/javascript" src="./js/FileSaver.js"></script>
 	<script type="text/javascript" src="./js/iniSaveButton.js"></script>
 	<script type="text/javascript" src="./js/createGraphTable.js"></script>
+	<script type="text/javascript" src="./js/causeToLower.js"></script>
 	<link type="text/css" rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/column.css">
+	<script>
+		function goBack() {
+			//window.history.back();
+			location.href = "http://students.washington.edu/shl7/capstone/diseaseprofile.html";
+		}
+	</script>
 </head>
 
 <body>
@@ -61,9 +68,11 @@
     </div>
 
 	<div id="main">
-
 		<div id="sidebar">
-			<p class="head">RESULTS</p>
+			<div onclick="goBack()" style="cursor: pointer; color: #57b055;">
+				<p>< Back</p>
+			</div>
+<!-- 			<p class="head">RESULTS</p>
 			<ul class="side">
 				<li><a href="http://ghdx.healthdata.org/gbd-results-tool">GBD Results Tool</a></li>
 				<li><a href="http://www.healthdata.org/results/data-visualizations">Data Visualizations</a></li>
@@ -78,7 +87,7 @@
 				<li><a href="http://www.healthdata.org/us-county-profiles">US County Profiles</a></li>
 				<li><a href="http://www.healthdata.org/results/topics">Topics</a></li>
 				<li><a href="Data &amp; Tools">Data &amp; Tools</a></li>
-			</ul>
+			</ul> -->
 		</div>
 
 		<div id="info">
@@ -87,7 +96,7 @@
 					<option value="">Choose</option>
 					<option value="Acute glomerulonephritis">Acute glomerulonephritis</option>
 					<option value="Adverse effects of medical treatment">Adverse effects of medical treatment</option>
-					<option value="African trypanosomiasis">African trypanosomiasis</option>
+					<!-- <option value="African trypanosomiasis">African trypanosomiasis</option> -->
 					<option value="Alcohol use disorders">Alcohol use disorders</option>
 					<option value="Alzheimer disease and other dementias">Alzheimer disease and other dementias</option>
 					<option value="Animal contact">Animal contact</option>
@@ -96,7 +105,7 @@
 					<option value="Appendicitis">Appendicitis</option>
 					<option value="Asthma">Asthma</option>
 					<option value="Atrial fibrillation and flutter">Atrial fibrillation and flutter</option>
-					<option value="Autistic spectrum disorders">Autistic spectrum disorders</option>
+					<!-- <option value="Autistic spectrum disorders">Autistic spectrum disorders</option> -->
 					<option value="Bipolar disorder">Bipolar disorder</option>
 					<option value="Bladder cancer">Bladder cancer</option>
 					<option value="Brain and nervous system cancer">Brain and nervous system cancer</option>
@@ -262,11 +271,19 @@
 					<option value="Low-middle SDI">Low Middle SDI</option>
 					<option value="Low SDI">Low SDI</option>
 					<optgroup label="Countries">
-					<option value="Cuba">Cuba</option>
+					<option value="Chad">Chad</option>
 					<option value="Colombia">Colombia</option>
+					<option value="Cuba">Cuba</option>
 					<option value="France">France</option>
+					<option value="Japan">Japan</option>
+					<option value="Mexico">Mexico</option>
 					<option value="New Zealand">New Zealand</option>
+					<option value="Nigeria">Nigeria</option>
+					<option value="Palestine">Palestine</option>
 					<option value="Russia">Russia</option>
+					<option value="Spain">Spain</option>
+					<option value="Syria">Syria</option>
+					<option value="Thailand">Thailand</option>
 					<option value="United States">United States</option>
 				</select>
 				<input type="submit"></button>
@@ -280,54 +297,66 @@
 				</div>
 				<div id="SDI"></div>
 				<div class="graph" id="lineDiv">
-					<h2 class="graph-header" id="lineTitle"></h2>
-					<div id="lineLegend">
-						<span id="fembar"></span>
-						<span id="femtext"></span>
-						<span id="sdifbar"></span>
-						<span id="sdiftext"></span>
-						<span id="mbar"></span>
-						<span id="mtext"></span>
-						<span id="sdimbar"></span>
-						<span id="sdimtext"></span>
+					<button class="saveButtons" id="lineSave">Save as Image</button>
+					<div class="graphDiv" id="lineGraph">
+						<h2 class="graph-header" id="lineTitle"></h2>
+						<div id="lineLegend">
+							<span id="fembar"></span>
+							<span id="femtext"></span>
+							<span id="sdifbar"></span>
+							<span id="sdiftext"></span>
+							<span id="mbar"></span>
+							<span id="mtext"></span>
+							<span id="sdimbar"></span>
+							<span id="sdimtext"></span>
+						</div>
 					</div>
 				</div>
 
 				<div class="graph" id="daly_lineDiv">
-					<h2 class="graph-header" id="daly_lineTitle"></h2>
-					<div id="daly_lineLegend">
-						<span id="daly_fembar"></span>
-						<span id="daly_femtext"></span>
-						<span id="daly_sdifbar"></span>
-						<span id="daly_sdiftext"></span>
-						<span id="daly_mbar"></span>
-						<span id="daly_mtext"></span>
-						<span id="daly_sdimbar"></span>
-						<span id="daly_sdimtext"></span>
+					<button class="saveButtons" id="dalyLineSave">Save as Image</button>
+					<div class="graphDiv" id="dalyLineGraph">
+						<h2 class="graph-header" id="daly_lineTitle"></h2>
+						<div id="daly_lineLegend">
+							<span id="daly_fembar"></span>
+							<span id="daly_femtext"></span>
+							<span id="daly_sdifbar"></span>
+							<span id="daly_sdiftext"></span>
+							<span id="daly_mbar"></span>
+							<span id="daly_mtext"></span>
+							<span id="daly_sdimbar"></span>
+							<span id="daly_sdimtext"></span>
+						</div>
 					</div>
 				</div>
 
 				<div class="graph" id="yld_lineDiv">
-					<h2 class="graph-header" id="yld_lineTitle"></h2>
-					<div id="yld_lineLegend">
-						<span id="yld_fembar"></span>
-						<span id="yld_femtext"></span>
-						<span id="yld_sdifbar"></span>
-						<span id="yld_sdiftext"></span>
-						<span id="yld_mbar"></span>
-						<span id="yld_mtext"></span>
-						<span id="yld_sdimbar"></span>
-						<span id="yld_sdimtext"></span>
+					<button class="saveButtons" id="yldLineSave">Save as Image</button>
+					<div class="graphDiv" id="yldLineGraph">
+						<h2 class="graph-header" id="yld_lineTitle"></h2>
+						<div id="yld_lineLegend">
+							<span id="yld_fembar"></span>
+							<span id="yld_femtext"></span>
+							<span id="yld_sdifbar"></span>
+							<span id="yld_sdiftext"></span>
+							<span id="yld_mbar"></span>
+							<span id="yld_mtext"></span>
+							<span id="yld_sdimbar"></span>
+							<span id="yld_sdimtext"></span>
+						</div>
 					</div>
 				</div>
 				<div class="graph" id="ranktableDiv">
-					<button class="saveButtons" id="ranktableSave">Save as Image</button>
+					<button class="saveButtons" id="ranktableSave" style="display: none">Save as Image</button>
 					<div class="graphDiv" id="ranktableGraph">
 						<h2 class="graph-header" id="rankTitle"></h2>
 					</div>
 				</div>
 				<div class="graph" id="risksDiv">
-					<h2 class="graph-header" id="risksTitle"></h2>
+					<button class="saveButtons" id="risksSave">Save as Image</button>
+					<div class="graphDiv" id="risksGraph">
+						<h2 class="graph-header" id="risksTitle"></h2>
+					</div>
 				</div>
 				<div class="graph" id="lineAreaDiv">
 					<button class="saveButtons" id="lineAreaSave">Save as Image</button>

@@ -10,7 +10,7 @@ Here's an example div that you want to save (you should also format it your grap
 
 To attach the save function to the button in this div, you would write
 
-iniSaveButton(`lineAreaSave`, `lineAreaGraph`, `${cause_name}MortalityAt${location_name}`);
+iniSaveButton(`lineAreaSave`, `lineAreaDiv`, `${cause_name}MortalityAt${location_name}`);
 
 	fileName is an optional parameter that will default the saved file's name to graphID.
 
@@ -20,16 +20,22 @@ do not add file extension (e.g. .jpge, .png, etc) TO fileName if you're changing
 */
 
 function iniSaveButton(buttonID, graphID, fileName = graphID, backgroundColor = `#FFFFFF`) {
+	let button = document.getElementById(buttonID);
 	$(`#${buttonID}`).click(function() {
 		let graph = document.getElementById(graphID);
-		domtoimage.toPng(graph, {bgcolor:backgroundColor}).then(function(dataUrl) {
+		domtoimage.toPng(graph, {filter: filter, bgcolor:backgroundColor}).then(function(dataUrl) {
 			let dLink = document.createElement("a");
 			dLink.download = `${fileName}.png`;
 			dLink.href = dataUrl;
 			dLink.click();
-		})
+		}
+		)
 		.catch(function(error) {
 			console.error(`Error from saving ${graphID}: `, error);
 		});
 	});
+}
+
+function filter (node) {
+	return (node.tagName !== `BUTTON`);
 }
