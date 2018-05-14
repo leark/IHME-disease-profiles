@@ -47,7 +47,7 @@ $(function() {
 		// Footer
 		var containerDiv = document.getElementById("ranktableGraph");
 		var footer = document.createElement("p");
-		var footer_text = document.createTextNode(`All ages rate per 100,000, percent change, 1990-2016, ${location_name}`);
+		var footer_text = document.createTextNode("All ages rate per 100,000, percent change, 1990-2016, " + location_name + " - ranked where 1 is most affected country and 195 is least affected");
 		footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);
 
