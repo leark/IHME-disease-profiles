@@ -44,19 +44,19 @@ $(function() {
 			let benchmarkDiv = document.getElementById("benchmark-legend");
 
 			let lower = document.createElement("div");
-			lower.innerHTML = "Significantly lower than mean";
+			lower.innerHTML = "Lower than mean";
 			lower.className = "disease-profile legend";
 			lower.setAttribute("id", "legend-item-lower-text");
 			benchmarkDiv.appendChild(lower);
 
 			let same = document.createElement("div");
-			same.innerHTML = "Statistically indistinguishable from mean";
+			same.innerHTML = "Equal to mean";
 			same.className = "disease-profile legend";
 			same.setAttribute("id", "legend-item-same-text");
 			benchmarkDiv.appendChild(same);
 
 			let upper = document.createElement("div");
-			upper.innerHTML = "Significantly higher than mean";
+			upper.innerHTML = "Higher than mean";
 			upper.className = "disease-profile legend";
 			upper.setAttribute("id", "legend-item-upper-text");
 			benchmarkDiv.appendChild(upper);
