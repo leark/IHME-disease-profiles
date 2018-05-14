@@ -14,23 +14,26 @@ $(function() {
 
 		var rankData = [];
 		for (let i = 0; i < rows.length; i += 2) {
-			let improvement = 0;
-			if (rows[i].rank > rows[i + 1].rank) {
-				improvement = -1;
-			} else if (rows[i].rank < rows[i + 1].rank) {
-				improvement = 1;
+			// let the phrase come before the acronym
+			if (rows[i].measure.includes("DALYs")) {
+				rows[i].measure = "Disability-Adjusted Life Years (DALYs)"
+			} else if (rows[i].measure.includes("YLDs")) {
+				rows[i].measure = "Years Lived with Disability (YLDs)"
 			}
+			let value = ((rows[i + 1].val - rows[i].val) / rows[i].val  * 100).toFixed(2);
+			if (value > 0)
+				value = "+" + value;
 			rankData.push({
 				'measure': rows[i].measure,
-				'1990 ranking': rows[i].rank,
-				'2016 ranking': rows[i + 1].rank,
-				'% change 1990-2016': (((rows[i + 1].val - rows[i].val) / rows[i].val ) * 100).toFixed(2) + "%",
-				'got better': improvement
+				'1990 global ranking': rows[i].rank,
+				'2016 global ranking': rows[i + 1].rank,
+				'measure % change 1990-2016': value + "%",
 			});
 
 		}
+
 		// console.log(rankData);
-		columns = ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"];
+		columns = ["measure", "1990 global ranking", "2016 global ranking", "measure % change 1990-2016"];
 		var rankingsTable = tabulate(rankData, columns, "#ranktableGraph");
 		rankingsTable.selectAll("thead th")
 			.text(function(column) {
@@ -44,7 +47,7 @@ $(function() {
 		// Footer
 		var containerDiv = document.getElementById("ranktableGraph");
 		var footer = document.createElement("p");
-		var footer_text = document.createTextNode("Percent change, 1990-2016, all ages, rate");
+		var footer_text = document.createTextNode("All ages rate per 100,000, percent change, 1990-2016, " + location_name + " - ranked where 1 is most affected country and 195 is least affected");
 		footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);
 
@@ -67,8 +70,7 @@ function tabulate(data, columns, table) {
         .enter()
         .append("th")
             .text(function(column) { return column; })
-				.style('font-weight', 'normal')
-				.style('color', '#454545');
+				.attr('id', 'percent-header');
 
     // create a row for each object in the data
     var rows = tbody.selectAll("tr")
@@ -87,14 +89,14 @@ function tabulate(data, columns, table) {
         .append("td")
         .text(function(d) { return d.value; })
 				.attr('id', function(d) {
-					if (isNaN(d.value)) {
-							return "percent_label-cell";
-					} else {
-							if (d.value > 0) {
+					if (d.column.includes("%")) {
+							let value = (d.value.substring(0, d.value.length - 1));
+							if (value > 0) {
 									return "percent_body-cell-positive";
 							}
 							return "percent_body-cell-negative";
 					}
-				}); // red #C2464F, blue #3B81A0
+					return "percent_label-cell";
+				});
     return table;
 }

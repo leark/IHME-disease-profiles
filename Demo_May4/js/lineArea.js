@@ -128,7 +128,7 @@ $(function() {
 		var containerDiv = document.getElementById("lineAreaGraph");
 		containerDiv.appendChild(createGraphTable(location_name, formattedData));
 		var footer = document.createElement(`div`);
-		footer.innerHTML = `<p>All-ages mortality rate per 100,000 with 95% uncertainty interval, 1990–2016</p>`;
+		footer.innerHTML = `<p>All ages mortality rate per 100,000 with 95% uncertainty interval, 1990–2016, ${location_name}</p>`;
 		// var footer_text = document.createTextNode("Morality rate and uncertainty, 1990-2016, all ages, rate");
 		// footer.appendChild(footer_text);
 		containerDiv.appendChild(footer);	

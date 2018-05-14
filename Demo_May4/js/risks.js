@@ -1,6 +1,6 @@
 $(function() {
 	barChart = function(requestType, lineDiv, titleDiv, titleText,
-		xLabel, lineDivID, caption) {
+		xLabel, lineDivID, buttonID, caption) {
 		$.ajax({
 			url:"./php/executeQuery.php", //the page containing php script
 			type: "get", //request type
@@ -155,16 +155,19 @@ $(function() {
 				var footer_text = document.createTextNode(caption);
 				footer.appendChild(footer_text);
 				containerDiv.appendChild(footer);
+				
+				//save as image
+				iniSaveButton(buttonID, lineDivID, `${cause_name}_${location_name}_risks`);
 			}
-			// else {
-			// 	//title - margin needs fixing if we employ this
-			// 	$(titleDiv).text(`No risks found for ${cause_name}`);
-			// }
+			//no data
+			else {
+				document.getElementById(lineDivID).style.display = "none";
+			}
 		}).fail(function (error) {
 			console.log(error);
 		});
 	}
 
-	barChart("risks", "#risksDiv", "#risksTitle", `What are the risk factors for`,
-		"DALYs per 100,000 people", "risksDiv", "Disability-adjusted life years, 2016, all ages, rate");
+	barChart("risks", "#risksDiv", "#risksTitle", `What risk factors drive death and disability combined for`,
+		"DALYs per 100,000 people", "risksDiv", "risksSave", `All ages disability-adjusted life years (DALYs) rate per 100,000, 2016, ${location_name}`);
 });

@@ -342,3 +342,28 @@ th {
 .footer {
   width: 100%;
 }
+
+#percent_body-cell-positive {
+  background-color: #F16639;
+  color: white;
+}
+
+#percent_body-cell-negative {
+  background-color: #5596D0;
+  color: white;
+}
+
+#percent_label-cell {
+  background-color: #DFE0DF;
+  color: #4d4d4f;
+}
+
+#percent-header {
+  font-weight: normal;
+  color: #454545;
+}
+
+#SDI {
+  margin-left: 2px;
+  font-size: 18px;
+}
