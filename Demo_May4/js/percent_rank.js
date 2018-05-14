@@ -25,15 +25,15 @@ $(function() {
 				value = "+" + value;
 			rankData.push({
 				'measure': rows[i].measure,
-				'1990 ranking': rows[i].rank,
-				'2016 ranking': rows[i + 1].rank,
-				'% change 1990-2016': value + "%",
+				'1990 global ranking': rows[i].rank,
+				'2016 global ranking': rows[i + 1].rank,
+				'measure % change 1990-2016': value + "%",
 			});
 
 		}
 
 		// console.log(rankData);
-		columns = ["measure", "1990 ranking", "2016 ranking", "% change 1990-2016"];
+		columns = ["measure", "1990 global ranking", "2016 global ranking", "measure % change 1990-2016"];
 		var rankingsTable = tabulate(rankData, columns, "#ranktableGraph");
 		rankingsTable.selectAll("thead th")
 			.text(function(column) {
