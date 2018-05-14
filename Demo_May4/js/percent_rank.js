@@ -5,53 +5,56 @@ $(function() {
 		datatype: 'json',
 		data: {request_type:"percent_rank", causeName: cause_name, locationName: location_name}
 	}).done(function (response) {
-		var rows = JSON.parse(response);
+		if (response.length != 0) {
+			var rows = JSON.parse(response);
 
-		iniSaveButton(`ranktableSave`, `ranktableDiv`);
+			iniSaveButton(`ranktableSave`, `ranktableDiv`);
 
-		// Title
-		$('#rankTitle').text(`Percent change of ${cause_name} from 1990 to 2016`);
+			// Title
+			$('#rankTitle').text(`Percent change of ${cause_name} from 1990 to 2016`);
 
-		var rankData = [];
-		for (let i = 0; i < rows.length; i += 2) {
-			// let the phrase come before the acronym
-			if (rows[i].measure.includes("DALYs")) {
-				rows[i].measure = "Disability-Adjusted Life Years (DALYs)"
-			} else if (rows[i].measure.includes("YLDs")) {
-				rows[i].measure = "Years Lived with Disability (YLDs)"
-			}
-			let value = ((rows[i + 1].val - rows[i].val) / rows[i].val  * 100).toFixed(2);
-			if (value > 0)
+			var rankData = [];
+			for (let i = 0; i < rows.length; i += 2) {
+				// let the phrase come before the acronym
+				if (rows[i].measure.includes("DALYs")) {
+					rows[i].measure = "Disability-Adjusted Life Years (DALYs)"
+				} else if (rows[i].measure.includes("YLDs")) {
+					rows[i].measure = "Years Lived with Disability (YLDs)"
+				}
+				let value = ((rows[i + 1].val - rows[i].val) / rows[i].val  * 100).toFixed(2);
+				if (value > 0)
 				value = "+" + value;
-			rankData.push({
-				'measure': rows[i].measure,
-				'1990 global ranking': rows[i].rank,
-				'2016 global ranking': rows[i + 1].rank,
-				'measure % change 1990-2016': value + "%",
-			});
+				rankData.push({
+					'measure': rows[i].measure,
+					'1990 global ranking': rows[i].rank,
+					'2016 global ranking': rows[i + 1].rank,
+					'measure % change 1990-2016': value + "%",
+				});
 
-		}
+			}
 
-		// console.log(rankData);
-		columns = ["measure", "1990 global ranking", "2016 global ranking", "measure % change 1990-2016"];
-		var rankingsTable = tabulate(rankData, columns, "#ranktableGraph");
-		rankingsTable.selectAll("thead th")
+			// console.log(rankData);
+			columns = ["measure", "1990 global ranking", "2016 global ranking", "measure % change 1990-2016"];
+			var rankingsTable = tabulate(rankData, columns, "#ranktableGraph");
+			rankingsTable.selectAll("thead th")
 			.text(function(column) {
 				return column.charAt(0).toUpperCase() + column.substr(1);
 			});
-		rankingsTable.selectAll("tbody tr")
+			rankingsTable.selectAll("tbody tr")
 			.sort(function(a, b) {
 				return d3.descending(a.age, b.age);
 			});
 
-		// Footer
-		var containerDiv = document.getElementById("ranktableGraph");
-		var footer = document.createElement("p");
-		var footer_text = document.createTextNode("All ages rate per 100,000, percent change, 1990-2016, " + location_name + " - ranked where 1 is most affected country and 195 is least affected");
-		footer.appendChild(footer_text);
-		containerDiv.appendChild(footer);
-
-		document.getElementById(`ranktableSave`).style.display = "inherit";
+			// Footer
+			var containerDiv = document.getElementById("ranktableGraph");
+			var footer = document.createElement("p");
+			var footer_text = document.createTextNode("All ages rate per 100,000, percent change, 1990-2016, " + location_name + " - ranked where 1 is most affected country and 195 is least affected");
+			footer.appendChild(footer_text);
+			containerDiv.appendChild(footer);
+			document.getElementById(`ranktableSave`).style.display = "inherit";
+		} else {
+			document.getElementById("ranktableDiv").style.display = "none";
+		}
 
 	}).fail(function (e) {
 		console.log(e);
