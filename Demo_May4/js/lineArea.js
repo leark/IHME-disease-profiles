@@ -6,6 +6,10 @@ $(function() {
 		data: {request_type: "bullet", causeName: cause_name, locationName: location_name}
 	}).done(function (msg) {
 		// console.log(msg);
+		let loading = document.getElementById("loading");
+		loading.style.display = 'none';
+		document.getElementById("everything").style.visibility = "visible";
+		
 		cause_name = causeToLowerCase(cause_name);
 
 		let margins = {top: 30, bottom: 50, left: 60, right: 50};
