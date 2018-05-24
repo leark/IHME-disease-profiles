@@ -29,14 +29,26 @@ $(function() {
 								"female": parseFloat(msg[i-1].val),
 								"male": parseFloat(msg[i-2].val),
 								"both": parseFloat(singleYear.val),
-								// "0": parseFloat(msg[i-1].val),
-								// "1": parseFloat(msg[i-2].val),
-								// "2": parseFloat(singleYear.val),
-								// "6": 'Females',
-								// "7": 'Males',
-								// "8": 'All'
+							    "0": parseFloat(msg[i-1].val),
+								"1": parseFloat(msg[i-2].val),
+								"2": parseFloat(singleYear.val),
+								"6": 'Females',
+								"7": 'Males',
+								"8": 'All'
 							});
 					}
+					
+					
+// "0": female value,
+// "1": male value,
+// "2": both value,
+// "3": sdi female,
+// "4": sdi male,
+// "5": sdi both,
+// "6": 'Females',
+// "7": 'Males',
+// "8": 'All'
+
 				// input location is a country
 				} else {
 					for (var i = msg.length - 1; i >= 0; i = i - 6) {
@@ -52,16 +64,16 @@ $(function() {
 								"sdi": parseFloat(msg[i-3].val),
 								"sdiFemale": parseFloat(msg[i-4].val),
 								"sdiMale": parseFloat(msg[i-5].val),
-								"sdiGroup": msg[i-5].location_name
-								// "0": parseFloat(msg[i-1].val),
-								// "1": parseFloat(msg[i-2].val),
-								// "2": parseFloat(singleYear.val),
-								// "3": parseFloat(msg[i-3].val),
-								// "4": parseFloat(msg[i-4].val),
-								// "5": parseFloat(msg[i-5].val),
-								// "6": 'Females',
-								// "7": 'Males',
-								// "8": 'All'
+								"sdiGroup": msg[i-5].location_name,
+								"0": parseFloat(msg[i-1].val),
+								"1": parseFloat(msg[i-2].val),
+								"2": parseFloat(singleYear.val),
+								"3": parseFloat(msg[i-4].val),
+								"4": parseFloat(msg[i-5].val),
+								"5": parseFloat(msg[i-3].val),
+								"6": 'Females',
+								"7": 'Males',
+								"8": 'All'
 							});
 					}
 				}
@@ -77,7 +89,7 @@ $(function() {
 					}
 				}
 
-				// console.log(formattedData);
+				console.log(formattedData);
 
 				// Set the ranges
 				var x = d3.scale.linear().range([0, width]);
@@ -261,7 +273,8 @@ $(function() {
 
 				// Values table
 				var containerDiv = document.getElementById(lineDivID);
-
+				
+				/*
 				var table = document.createElement("table");
 
 				var tableHeader = table.createTHead();
@@ -321,7 +334,10 @@ $(function() {
 				}
 
 				containerDiv.appendChild(table);
-
+				*/
+				
+				containerDiv.appendChild(createGraphTable(location_name, formattedData, true));
+				
 				// Footer
 				var footer = document.createElement("p");
 				var footer_text = document.createTextNode(caption);

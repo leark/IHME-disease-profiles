@@ -57,12 +57,27 @@ function createGraphTable(location_name, data, gender = false) {
 	    rowName = data[0][rowNumber + 6];
 		row.className = rowName;
 		row.insertCell(0).innerHTML = rowName;
-		row.insertCell(1).innerHTML = (Math.round(data[0][rowNumber] * 10) / 10).toFixed(1);
-		row.insertCell(2).innerHTML = (Math.round(data[data.length - 1][rowNumber] * 10) / 10).toFixed(1);
+		for(i = 0; i <= 1; i++){
+			let value = (Math.round(data[i*(data.length - 1)][rowNumber] * 1000) / 1000);
+			if (value < .1){
+				row.insertCell(i + 1).innerHTML = value.toFixed(3);
+			}else{
+				row.insertCell(i + 1).innerHTML = value.toFixed(1);
+			}
+		}
 		if (sdiPresent) {
 			sdiNumber = rowNumber + 3;
-			row.insertCell(3).innerHTML = (Math.round(data[0][sdiNumber] * 10) / 10).toFixed(1);
-			row.insertCell(4).innerHTML = (Math.round(data[data.length - 1][sdiNumber] * 10) / 10).toFixed(1);
+			for(i = 0; i <= 1; i++){
+				let value = (Math.round(data[i*(data.length - 1)][sdiNumber] * 1000) / 1000);
+				if (value < .1){
+					row.insertCell(i + 3).innerHTML = value.toFixed(3);
+				}else{
+					row.insertCell(i + 3).innerHTML = value.toFixed(1);
+				}
+			}
+				
+			//row.insertCell(3).innerHTML = (Math.round(data[0][sdiNumber] * 10) / 10).toFixed(1);
+			//row.insertCell(4).innerHTML = (Math.round(data[data.length - 1][sdiNumber] * 10) / 10).toFixed(1);
 		}
 	}
 
