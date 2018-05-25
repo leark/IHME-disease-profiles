@@ -334,7 +334,7 @@ th {
   background: 0 0;
 }
 
-#benchmark-legend {
+#benchmark-legend, #rank-legend {
   margin-left: 10px;
   overflow:hidden;
 }

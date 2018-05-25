@@ -23,18 +23,19 @@ $(function() {
 				}
 				let value = ((rows[i + 1].val - rows[i].val) / rows[i].val  * 100).toFixed(2);
 				if (value > 0)
-				value = "+" + value;
+					value = "+" + value;
 				rankData.push({
 					'measure': rows[i].measure,
 					'1990 global ranking': rows[i].rank,
 					'2016 global ranking': rows[i + 1].rank,
+					'1990 value': parseFloat(rows[i].val).toFixed(2),
+					'2016 value': parseFloat(rows[i + 1].val).toFixed(2),
 					'measure % change 1990-2016': value + "%",
 				});
 
 			}
 
-			// console.log(rankData);
-			columns = ["measure", "1990 global ranking", "2016 global ranking", "measure % change 1990-2016"];
+			columns = ["measure", "1990 global ranking", "1990 value", "2016 global ranking", "2016 value", "measure % change 1990-2016"];
 			var rankingsTable = tabulate(rankData, columns, "#ranktableGraph");
 			rankingsTable.selectAll("thead th")
 			.text(function(column) {
@@ -45,13 +46,31 @@ $(function() {
 				return d3.descending(a.age, b.age);
 			});
 
+			// legend
+			let rankDiv = document.getElementById("rank-legend");
+
+			let lower = document.createElement("div");
+			lower.innerHTML = "Percent rate in value has decreased";
+			lower.className = "disease-profile legend";
+			lower.setAttribute("id", "legend-item-lower-text");
+			rankDiv.appendChild(lower);
+
+			let upper = document.createElement("div");
+			upper.innerHTML = "Percent rate in value has increased";
+			upper.className = "disease-profile legend";
+			upper.setAttribute("id", "legend-item-upper-text");
+			rankDiv.appendChild(upper);
+
 			// Footer
-			var containerDiv = document.getElementById("ranktableGraph");
-			var footer = document.createElement("p");
-			var footer_text = document.createTextNode("All ages rate per 100,000, percent change, 1990-2016, " + location_name + " - ranked where 1 is most affected country and 195 is least affected");
+			let containerDiv = document.getElementById("ranktableDiv");
+			let footer = document.createElement("p");
+			footer.className = "footer";
+			let footer_text = document.createTextNode("All ages rate per 100,000, percent change, 1990-2016, " + location_name + " - ranked where 1 is most affected country and 195 is least affected");
 			footer.appendChild(footer_text);
 			containerDiv.appendChild(footer);
+
 			document.getElementById(`ranktableSave`).style.display = "inherit";
+
 		} else {
 			document.getElementById("ranktableDiv").style.display = "none";
 		}

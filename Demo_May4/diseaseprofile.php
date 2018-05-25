@@ -350,6 +350,7 @@
 					<div class="graphDiv" id="ranktableGraph">
 						<h2 class="graph-header" id="rankTitle"></h2>
 					</div>
+					<div id="rank-legend"></div>
 				</div>
 				<div class="graph" id="risksDiv">
 					<button class="saveButtons" id="risksSave">Save as Image</button>

@@ -121,7 +121,7 @@
 
 	function GetChartRanking($conn, $cause, $location, $year, $type) {
 		// $stmt = $conn->prepare('CALL GetChartRanking(:location, :cause, :year, 3, 3, 22, :type)');
-		$stmt = $conn->prepare('CALL GetPercentRankSmall(:location, :cause, :year, :type)');		
+		$stmt = $conn->prepare('CALL GetPercentRankSmall(:location, :cause, :year, :type)');
 		$stmt->bindParam(':location', $location);
 		$stmt->bindParam(':cause', $cause);
 		$stmt->bindParam(':year', $year);
