@@ -152,7 +152,9 @@ $(function() {
 		}
 
 	}).fail(function (error) {
-		console.log(`Error from lineArea: ${error}`);
+		console.log(`Error from lineArea:`);
+		console.log(error);
+		window.location.replace(`./diseaseprofile.html`);
 	});
 });
 	

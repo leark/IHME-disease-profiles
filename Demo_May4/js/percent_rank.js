@@ -6,6 +6,7 @@ $(function() {
 		data: {request_type:"percent_rank", causeName: cause_name, locationName: location_name}
 	}).done(function (response) {
 		if (response.length != 0) {
+			console.log(response.length);
 			var rows = JSON.parse(response);
 
 			iniSaveButton(`ranktableSave`, `ranktableDiv`);
