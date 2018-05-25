@@ -29,7 +29,7 @@
 	<script type="text/javascript" src="./js/lineArea.js"></script>
 	<script type="text/javascript" src="./js/percent_rank.js"></script>
 	<script type="text/javascript" src="./js/heat_map.js"></script>
-	<script type="text/javascript" src="./js/select2.js"></script>
+<!-- 	<script type="text/javascript" src="./js/select2.js"></script> -->
 	<script type="text/javascript" src="./js/dom-to-image.js"></script>
 	<script type="text/javascript" src="./js/FileSaver.js"></script>
 	<script type="text/javascript" src="./js/iniSaveButton.js"></script>

@@ -1,4 +1,15 @@
 $(function() {
+	$("#e1").select2({
+		allowClear: true,
+		width: '30%',
+		selectOnClose: true
+	}).val(cause_name).trigger(`change`); 
+	$("#e2").select2({
+		allowClear: true,
+		width: '25%',
+		selectOnClose: true
+	}).val(location_name).trigger(`change`); 
+
 	$.ajax({
 		url:"./php/executeQuery.php", //the page containing php script
 		type: "get", //request type
