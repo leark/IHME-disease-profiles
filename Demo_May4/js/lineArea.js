@@ -17,10 +17,10 @@ $(function() {
 		data: {request_type: "bullet", causeName: cause_name, locationName: location_name}
 	}).done(function (msg) {
 		// console.log(msg);
-		let loading = document.getElementById("loading");
-		loading.style.display = 'none';
+		// let loading = document.getElementById("loading");
+		// loading.style.display = 'none';
 		if (msg.length != 0) {
-			document.getElementById("everything").style.visibility = "visible";
+			// document.getElementById("everything").style.visibility = "visible";
 			
 			cause_name = causeToLowerCase(cause_name);
 

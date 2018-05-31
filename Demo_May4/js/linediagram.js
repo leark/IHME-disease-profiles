@@ -81,12 +81,24 @@ $(function() {
 				let sdiPresent = typeof formattedData[0].sdi !== `undefined`;
 
 				//SDI Info
-				if (requestType == "death_line"){
+				// if (requestType == "death_line"){
+				// 	if (sdiPresent) {
+				// 		document.getElementById('SDI').innerHTML = formattedData[0].sdiGroup;
+				// 	} else {
+				// 		document.getElementById(`media`).style.height = `20px`;
+				// 	}
+				// }
+
+				if (requestType == `daly_line`) {
 					if (sdiPresent) {
 						document.getElementById('SDI').innerHTML = formattedData[0].sdiGroup;
 					} else {
 						document.getElementById(`media`).style.height = `20px`;
 					}
+					let loading = document.getElementById("loading");
+					loading.style.display = 'none';
+					document.getElementById("everything").style.visibility = "visible";
+			
 				}
 
 				console.log(formattedData);
