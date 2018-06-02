@@ -160,7 +160,7 @@
 					<option value="Hodgkin lymphoma">Hodgkin lymphoma</option>
 					<option value="Hypertensive heart disease">Hypertensive heart disease</option>
 					<!-- <option value="Idiopathic intellectual disability">Idiopathic intellectual disability</option> -->
-					<option value="Indirect maternal deaths">Indirect maternal deaths</option>
+					<!-- <option value="Indirect maternal deaths">Indirect maternal deaths</option> -->
 					<option value="Inflammatory bowel disease">Inflammatory bowel disease</option>
 					<option value="Inguinal, femoral, and abdominal hernia">Inguinal, femoral, and abdominal hernia</option>
 					<option value="Interpersonal violence">Interpersonal violence</option>
@@ -171,7 +171,7 @@
 					<option value="Ischemic heart disease">Ischemic heart disease</option>
 					<option value="Kidney cancer">Kidney cancer</option>
 					<option value="Larynx cancer">Larynx cancer</option>
-					<option value="Late maternal deaths">Late maternal deaths</option>
+					<!-- <option value="Late maternal deaths">Late maternal deaths</option> -->
 					<option value="Leishmaniasis">Leishmaniasis</option>
 					<option value="Leprosy">Leprosy</option>
 					<option value="Leukemia">Leukemia</option>
@@ -182,10 +182,10 @@
 					<option value="Lymphatic filariasis">Lymphatic filariasis</option>
 					<option value="Malaria">Malaria</option>
 					<option value="Malignant skin melanoma">Malignant skin melanoma</option>
-					<option value="Maternal deaths aggravated by HIV/AIDS">Maternal deaths aggravated by HIV/AIDS</option>
+					<!-- <option value="Maternal deaths aggravated by HIV/AIDS">Maternal deaths aggravated by HIV/AIDS</option>
 					<option value="Maternal hemorrhage">Maternal hemorrhage</option>
 					<option value="Maternal hypertensive disorders">Maternal hypertensive disorders</option>
-					<option value="Maternal sepsis and other maternal infections">Maternal sepsis and other maternal infections</option>
+					<option value="Maternal sepsis and other maternal infections">Maternal sepsis and other maternal infections</option> -->
 					<option value="Measles">Measles</option>
 					<option value="Meningitis">Meningitis</option>
 					<option value="Mesothelioma">Mesothelioma</option>
@@ -206,7 +206,7 @@
 					<option value="Other chronic respiratory diseases">Other chronic respiratory diseases</option>
 					<option value="Other digestive diseases">Other digestive diseases</option>
 					<option value="Other infectious diseases">Other infectious diseases</option>
-					<option value="Other maternal disorders">Other maternal disorders</option>
+					<!-- <option value="Other maternal disorders">Other maternal disorders</option> -->
 					<option value="Other mental and substance use disorders">Other mental and substance use disorders</option>
 					<option value="Other musculoskeletal disorders">Other musculoskeletal disorders</option>
 					<option value="Other neglected tropical diseases">Other neglected tropical diseases</option>
