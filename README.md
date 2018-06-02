@@ -1,4 +1,4 @@
-# IHME-country-profiles
+# IHME Disease Profiles
 
 ## Overview
 
@@ -40,4 +40,4 @@ Most of our major decisions on technology used stems from what our sponsor used 
 
 * [IHME](http://www.healthdata.org/)
 * Informatics Social Impact Class
-* People who responded in surveys
+* User survey participants
