@@ -13,9 +13,6 @@ The Disease Profiles project is sponsored by the Institute of Health Metrics and
 3. Authors
 4. Acknowledgments
 
-ReadMe file appropriate for all audiences that includes an overview of your project, a list of contents, and a summary of the major technology decisions you made, including why you chose the stack you did, and contact information 
-link(s) to wherever your project is deployed, if possible (web URL and/or link to app in store); if not possible, a video or set of gifs that shows the project in action 
-
 ## Built With
 
 * [PHP](https://php.net/) - Backend
@@ -39,5 +36,5 @@ Most of our major decisions on technology used stems from what our sponsor used 
 ## Acknowledgments
 
 * [IHME](http://www.healthdata.org/)
-* Informatics Social Impact Class
+* Informatics Social Impact Capstone Class
 * User survey participants
