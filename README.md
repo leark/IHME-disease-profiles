@@ -23,11 +23,11 @@ link(s) to wherever your project is deployed, if possible (web URL and/or link t
 * [D3](https://d3js.org/) - Used to generate visualizations
 * [jQuery](https://jquery.com/) - Javascript library to ease developement
 * [DOM to Image](https://github.com/tsayen/dom-to-image) - Javascript libarry used to convert graph elements as image files
-* [FileSaver.js](https://github.com/eligrey/FileSaver.js/) - Javascript library used to save image files onto computer
+* [FileSaver](https://github.com/eligrey/FileSaver.js/) - Javascript library used to save image files onto computer
 
 ## Technology Decisions
 
-Why we used what we used
+Most of our major decisions on technology used stems from what our sponsor used to create their [country profiles](http://www.healthdata.org/results/country-profiles) and their future API. Country profiles uses D3 to generate the visualizations and IHME's future API is based on PHP. MySQL was picked as it is a free resource. DOM-to-Image and FileSaver work in conjunction to for the graphs to be saved easily as a PNG file.
 
 ## Authors
 
