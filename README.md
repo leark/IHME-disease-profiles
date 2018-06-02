@@ -5,6 +5,7 @@
 The Disease Profiles project is sponsored by the Institute of Health Metrics and Evaluation (IHME), a research center that provides publicly accessible population health data used to evaluate current policies and strategies. Currently, users of the existing tools on the IHME website have difficulty viewing the impact of a specific disease. Our web page provides snapshots of the impact of over 300 diseases in 195 different countries. This tool will assist health policy makers, advocates, non-governmental organizations, and members of the general public in making informed decisions about public health in regards to funding, policy, and education.
 
 [Website](https://students.washington.edu/shl7/capstone/diseaseprofile.html)
+[GitHub](https://github.com/leark/IHME-disease-profiles)
 
 ## List of Contents
 
